@@ -1,29 +1,29 @@
-## Cara Install
+# Cara Install
 
 After initializing a fresh instance of Laravel (and making all the necessary configurations), install the preset using one of the provided methods:
 
-### Via Composer
+## Via Composer
 
 > Clone repo github ke vscode
-composer install/update
-npm install
-npm run dev
+##### composer install/update
+##### npm install
+##### npm run dev
 
 > Buat database code dan testing
-cp .env.example .env
+##### cp .env.example .env
 
 > Setting value .env dan .env.testing
-php artisan key:generate
-php artisan migrate
-php artisan migrate --seed
-php artisan serve
+##### php artisan key:generate
+##### php artisan migrate
+##### php artisan migrate --seed
+##### php artisan serve
 
 ## Usage
 
 > Masuk menggunakan *nama kalian*@gmail.com dengan password *nama kalian*.
-Contoh: brian@gmail.com dengan password brian. 
+##### Contoh: brian@gmail.com dengan password brian. 
 
-### Dashboard
+## Dashboard
 
 You can access the dashboard either by using the "**Dashboard**" link in the left sidebar or by adding **/home** in the url. 
 
