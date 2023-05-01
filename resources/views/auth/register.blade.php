@@ -1,7 +1,7 @@
-@extends('layouts.app', ['class' => 'bg-default'])
+@extends('layouts.signStyle', ['class' => 'bg-default'])
 
 @section('content')
-    @include('layouts.headers.guest')
+    @include('layouts.sign')
 
     <div class="container mt--8 pb-5">
         <!-- Table -->
@@ -9,7 +9,7 @@
             <div class="col-lg-6 col-md-8">
                 <div class="card bg-secondary shadow border-0">
                     <div class="card-header bg-transparent pb-5">
-                        <div class="text-muted text-center mt-2 mb-4"><small>{{ __('Sign up with') }}</small></div>
+
                         <div class="text-center">
                             <a href="#" class="btn btn-neutral btn-icon mr-4">
                                 <span class="btn-inner--icon"><img src="{{ asset('argon') }}/img/icons/common/github.svg"></span>
