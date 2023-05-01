@@ -390,6 +390,16 @@
       width: 350px;
       height: 50px;
     }
+    .none {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: var(--br-31xl);
+        opacity: 0;
+        box-sizing: border-box;
+        width: 250px;
+        height: 70px;
+    }
     </style>
   </head>
   <body class="{{ $class ?? '' }}">

@@ -1,26 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./sign-up-page.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-    />
-  </head>
   <body>
     <div class="sign-up-page">
-      <img class="bg-icon" alt="" src="./public/bg.svg" />
+      <img alt="" src="{{ asset('assets') }}/bg.svg"
+      position= absolute;
+      top= "0"
+      left= "0"
+      width= "100%"
+      height= "100%"
+      marging= "0 auto"/>
       <div class="sign-up-page-child"></div>
       <div class="right-side">
         <div class="right-side-child"></div>
@@ -28,43 +16,76 @@
         <div class="daftarkan-dirimu-untuk">
           Daftarkan dirimu untuk mendapatkan informasi dari OKI yang anda ikuti
         </div>
-        <div class="dropdown-oki">
-          <div class="pilih-oki-yang">Pilih OKI yang diikuti</div>
-          <div class="dropdown-oki-child"></div>
-          <img class="dropdown-oki-item" alt="" src="./public/polygon-2.svg" />
-        </div>
-        <div class="email">
-          <div class="field-email">
-            <div class="masukkan-email-anda">Masukkan email anda</div>
-            <div class="dropdown-oki-child"></div>
-          </div>
-          <div class="password">Email</div>
-        </div>
-        <div class="username">
-          <div class="field-email">
-            <div class="masukkan-email-anda">Masukkan nama lengkap anda</div>
-            <div class="dropdown-oki-child"></div>
-          </div>
-          <div class="password">Nama Lengkap</div>
-        </div>
-        <div class="username1">
-          <div class="field-email">
-            <div class="masukkan-email-anda">Masukkan password anda</div>
-            <div class="dropdown-oki-child"></div>
-          </div>
-          <div class="password">Password</div>
-        </div>
-        <div class="password1">
-          <div class="field-email">
-            <div class="masukkan-username-anda">Masukkan username anda</div>
-            <div class="dropdown-oki-child"></div>
-          </div>
-          <div class="password">Username</div>
-        </div>
-        <div class="sign-up-button">
-          <div class="sign-up-button-child"></div>
-          <div class="sign-up">SIGN UP</div>
-        </div>
+
+        <form role="form" method="POST" action="{{ route('register') }}">
+            @csrf
+
+            <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
+                <div class="email">
+                    <div class="field-email">
+                        <div class=""> $email=<input class="no-border{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan email anda') }}" type="email" name="email" value="{{ old('email') }}" minlength="{8}" required autofocus></input></div>
+                    </div>
+                    <div class="password">Email</div>
+                </div>
+                @if ($errors->has('email'))
+                    <span class="invalid-feedback" style="display: block;" role="alert">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
+            </div>
+
+            <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                <div class="username">
+                    <div class="field-email">
+                        <div class=""><input class="no-border{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan nama lengkap anda') }}" type="text" name="name" value="{{ old('name') }}" required autofocus></input></div>
+                    </div>
+                    <div class="password">Nama Lengkap</div>
+                </div>
+                @if ($errors->has('name'))
+                    <span class="invalid-feedback" style="display: block;" role="alert">
+                        <strong>{{ $errors->first('name') }}</strong>
+                    </span>
+                @endif
+            </div>
+
+            <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
+                <div class="password1">
+                    <div class="field-email">
+                        <div class=""><input class="no-border{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan password anda') }}" type="password" name="password" minlength="{8}" required></input></div>
+                    </div>
+                    <div class="password">Password ( minimal 8 huruf / angka )</div>
+                </div>
+                @if ($errors->has('password'))
+                    <span class="invalid-feedback" style="display: block;" role="alert">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
+            </div>
+
+            <div class="form-group">
+                <div class="username1">
+                    <div class="field-email">
+                        <div class=""><input class="no-border" placeholder="{{ __('Ulangi password anda') }}" type="password" name="password_confirmation" minlength="{8}" required></input></div>
+                    </div>
+                    <div class="password">Confirm Password</div>
+                </div>
+            </div>
+
+            <div class="dropdown-oki">
+                <select id="option" name="option" class="dropdown-oki-child">
+                  <option value="" disabled selected>Pilih OKI yang diikuti</option>
+                  <option value="option1">Option 1</option>
+                  <option value="option2">Option 2</option>
+                  <option value="option3">Option 3</option>
+                </select>
+            </div>
+
+            <div class="sign-up-button">
+                <div class="sign-up-button-child"></div>
+                <div class="sign-up">SIGN UP</div>
+                <button type="submit" class="none">{{ __('Create account') }}</button>
+            </div>
+
       </div>
       <div class="left-side">
         <div class="left-side-child"></div>
@@ -77,14 +98,22 @@
           <div class="sign-in-button">
             <div class="sign-in-button-child"></div>
             <div class="sign-in">SIGN IN</div>
+            <button class="none"><a href="login" class="sign-in-button-child"></a></button>
           </div>
-          <img
-            class="logo-politeknik-negeri-malang-icon3"
+
+          <img src="{{ asset('assets') }}/logo-politeknik-negeri-malang-1@2x.png"
             alt=""
-            src="./public/logo-politeknik-negeri-malang-1@2x.png"
+            position="absolute"
+            top="0"
+            left="93px"
+            width="200px"
+            height="201.47px"
+            object-fit="cover"
           />
+
         </div>
       </div>
+    </form>
     </div>
   </body>
 </html>

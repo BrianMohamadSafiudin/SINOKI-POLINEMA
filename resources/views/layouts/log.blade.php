@@ -18,7 +18,6 @@
           anda ikuti
         </div>
         <div class="dropdown-oki1">
-          <div class="username4">Username</div>
           <select id="option" name="option" class="dropdown-oki-inner">
             <option value="" disabled selected>Pilih OKI yang diikuti</option>
             <option value="option1">Option 1</option>
@@ -33,9 +32,9 @@
             <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} mb-3">
                 <div class="username3">
                     <div class="field-username2">
-                        <div class=""> $username=<input class="no-border{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan username anda') }}" type="email" name="email" value="{{ old('email') }}" value="admin@argon.com" minlength="{8}" required autofocus></input></div>
+                        <div class=""> $email=<input class="no-border{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ __('Masukkan email anda') }}" type="email" name="email" value="{{ old('email') }}" minlength="{8}" required autofocus></input></div>
                     </div>
-                    <div class="username4">Username</div>
+                    <div class="username4">Email</div>
                 </div>
                 @if ($errors->has('email'))
                     <span class="invalid-feedback" style="display: block;" role="alert">
@@ -59,11 +58,13 @@
             </div>
 
               <div class="sign-up-button1">
-                <button type="submit" class="sign-up-button-item"></button>
+                <div class="sign-up-button-item"></div>
                 <div class="sign-in1">SIGN IN</div>
+                <button type="submit" class="none"></button>
               </div>
               <div class="lupa-kata-sandi"><a href="https://wa.me/+6282114903130?text=Username%20anda%20:%20? %0A(Kirim%20bukti%20selfie%20dengan%20ktm%20anda)" target="_blank">Lupa sandi? Call Admin</a></div>
             </div>
+
             <div class="left-side1">
               <div class="left-side-item"></div>
               <div class="content1">
@@ -73,8 +74,9 @@
                   POLINEMA yang anda ikuti
                 </div>
                 <div class="sign-in-button1">
+                  <div class="sign-in-button-item"></div>
                   <div class="sign-up1">SIGN UP</div>
-                  <button><a href="signUp" class="sign-in-button-item"></a></button>
+                  <button class="none"><a href="register" class="sign-in-button-item"></a></button>
                 </div>
 
                 <img src="{{ asset('assets') }}/logo-politeknik-negeri-malang-1@2x.png"
