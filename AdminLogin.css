@@ -1,0 +1,232 @@
+.bg-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1845px;
+  height: 2033px;
+}
+.admin-login-child,
+.right-side-child {
+  position: absolute;
+  top: 68px;
+  left: 95px;
+  border-radius: var(--br-mini);
+  background-color: var(--color-white);
+  width: 1250px;
+  height: 888.89px;
+}
+.right-side-child {
+  top: 0;
+  left: 0;
+  border-radius: 0 var(--br-mini) var(--br-mini) 0;
+  width: 625px;
+  height: 889px;
+}
+.login,
+.masuk-dengan-akun {
+  position: absolute;
+  color: var(--color-black);
+  text-align: center;
+  display: inline-block;
+}
+.login {
+  top: 79px;
+  left: 80px;
+  font-size: 45px;
+  width: 466px;
+}
+.masuk-dengan-akun {
+  top: 147px;
+  left: 145px;
+  width: 336px;
+}
+.pilih-oki-yang {
+  position: absolute;
+  top: 12px;
+  left: 33px;
+}
+.dropdown-oki-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-5xs);
+  border: 2px solid var(--color-steelblue-200);
+  box-sizing: border-box;
+  width: 350px;
+  height: 50px;
+}
+.dropdown-oki,
+.dropdown-oki-item {
+  position: absolute;
+  top: 20.12px;
+  left: 16px;
+  width: 10.39px;
+  height: 9px;
+}
+.dropdown-oki {
+  top: 240px;
+  left: 138px;
+  width: 350px;
+  height: 50px;
+  font-size: var(--font-size-base);
+}
+.field-username,
+.masukkan-username-anda {
+  position: absolute;
+  top: 14px;
+  left: 21px;
+}
+.field-username {
+  top: 31px;
+  left: 0;
+  width: 350px;
+  height: 50px;
+}
+.username1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-black);
+}
+.username {
+  position: absolute;
+  top: 318px;
+  left: 138px;
+  width: 350px;
+  height: 81px;
+}
+.masukkan-password-anda,
+.password3 {
+  position: absolute;
+  top: 15px;
+  left: 21px;
+}
+.password3 {
+  top: 419px;
+  left: 138px;
+  width: 350px;
+  height: 81px;
+}
+.sign-up-button-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-31xl);
+  background-color: #4e31aa;
+  width: 250px;
+  height: 65px;
+}
+.sign-in {
+  position: absolute;
+  top: 16px;
+  left: 83px;
+  font-weight: 600;
+}
+.sign-up-button {
+  position: absolute;
+  top: 552px;
+  left: 188px;
+  width: 250px;
+  height: 65px;
+  font-size: var(--font-size-3xl);
+  color: var(--color-white);
+}
+.lupa-kata-sandi {
+  position: absolute;
+  top: 628px;
+  left: 227px;
+  font-size: var(--font-size-mini);
+  color: #2b2b2b;
+}
+.left-side-child,
+.right-side {
+  position: absolute;
+  top: 68px;
+  left: 720px;
+  width: 625px;
+  height: 889px;
+}
+.left-side-child {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-mini) 0 0 var(--br-mini);
+  background-color: #f2ebff;
+}
+.admin-login1,
+.halaman-login-admin {
+  position: absolute;
+  top: 223px;
+  left: 0;
+  display: inline-block;
+  width: 434px;
+}
+.halaman-login-admin {
+  top: 286px;
+  left: 24px;
+  font-size: 20px;
+  width: 386px;
+}
+.sign-in-button-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-31xl);
+  border: 3px solid var(--color-darkslateblue);
+  box-sizing: border-box;
+  width: 250px;
+  height: 70px;
+}
+.sign-up {
+  position: absolute;
+  top: 16px;
+  left: 76px;
+  font-weight: 600;
+}
+.sign-in-button {
+  position: absolute;
+  top: 428px;
+  left: 92px;
+  width: 250px;
+  height: 70px;
+  display: none;
+  font-size: var(--font-size-6xl);
+  color: var(--color-darkslateblue);
+}
+.logo-politeknik-negeri-malang-icon9 {
+  position: absolute;
+  top: 0;
+  left: 117px;
+  width: 200px;
+  height: 201.47px;
+  object-fit: cover;
+}
+.content1,
+.left-side {
+  position: absolute;
+  top: 195px;
+  left: 96px;
+  width: 434px;
+  height: 316px;
+}
+.left-side {
+  top: 68px;
+  left: 95px;
+  width: 625px;
+  height: 889px;
+  text-align: center;
+  font-size: 40px;
+  color: var(--color-black);
+}
+.admin-login {
+  position: relative;
+  background-color: #bface2;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--color-dimgray-100);
+  font-family: var(--font-poppins);
+}
