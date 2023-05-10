@@ -955,14 +955,14 @@ var OrdersChart = (function() {
 							}
 
 							content += '<span class="popover-body-value">' + yLabel + '</span>';
-							
+
 							return content;
 						}
 					}
 				}
-			},
-			data: {
-				labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			}
+			,data: {
+				labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
 				datasets: [{
 					label: 'Sales',
 					data: [25, 20, 30, 22, 17, 29]
@@ -1015,7 +1015,7 @@ var SalesChart = (function() {
 						ticks: {
 							callback: function(value) {
 								if (!(value % 10)) {
-									return '$' + value + 'k';
+									return '' + value + '';
 								}
 							}
 						}
@@ -1032,14 +1032,14 @@ var SalesChart = (function() {
 								content += '<span class="popover-body-label mr-auto">' + label + '</span>';
 							}
 
-							content += '<span class="popover-body-value">$' + yLabel + 'k</span>';
+							content += '<span class="popover-body-value">' + yLabel + '</span>';
 							return content;
 						}
 					}
 				}
 			},
 			data: {
-				labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+				labels: ['Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
 				datasets: [{
 					label: 'Performance',
 					data: [0, 20, 10, 30, 15, 40, 20, 60, 60]
