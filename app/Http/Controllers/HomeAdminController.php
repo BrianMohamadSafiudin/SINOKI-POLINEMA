@@ -1,10 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
 
-class HomeController extends Controller
+class HomeAdminController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,10 +21,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (Gate::allows('home_admin')) {
-            return view('dashboard_admin');
-        } else {
-            return view('profile.edit');
-        }
+        return view('dashboard_admin');
     }
 }
+
+
+

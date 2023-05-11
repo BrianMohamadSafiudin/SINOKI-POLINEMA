@@ -76,16 +76,28 @@
             </form>
             <!-- Navigation -->
             <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('home_admin') }}">
+                        <i class="ni ni-tv-2 text-primary text-white"></i> {{ __('Dashboard') }}
+                    </a>
+                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="{{ route('profile.edit') }}">
+                    <a class="nav-link text-white" href="{{ route('profile.edit_admin') }}">
                         <i class="fab fa-laravel text-white" style="color: #f4645f;"></i> {{ __('User profile') }}
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link text-white" href="{{ route('dataProkerAdmin') }}">
-                        <i class="ni ni-planet text-blue text-white"></i> {{ __('Program Kerja Anggota') }}
+                        <i class="ni ni-planet text-blue text-white"></i> {{ __('Program Kerja Admin') }}
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('tambahDataSie') }}">
+                      <i class="ni ni-bullet-list-67 text-default text-white"></i>
+                      <span class="nav-link-text">Data Anggota</span>
                     </a>
                 </li>
 

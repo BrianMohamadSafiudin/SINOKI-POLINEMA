@@ -15,7 +15,17 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Admin Brian',
+            'name' => 'Admin',
+            'role' => 'admin',
+            'email' => 'admin@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('admin'),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+        DB::table('users')->insert([
+            'name' => 'BRIAN MOHAMAD SAFIUDIN',
+            'role' => 'user',
             'email' => 'brian@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('brian'),
@@ -23,7 +33,8 @@ class UsersTableSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('users')->insert([
-            'name' => 'Admin Sholu',
+            'name' => 'MUHAMMAD BINTANG SHOLU FIRMANSYAH',
+            'role' => 'user',
             'email' => 'sholu@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('sholu'),
@@ -31,7 +42,8 @@ class UsersTableSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('users')->insert([
-            'name' => 'Admin Yani',
+            'name' => 'TRI JAGAD ARIYANI',
+            'role' => 'user',
             'email' => 'yani@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('yani'),
@@ -39,7 +51,8 @@ class UsersTableSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('users')->insert([
-            'name' => 'Admin Febryan',
+            'name' => 'FEBRYAN RIZKI HIDAYATULLAH',
+            'role' => 'user',
             'email' => 'febryan@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('febryan'),
@@ -47,7 +60,8 @@ class UsersTableSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('users')->insert([
-            'name' => 'Admin Fadlila',
+            'name' => 'FADLILA AFIDA',
+            'role' => 'user',
             'email' => 'fadlila@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('fadlila'),
