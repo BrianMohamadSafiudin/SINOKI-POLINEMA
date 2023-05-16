@@ -1,6 +1,6 @@
-@extends('layouts.prokerAdminStyle', ['class' => 'bg-default'])
+@extends('layouts.app_admin', ['title' => __('Program Kerja Admin')])
 
 @section('content')
-    @include('layouts.prokerAdmin')
+    @include('layouts.headers.cardsTest')
 
 @endsection

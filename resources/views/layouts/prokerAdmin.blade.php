@@ -19,57 +19,7 @@
     />
   </head>
   <body>
-    <div class="data-program-kerja-admin">
-      <div class="data-program-kerja-admin-child"></div>
-      <div class="data-program-kerja-admin-item"></div>
-      <div class="data-program-kerja-admin-inner"></div>
-      <div class="logo8">
-        <b class="sinoki8">SINOKI</b>
-        <img
-          class="logo-politeknik-negeri-malang-icon8"
-          alt=""
-          src="./public/logo-politeknik-negeri-malang-2@2x.png"
-        />
-
-        <div class="sistem-informasi-oki8">SISTEM INFORMASI OKI</div>
-      </div>
-      <b class="data-program-kerja9">Data Program Kerja</b>
-      <div class="profil8">
-        <div class="bintangsholu8">BintangSholu</div>
-        <img class="profil-child5" alt="" src="./public/vector-1.svg" />
-      </div>
-      <img class="mask-group-icon8" alt="" src="./public/mask-group@2x.png" />
-
-      <div class="oki16">
-        <div class="rispol8">RISPOL</div>
-        <div class="oki17">OKI</div>
-      </div>
-      <div class="nama-lengkap18">
-        <div class="muhammad-bintang-sholu8">
-          Muhammad Bintang Sholu Firmansyah
-        </div>
-        <div class="nama-lengkap19">Nama Lengkap</div>
-      </div>
-      <div class="jabatan16">
-        <div class="admin1">Admin</div>
-        <div class="jabatan17">Jabatan</div>
-      </div>
-      <div class="data-anggota16">
-        <div class="data-anggota17">Data Anggota</div>
-        <img
-          class="material-symbolsperson-icon8"
-          alt=""
-          src="./public/materialsymbolsperson.svg"
-        />
-      </div>
-      <div class="data-program-kerja10">
-        <img
-          class="material-symbolsperson-icon8"
-          alt=""
-          src="./public/materialsymbolsinsertchartoutline2.svg"
-        />
-
-        <div class="data-program-kerja11">Data Program Kerja</div>
+    <div class="data-program-kerja11">Data Program Kerja</div>
       </div>
       <div class="proker-1">
         <div class="proker-1-child"></div>
