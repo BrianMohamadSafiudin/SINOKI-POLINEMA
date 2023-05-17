@@ -31,6 +31,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
     Route::get('dataAnggota', function () {return view('dataAnggota');})->name('dataAnggota');
+    Route::get('halamanDataSie', function () {return view('halamanDataSie');})->name('halamanDataSie');
+    Route::get('halamanProker', function () {return view('halamanProker');})->name('halamanProker');
+    Route::get('tambahProker', function () {return view('tambahProker');})->name('tambahProker');
+    Route::get('tambahTugas', function () {return view('tambahTugas');})->name('tambahTugas');
 
 });
 
