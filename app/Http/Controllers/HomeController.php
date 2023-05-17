@@ -26,7 +26,7 @@ class HomeController extends Controller
         if (Gate::allows('home_admin')) {
             return view('dashboard_admin');
         } else {
-            return view('profile.edit');
+            return view('dashboard_admin');
         }
     }
 }
