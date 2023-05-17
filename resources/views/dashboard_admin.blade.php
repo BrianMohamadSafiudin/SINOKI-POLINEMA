@@ -1,5 +1,9 @@
 @extends('views.partials.head')
 
+@php
+    $dashboardPlaceholder = "Dashboard";
+@endphp
+
 @section('content')
 
 <!-- Page Wrapper -->
@@ -9,7 +13,7 @@
         @csrf
     </form>
     @include('views.partials.sidebar')
-@endauth
+    @endauth
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -19,6 +23,7 @@
             @include('views.partials.topbar')
             @include('views.dashboard_view')
             {{-- @include('layouts.footers.guest') --}}
+
         </div>
 
     </div>
@@ -27,8 +32,4 @@
 </div>
 <!-- End of Main Content -->
 
-@include('views.partials.logout-modal')
-@include('views.partials.core')
-
 @endsection
-
