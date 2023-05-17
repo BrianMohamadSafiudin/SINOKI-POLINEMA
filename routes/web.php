@@ -30,14 +30,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
-    Route::get('dataProkerAdmin', function () {return view('auth.dataProkerAdmin');})->name('dataProkerAdmin');
-    Route::get('halamanProkerAdmin', function () {return view('auth.halamanProkerAdmin');})->name('halamanProkerAdmin');
-    Route::get('tambahDataAnggota', function () {return view('auth.tambahDataAnggota');})->name('tambahDataAnggota');
-
-    Route::get('tambahDataSie', function () {return view('auth.tambahDataSie');})->name('tambahDataSie');
-    Route::get('tambahDataTugas', function () {return view('auth.tambahDataTugas');})->name('tambahDataTugas');
-    Route::get('tambahProkerAdmin', function () {return view('auth.tambahProkerAdmin');})->name('tambahProkerAdmin');
-    Route::get('tambahTugasAdmin', function () {return view('auth.tambahTugasAdmin');})->name('tambahTugasAdmin');
+    Route::get('dataAnggota', function () {return view('dataAnggota');})->name('dataAnggota');
 
 });
 
