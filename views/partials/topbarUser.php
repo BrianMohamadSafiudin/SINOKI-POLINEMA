@@ -10,7 +10,7 @@
     <form
         class="d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100">
         <div class="Title">
-            <h1 class="h3 mb-0 text-gray-800"><?= $heading ?></h1>
+            <h1 class="h3 mb-0 text-gray-800"><?=   $headingUser ?></h1>
         </div>
     </form>
 
@@ -21,14 +21,14 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-3 d-none d-lg-inline text-gray-900 font-weight-bolder">Bintang Sholu</span>
+                <span class="mr-3 d-none d-lg-inline text-gray-900 font-weight-bolder">Tri Jagad A</span>
                 <img class="img-profile rounded-circle"
                      src="img/sholu.jpg">
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                  aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="profileAdmin.php">
+                <a class="dropdown-item" href="#">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
