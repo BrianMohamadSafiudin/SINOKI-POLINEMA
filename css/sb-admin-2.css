@@ -9555,7 +9555,11 @@ button.bg-dark:focus {
   text-transform: lowercase !important;
 }
 
+/* <<<<<<< frontend */
 .text-uppercase, .dropdown .dropdown-menu .dropdown-header, .sidebar .sidebar-heading {
+.text-uppercase, .dropdown .dropdown-menu .dropdown-header, .sidebar {
+/* >>>>>>> frontend */
+
   text-transform: uppercase !important;
 }
 

@@ -5,7 +5,12 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #4E31AA">
 
     <!-- Sidebar - Brand -->
+
+<!-- <<<<<<< frontend-febryan/fadlila -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardAdmin.php">
+<!-- >>>>>>> frontend -->
+
         <div class="sidebar-brand-icon">
             <img src="img/logo.ico" alt="logo-polinema" style="max-width: 40px">
         </div>
@@ -23,7 +28,12 @@
 
 
     <li class='nav-item  active'>
+    
+<!-- <<<<<<< frontend-febryan/fadlila -->
         <a class='nav-link' href='dashboard.php' >
+        <a class='nav-link' href='dashboardAdmin.php' >
+<!-- >>>>>>> frontend -->
+
             <i class='fas fa-fw fa-folder'></i>
             <span>Data Program Kerja</span>
         </a>
