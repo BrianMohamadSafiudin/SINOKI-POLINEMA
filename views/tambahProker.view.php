@@ -39,11 +39,17 @@ require 'partials/head.php'; ?>
                                 <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Masukkan tanggal program kerja">
                             </div>
 
+<!-- <<<<<<< frontend-febryan/fadlila -->
+                            <a href="dashboard.php" class=" d-sm-inline-block btn btn-primary shadow-sm ">
+                                <i class="fas fa-sm text-white-50"></i>Submit
+
                             <a href="dashboardAdmin.php" class=" d-sm-inline-block btn btn-primary shadow-sm ">
                                 <i class="fas fa-sm text-white-50"></i>Save
                             </a>
                             <a href="dashboardAdmin.php" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2">
                                 <i class="fas fa-sm text-white-50"></i>Cancel
+<!-- >>>>>>> frontend -->
+
                             </a>
 
                         </form>

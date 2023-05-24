@@ -10,7 +10,12 @@
     <form
         class="d-none d-sm-inline-block mr-auto ml-md-3 my-2 my-md-0 mw-100">
         <div class="Title">
+
+<!-- <<<<<<< frontend-febryan/fadlila -->
+            <h1 class="h3 mb-0 text-gray-800"><?=   $heading ?></h1>
             <h1 class="h3 mb-0 text-gray-800"><?= $heading ?></h1>
+<!-- >>>>>>> frontend -->
+
         </div>
     </form>
 
@@ -28,7 +33,12 @@
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                  aria-labelledby="userDropdown">
+
+<!-- <<<<<<< frontend-febryan/fadlila -->
+                <a class="dropdown-item" href="#">
                 <a class="dropdown-item" href="profileAdmin.php">
+<!-- >>>>>>> frontend -->
+
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profile
                 </a>
