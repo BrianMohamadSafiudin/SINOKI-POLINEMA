@@ -12,7 +12,6 @@
         <div class="Title">
 
 <!-- <<<<<<< frontend-febryan/fadlila -->
-            <h1 class="h3 mb-0 text-gray-800"><?=   $heading ?></h1>
             <h1 class="h3 mb-0 text-gray-800"><?= $heading ?></h1>
 <!-- >>>>>>> frontend -->
 

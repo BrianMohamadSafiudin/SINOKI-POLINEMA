@@ -7,7 +7,7 @@
     <!-- Sidebar - Brand -->
 
 <!-- <<<<<<< frontend-febryan/fadlila -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
+    <!-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php"> -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardAdmin.php">
 <!-- >>>>>>> frontend -->
 
