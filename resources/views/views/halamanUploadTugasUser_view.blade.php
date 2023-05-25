@@ -1,16 +1,7 @@
-<?php
-require 'partials/head.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+
 <body id="page-top">
-
-<!-- Page Wrapper -->
-<div id="wrapper">
-    <?php require 'partials/sidebarUser.php'; ?>
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-            <?php require 'partials/topbarUser.php'; ?>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
@@ -23,7 +14,7 @@ require 'partials/head.php'; ?>
                     <div class="card-body">
                     <div class="card shadow mb-4">
                     <div class="card-body pl-4">
-                        <a href="dashboardUser.php" class="btn btn-danger btn-icon-split btn-sm mb-4">
+                        <a href="halamanProkerUser.php" class="btn btn-danger btn-icon-split btn-sm mb-4">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left "></i>
                             </span>
@@ -57,16 +48,16 @@ require 'partials/head.php'; ?>
                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                         </div>
-                        <a href="dashboardAdmin.php" class=" d-sm-inline-block btn btn-primary shadow-sm ">
+                        <a href="halamanProkerUser.php" class=" d-sm-inline-block btn btn-primary shadow-sm ">
                                 <i class="fas fa-sm text-white-50"></i>Submit
                             </a>
-                            <a href="dashboardAdmin.php" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2">
+                            <a href="halamanProkerUser.php" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2">
                                 <i class="fas fa-sm text-white-50"></i>Cancel
                             </a>
                             <h5 class="text-gray-900 font-weight-bolder mt-3">Hasil Evaluasi</h5>
                             <textarea class="form-control mt-3" id="validationTextarea" placeholder="Kerja Bagus" disabled></textarea>
-                            
-                
+
+
 
 
                     </div>
@@ -81,10 +72,8 @@ require 'partials/head.php'; ?>
 </div>
 <!-- End of Main Content -->
 
-<?php
-require 'partials/logout-modal.php';
-require 'partials/core.php';
-?>
+
 
 </body>
 
+</html>
