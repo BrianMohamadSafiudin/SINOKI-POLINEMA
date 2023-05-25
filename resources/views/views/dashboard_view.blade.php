@@ -22,7 +22,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <a href="{{ route('halamanProkerAdmin') }}" style="text-decoration: none">
+                                            <a href="{{ route('halamanProker') }}" style="text-decoration: none">
                                             <div class="text-l font-weight-bold text-gray-800 text-uppercase mb-1">Safari Dakwah</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
