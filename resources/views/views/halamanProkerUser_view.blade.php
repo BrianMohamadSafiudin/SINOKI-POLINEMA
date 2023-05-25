@@ -1,16 +1,7 @@
-<?php
-require 'partials/head.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
 <body id="page-top">
 
-<!-- Page Wrapper -->
-<div id="wrapper">
-    <?php require 'partials/sidebarUser.php'; ?>
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-            <?php require 'partials/topbarUser.php'; ?>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
@@ -43,7 +34,7 @@ require 'partials/head.php'; ?>
 
 
 
-                        <?php require 'partials/tableDaftarTugasUser.php'; ?>
+                        @include('views.partials.tableDaftarTugasUser')
                     </div>
                 </div>
 
@@ -56,11 +47,6 @@ require 'partials/head.php'; ?>
 </div>
 <!-- End of Main Content -->
 
-<?php
-require 'partials/logout-modal.php';
-require 'partials/core.php';
-?>
-
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
@@ -72,3 +58,5 @@ require 'partials/core.php';
 
 </body>
 
+
+</html>
