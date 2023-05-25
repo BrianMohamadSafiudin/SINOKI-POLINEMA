@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('tambahDataSie', ['as' => 'tambahDataSie', 'uses' => 'App\Http\Controllers\TambahDataSieController@index']);
     Route::get('tambahProker', ['as' => 'tambahProker', 'uses' => 'App\Http\Controllers\TambahProkerController@index']);
     Route::get('tambahTugas', ['as' => 'tambahTugas', 'uses' => 'App\Http\Controllers\TambahTugasController@index']);
+    // tes
 
 });
 
