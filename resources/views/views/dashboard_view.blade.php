@@ -11,7 +11,7 @@
         <div class="card shadow mb-4">
             <div class="card-header d-sm-flex align-items-center justify-content-between mb-4">
                 <h6 class="m-0 font-weight-bold text-primary">Data Program Kerja</h6>
-                <a href="tambahProker.php" class=" d-sm-inline-block btn btn-sm btn-primary shadow-sm ">
+                <a href="{{ route('tambahProker') }}" class=" d-sm-inline-block btn btn-sm btn-primary shadow-sm ">
                     <i class="fas fa-download fa-sm text-white-50 mx-2"></i>Buat Program Kerja</a>
             </div>
             <div class="card-body">
@@ -22,7 +22,7 @@
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <a href="halamanProker.php" style="text-decoration: none">
+                                            <a href="{{ route('halamanProkerAdmin') }}" style="text-decoration: none">
                                             <div class="text-l font-weight-bold text-gray-800 text-uppercase mb-1">Safari Dakwah</div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">

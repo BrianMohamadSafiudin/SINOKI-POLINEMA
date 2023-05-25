@@ -1,16 +1,7 @@
-<?php
-require 'partials/head.php'; ?>
+<!DOCTYPE html>
+<html lang="en">
+
 <body id="page-top">
-
-<!-- Page Wrapper -->
-<div id="wrapper">
-    <?php require 'partials/sidebar.php'; ?>
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-            <?php require 'partials/topbar.php'; ?>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
@@ -39,7 +30,7 @@ require 'partials/head.php'; ?>
                                 <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Masukkan tanggal program kerja">
                             </div>
 
-                            <a href="dashboard.php" class=" d-sm-inline-block btn btn-primary shadow-sm ">
+                            <a href="{{ route('home_admin') }}" class=" d-sm-inline-block btn btn-primary shadow-sm ">
                                 <i class="fas fa-sm text-white-50"></i>Submit
                             </a>
 
@@ -48,19 +39,12 @@ require 'partials/head.php'; ?>
                     </div>
                 </div>
 
-            </div>
-        </div>
 
     </div>
     <!-- /.container-fluid -->
 
-</div>
 <!-- End of Main Content -->
 
-<?php
-require 'partials/logout-modal.php';
-require 'partials/core.php';
-?>
 
 </body>
-
+</html>

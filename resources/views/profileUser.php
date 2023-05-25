@@ -1,4 +1,4 @@
 <?php
 $headingUser = 'Profile';
 
-require "views/profileUser.view.php";
+require "views/profile_user.view.php";
