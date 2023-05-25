@@ -42,6 +42,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('tambahDataSie', function () {return view('tambahDataSie');})->name('tambahDataSie');
     Route::get('tambahProker', function () {return view('tambahProker');})->name('tambahProker');
     Route::get('tambahTugas', function () {return view('tambahTugas');})->name('tambahTugas');
-
+// tes
 });
 
