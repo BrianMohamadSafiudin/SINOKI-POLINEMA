@@ -31,8 +31,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
     Route::get('dataAnggota', function () {return view('dataAnggota');})->name('dataAnggota');
+    Route::get('editDataSie', function () {return view('editDataSie');})->name('editDataSie');
     Route::get('halamanDataSie', function () {return view('halamanDataSie');})->name('halamanDataSie');
-    Route::get('halamanProker', function () {return view('halamanProker');})->name('halamanProker');
+    Route::get('halamanEditProker', function () {return view('halamanEditProker');})->name('halamanEditProker');
+    Route::get('halamanProkerUser', function () {return view('halamanProkerUser');})->name('halamanProkerUser');
+    Route::get('halamanUploadTugasUser', function () {return view('halamanUploadTugasUser');})->name('halamanUploadTugasUser');
+    Route::get('profileAdmin', function () {return view('profileAdmin');})->name('profileAdmin');
+    Route::get('profileUser', function () {return view('profileUser');})->name('profileUser');
+    Route::get('tambahDataAnggota', function () {return view('tambahDataAnggota');})->name('tambahDataAnggota');
+    Route::get('tambahDataSie', function () {return view('tambahDataSie');})->name('tambahDataSie');
     Route::get('tambahProker', function () {return view('tambahProker');})->name('tambahProker');
     Route::get('tambahTugas', function () {return view('tambahTugas');})->name('tambahTugas');
 
