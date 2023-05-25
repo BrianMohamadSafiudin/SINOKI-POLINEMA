@@ -30,19 +30,19 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
-    Route::get('dataAnggota', function () {return view('dataAnggota');})->name('dataAnggota');
-    Route::get('editDataSie', function () {return view('editDataSie');})->name('editDataSie');
-    Route::get('halamanDataSie', function () {return view('halamanDataSie');})->name('halamanDataSie');
-    Route::get('halamanEditProker', function () {return view('halamanEditProker');})->name('halamanEditProker');
-    Route::get('halamanProkerUser', function () {return view('halamanProkerUser');})->name('halamanProkerUser');
-    Route::get('halamanProkerAdmin', function () {return view('halamanProkerAdmin');})->name('halamanProkerAdmin');
-    Route::get('halamanUploadTugasUser', function () {return view('halamanUploadTugasUser');})->name('halamanUploadTugasUser');
-    Route::get('profileAdmin', function () {return view('profileAdmin');})->name('profileAdmin');
-    Route::get('profileUser', function () {return view('profileUser');})->name('profileUser');
-    Route::get('tambahDataAnggota', function () {return view('tambahDataAnggota');})->name('tambahDataAnggota');
-    Route::get('tambahDataSie', function () {return view('tambahDataSie');})->name('tambahDataSie');
-    Route::get('tambahProker', function () {return view('tambahProker');})->name('tambahProker');
-    Route::get('tambahTugas', function () {return view('tambahTugas');})->name('tambahTugas');
+    Route::get('dataAnggota', ['as' => 'dataAnggota', 'uses' => 'App\Http\Controllers\DataAnggotaController@index']);
+    Route::get('EditDataSie', ['as' => 'EditDataSie', 'uses' => 'App\Http\Controllers\EditDataSieController@index']);
+    Route::get('HalamanDataSie', ['as' => 'HalamanDataSie', 'uses' => 'App\Http\Controllers\HalamanDataSieController@index']);
+    Route::get('halamanEditProker', ['as' => 'halamanEditProker', 'uses' => 'App\Http\Controllers\HalamanEditProkerController@index']);
+    Route::get('halamanProkerUser', ['as' => 'halamanProkerUser', 'uses' => 'App\Http\Controllers\HalamanProkerUserController@index']);
+    Route::get('halamanProkerAdmin', ['as' => 'halamanProkerAdmin', 'uses' => 'App\Http\Controllers\HalamanProkerAdminController@index']);
+    Route::get('halamanUploadTugasUser', ['as' => 'halamanUploadTugasUser', 'uses' => 'App\Http\Controllers\HalamanUploadTugasUserController@index']);
+    Route::get('profileAdmin', ['as' => 'profileAdmin', 'uses' => 'App\Http\Controllers\ProfileAdminController@index']);
+    Route::get('profileUser', ['as' => 'profileUser', 'uses' => 'App\Http\Controllers\ProfileUserController@index']);
+    Route::get('tambahDataAnggota', ['as' => 'tambahDataAnggota', 'uses' => 'App\Http\Controllers\TambahDataAnggotaController@index']);
+    Route::get('tambahDataSie', ['as' => 'tambahDataSie', 'uses' => 'App\Http\Controllers\TambahDataSieController@index']);
+    Route::get('tambahProker', ['as' => 'tambahProker', 'uses' => 'App\Http\Controllers\TambahProkerController@index']);
+    Route::get('tambahTugas', ['as' => 'tambahTugas', 'uses' => 'App\Http\Controllers\TambahTugasController@index']);
 
 });
 
