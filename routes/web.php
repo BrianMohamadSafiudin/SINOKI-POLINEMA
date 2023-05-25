@@ -35,7 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('HalamanDataSie', ['as' => 'HalamanDataSie', 'uses' => 'App\Http\Controllers\HalamanDataSieController@index']);
     Route::get('halamanEditProker', ['as' => 'halamanEditProker', 'uses' => 'App\Http\Controllers\HalamanEditProkerController@index']);
     Route::get('halamanProkerUser', ['as' => 'halamanProkerUser', 'uses' => 'App\Http\Controllers\HalamanProkerUserController@index']);
-    Route::get('halamanProkerAdmin', ['as' => 'halamanProkerAdmin', 'uses' => 'App\Http\Controllers\HalamanProkerAdminController@index']);
+    Route::get('halamanProker', ['as' => 'halamanProker', 'uses' => 'App\Http\Controllers\HalamanProkerController@index']);
     Route::get('halamanUploadTugasUser', ['as' => 'halamanUploadTugasUser', 'uses' => 'App\Http\Controllers\HalamanUploadTugasUserController@index']);
     Route::get('profileAdmin', ['as' => 'profileAdmin', 'uses' => 'App\Http\Controllers\ProfileAdminController@index']);
     Route::get('profileUser', ['as' => 'profileUser', 'uses' => 'App\Http\Controllers\ProfileUserController@index']);
