@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('halamanDataSie', function () {return view('halamanDataSie');})->name('halamanDataSie');
     Route::get('halamanEditProker', function () {return view('halamanEditProker');})->name('halamanEditProker');
     Route::get('halamanProkerUser', function () {return view('halamanProkerUser');})->name('halamanProkerUser');
+    Route::get('halamanProkerAdmin', function () {return view('halamanProkerAdmin');})->name('halamanProkerAdmin');
     Route::get('halamanUploadTugasUser', function () {return view('halamanUploadTugasUser');})->name('halamanUploadTugasUser');
     Route::get('profileAdmin', function () {return view('profileAdmin');})->name('profileAdmin');
     Route::get('profileUser', function () {return view('profileUser');})->name('profileUser');
@@ -42,6 +43,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('tambahDataSie', function () {return view('tambahDataSie');})->name('tambahDataSie');
     Route::get('tambahProker', function () {return view('tambahProker');})->name('tambahProker');
     Route::get('tambahTugas', function () {return view('tambahTugas');})->name('tambahTugas');
-// tes
+
 });
 
