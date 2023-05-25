@@ -15,7 +15,7 @@
         <td>Tri Jagad Ariyani</td>
         <td>Sie Acara</td>
         <td>
-            <a href="editDataSie.php" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data</a>
+            <a href="{{ route('editDataSie') }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data</a>
             <a href="#" class="btn btn-danger text-md-center"><i class="fas text-white-50 "></i>Delete Data</a>
         </td>
     </tr>
