@@ -7,7 +7,7 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboardUser.php">
         <div class="sidebar-brand-icon">
-            <img src="img/logo.ico" alt="logo-polinema" style="max-width: 40px">
+            <img src="{{ asset('admin') }}/img/logo.ico" alt="logo-polinema" style="max-width: 40px">
         </div>
         <div class="sidebar-brand-text mx-3">SINOKI POLINEMA</div>
     </a>

@@ -1,16 +1,7 @@
-<?php
-require 'partials/head.php'; ?>
+<!DOCTYPE html>
+
 <body id="page-top">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<!-- Page Wrapper -->
-<div id="wrapper">
-    <?php require 'partials/sidebarUser.php'; ?>
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-        <!-- Main Content -->
-        <div id="content">
-            <?php require 'partials/topbarUser.php'; ?>
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
@@ -29,7 +20,7 @@ require 'partials/head.php'; ?>
                                         <div class="card-header">Profile Picture</div>
                                         <div class="card-body text-center">
                                             <!-- Profile picture image-->
-                                            <img class="img-account-profile rounded-circle mb-2" src="img/sholu.jpg" style="max-width: 128px" alt="" />
+                                            <img class="img-account-profile rounded-circle mb-2" src="{{ asset('admin') }}/img/{{auth()->user()->name}}.jpg" style="max-width: 128px" alt="" />
                                             <!-- Profile picture upload button-->
                                             <div class="mb-3">
                                                 <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 5 MB</div>
@@ -48,10 +39,7 @@ require 'partials/head.php'; ?>
                                                     <label class="small mb-1" for="inputNamaLengkap">Nama Lengkap</label>
                                                     <input class="form-control" id="inputNamaLengkap" type="text" placeholder="Masukkan Nama Lengkap" value="Tri Jagad Ariyani" />
                                                 </div>
-                                                <div class="mb-3">
-                                                    <label class="small mb-1" for="inputUsername">Username</label>
-                                                    <input class="form-control" id="inputUsername" type="text" placeholder="Masukkan username" value="Tri Jagad A" />
-                                                </div>
+                                            
                                                 <div class="mb-3">
                                                     <label class="small mb-1" for="inputNim">NIM</label>
                                                     <input class="form-control" id="inputNim" type="text" placeholder="Masukkan NIM" value="2141123131" />
@@ -87,10 +75,10 @@ require 'partials/head.php'; ?>
                                                 </div>
 
                                                 <!-- Save changes button-->
-                                                <a href="dashboardUser.php" class=" d-sm-inline-block btn btn-primary shadow-sm mt-2 mb-4 ">
+                                                <a href="{{ route('home') }}" class=" d-sm-inline-block btn btn-primary shadow-sm mt-2 mb-4 ">
                                                     <i class="fas fa-sm text-white-50"></i>Save Changes
                                                 </a>
-                                                <a href="dahsboardUser.php" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2 mt-2 mb-4">
+                                                <a href="{{ route('home') }}" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2 mt-2 mb-4">
                                                     <i class="fas fa-sm text-white-50"></i>Cancel
                                                 </a>
                                             </form>
@@ -105,16 +93,8 @@ require 'partials/head.php'; ?>
             </div>
         </div>
 
-    </div>
     <!-- /.container-fluid -->
 
-</div>
-<!-- End of Main Content -->
-
-<?php
-require 'partials/logout-modal.php';
-require 'partials/core.php';
-?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

@@ -9,7 +9,7 @@
                 <!-- Card -->
                 <div class="card shadow mb-4">
                     <div class="card-body pl-4">
-                        <a href="dashboardUser.php" class="btn btn-danger btn-icon-split btn-sm mb-4">
+                        <a href="{{ route('home') }}" class="btn btn-danger btn-icon-split btn-sm mb-4">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left "></i>
                             </span>

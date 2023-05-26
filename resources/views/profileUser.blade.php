@@ -1,7 +1,7 @@
 @extends('views.partials.head')
 
 @php
-    $dashboardPlaceholder = "Dashboard";
+$dashboardPlaceholder = "Profile";
 @endphp
 
 @section('content')
@@ -21,8 +21,8 @@
         <!-- Main Content -->
         <div id="content">
             @include('views.partials.topbarUser')
-            @include('views.dashboardUser_view')
-            {{-- @include('layouts.footers.guest') --}}
+            @include('views.profileUser_view')
+{{-- <!--            @include('layouts.footers.guest')--> --}}
 
         </div>
 

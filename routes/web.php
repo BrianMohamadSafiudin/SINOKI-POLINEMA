@@ -31,12 +31,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
     Route::get('dataAnggota', ['as' => 'dataAnggota', 'uses' => 'App\Http\Controllers\DataAnggotaController@index']);
-    Route::get('EditDataSie', ['as' => 'editDataSie', 'uses' => 'App\Http\Controllers\EditDataSieController@index']);
-    Route::get('HalamanDataSie', ['as' => 'halamanDataSie', 'uses' => 'App\Http\Controllers\HalamanDataSieController@index']);
+    Route::get('editDataSie', ['as' => 'editDataSie', 'uses' => 'App\Http\Controllers\EditDataSieController@index']);
+    Route::get('halamanDataSie', ['as' => 'halamanDataSie', 'uses' => 'App\Http\Controllers\HalamanDataSieController@index']);
     Route::get('halamanEditProker', ['as' => 'halamanEditProker', 'uses' => 'App\Http\Controllers\HalamanEditProkerController@index']);
     Route::get('halamanProkerUser', ['as' => 'halamanProkerUser', 'uses' => 'App\Http\Controllers\HalamanProkerUserController@index']);
     Route::get('halamanProker', ['as' => 'halamanProker', 'uses' => 'App\Http\Controllers\HalamanProkerController@index']);
-    Route::get('halamanUploadTugasUser', ['as' => 'halamanUploadTugasUser', 'uses' => 'App\Http\Controllers\HalamanUploadTugasUserController@index']);
+    Route::get('halamanUploadTugasUser', ['as' => 'halamanUploadTugasUser', 'uses' => 'App\Http\Controllers\HalamanUploadTugasUser@index']);
     Route::get('profileAdmin', ['as' => 'profileAdmin', 'uses' => 'App\Http\Controllers\ProfileAdminController@index']);
     Route::get('profileUser', ['as' => 'profileUser', 'uses' => 'App\Http\Controllers\ProfileUserController@index']);
     Route::get('tambahDataAnggota', ['as' => 'tambahDataAnggota', 'uses' => 'App\Http\Controllers\TambahDataAnggotaController@index']);

@@ -20,7 +20,7 @@
         <td>17 March 2023, 12:00 PM</td>
         <td>Selesai</td>
         <td>
-            <a href="halamanUploadTugasUser.php" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Upload Tugas</a>
+        <a href="{{ route('halamanUploadTugasUser') }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Upload Tugas</a>
         </td>
         <td>
         <input class="form-control" type="text" placeholder="Materi Kurang Mantap" readonly>

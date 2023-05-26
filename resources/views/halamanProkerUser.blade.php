@@ -13,7 +13,7 @@
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
-    @include('views.partials.sidebar')
+    @include('views.partials.sidebarUser')
     @endauth
 
     <!-- Content Wrapper -->
@@ -21,7 +21,7 @@
 
         <!-- Main Content -->
         <div id="content">
-            @include('views.partials.topbar')
+            @include('views.partials.topbarUser')
             @include('views.halamanProkerUser_view')
             {{-- @include('layouts.footers.guest') --}}
 

@@ -16,7 +16,7 @@
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                     <i class="ni ni-user-run"></i>
-                    <span>{{ __('Logout') }}</span>>
+                    <span>{{ __('Logout') }}</span>
                 </a>
             </div>
         </div>

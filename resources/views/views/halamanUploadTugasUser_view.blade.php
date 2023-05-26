@@ -14,7 +14,7 @@
                     <div class="card-body">
                     <div class="card shadow mb-4">
                     <div class="card-body pl-4">
-                        <a href="halamanProkerUser.php" class="btn btn-danger btn-icon-split btn-sm mb-4">
+                        <a href="{{ route('halamanProkerUser') }}" class="btn btn-danger btn-icon-split btn-sm mb-4">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left "></i>
                             </span>
@@ -48,10 +48,10 @@
                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                         </div>
-                        <a href="halamanProkerUser.php" class=" d-sm-inline-block btn btn-primary shadow-sm ">
+                        <a href="#" class=" d-sm-inline-block btn btn-primary shadow-sm ">
                                 <i class="fas fa-sm text-white-50"></i>Submit
                             </a>
-                            <a href="halamanProkerUser.php" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2">
+                            <a href="#" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2">
                                 <i class="fas fa-sm text-white-50"></i>Cancel
                             </a>
                             <h5 class="text-gray-900 font-weight-bolder mt-3">Hasil Evaluasi</h5>
