@@ -30,7 +30,7 @@
                         </ul>
 
                         <!-- <<<<<<< frontend-febryan/fadlila -->
-                        <a href="halamanEditProker.php" class="btn btn-warning btn-icon-split btn-sm shadow-sm">
+                        <a href="{{ route('halamanEditProker') }}" class="btn btn-warning btn-icon-split btn-sm shadow-sm">
                             <span class="icon text-white-50">
                                 <i class="fas fa-pen-to-square "></i>
                             </span>
@@ -41,10 +41,10 @@
                         <hr class="content-divider mt-4">
                         <h5 class="text-gray-900 font-weight-bolder">Daftar Tugas Program Kerja</h5>
 
-                        <a href="tambahTugas.php" class=" d-sm-inline-block btn btn-success btn-sm shadow-sm mt-2 mb-4 ">
+                        <a href="{{ route('tambahTugas') }}" class=" d-sm-inline-block btn btn-success btn-sm shadow-sm mt-2 mb-4 ">
                             <i class="fas fa-sm text-white-50"></i>Tambah Tugas
                         </a>
-                        <a href="halamanDataSie.php" class=" d-sm-inline-block btn btn-primary btn-sm shadow-sm ml-2 mt-2 mb-4">
+                        <a href="{{ route('halamanDataSie') }}" class=" d-sm-inline-block btn btn-primary btn-sm shadow-sm ml-2 mt-2 mb-4">
                             <i class="fas fa-sm text-white-50"></i>Data SIE
                         </a>
                         @include('views.partials.tableDaftarTugas')

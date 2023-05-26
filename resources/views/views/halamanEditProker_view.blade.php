@@ -10,7 +10,7 @@
                 <div class="card shadow mb-4">
                     
                     <div class="card-body pl-4">
-                        <a href="halamanProker.php" class="btn btn-danger btn-icon-split btn-sm mb-4">
+                        <a href="{{ route('halamanProker') }}" class="btn btn-danger btn-icon-split btn-sm mb-4">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left "></i>
                             </span>

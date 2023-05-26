@@ -7,7 +7,7 @@
                 <!-- Card -->
                 <div class="card shadow mb-4">
                     <div class="card-body pl-4">
-                        <a href="halamanProker.php" class="btn btn-danger btn-icon-split btn-sm mb-2">
+                        <a href="{{ route('halamanProker') }}" class="btn btn-danger btn-icon-split btn-sm mb-2">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left "></i>
                             </span>
@@ -29,7 +29,7 @@
 
                         <h5 class=" mb-3 text-gray-900 font-weight-bolder">Daftar Anggota Program Kerja</h5>
                         <div class="btn-tambah-tugas mb-5 mt-3">
-                            <a href="tambahDataSie.php" class=" d-sm-inline-block btn btn-success shadow-sm  btn-sm">
+                            <a href="{{ route('tambahDataSie') }}" class=" d-sm-inline-block btn btn-success shadow-sm  btn-sm">
                                 <i class="fas text-white-50 "></i>Tambah Anggota
                             </a>
                         </div>
