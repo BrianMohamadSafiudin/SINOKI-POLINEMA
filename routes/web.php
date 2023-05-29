@@ -19,14 +19,19 @@ use App\Http\Controllers\HomeAdminController;
 Route::redirect('/', '/login');
 Auth::routes();
 
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login');
+    Auth::routes();
+});
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/home_admin', [HomeAdminController::class, 'index'])->name('home_admin');
 
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
     Route::get('profile_admin', ['as' => 'profile.edit_admin', 'uses' => 'App\Http\Controllers\ProfileController@editAdmin']);
+    Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile_admin', ['as' => 'profile.update_admin', 'uses' => 'App\Http\Controllers\ProfileController@update']);
-	Route::get('profile', ['as' => 'profile.edit', 'uses' => 'App\Http\Controllers\ProfileController@edit']);
 	Route::put('profile', ['as' => 'profile.update', 'uses' => 'App\Http\Controllers\ProfileController@update']);
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 
