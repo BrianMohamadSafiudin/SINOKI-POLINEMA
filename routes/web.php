@@ -19,11 +19,6 @@ use App\Http\Controllers\HomeAdminController;
 Route::redirect('/', '/login');
 Auth::routes();
 
-Route::middleware(['guest'])->group(function () {
-    Route::get('/login');
-    Auth::routes();
-});
-
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/home_admin', [HomeAdminController::class, 'index'])->name('home_admin');
