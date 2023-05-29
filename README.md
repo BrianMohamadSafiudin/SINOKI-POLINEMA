@@ -1,6 +1,6 @@
 # Cara Install
 
-After initializing a fresh instance of Laravel (and making all the necessary configurations), install the preset using one of the provided methods:
+After initializing a fresh instances of Laravel (and making all the necessary configurations), install the preset using one of the provided methods:
 
 ## Via Composer
 

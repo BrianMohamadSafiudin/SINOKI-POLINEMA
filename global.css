@@ -4,7 +4,7 @@ body {
 }
 
 :root {
-  /* fonts */
+  /* fonts preset */
   --font-inter: Inter;
   --font-poppins: Poppins;
   --font-montserrat: Montserrat;
