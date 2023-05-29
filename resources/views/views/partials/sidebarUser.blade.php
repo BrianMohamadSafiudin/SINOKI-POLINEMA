@@ -24,7 +24,7 @@
             Nama Lengkap
         </div>
         <div class="nav-link text-light font-weight-bolder py-2">
-            <span style="font-size: 1rem">Tri Jagad Ariyani</span>
+            <span style="font-size: 1rem">{{ auth()->user()->name }}</span>
         </div>
     </li>
 

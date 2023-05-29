@@ -34,30 +34,62 @@
                                     <div class="card mb-4">
                                         <div class="card-header">Account Details</div>
                                         <div class="card-body">
-                                            <form>
-                                                <div class="mb-3">
-                                                    <label class="small mb-1" for="inputNamaLengkap">Nama Lengkap</label>
-                                                    <input class="form-control" id="inputNamaLengkap" type="text" placeholder="Masukkan Nama Lengkap" value="Tri Jagad Ariyani" />
+                                            <form method="post" action="{{ route('profile.update') }}" autocomplete="off">
+                                                @csrf
+
+                                                <div class="mb-3 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                                    <label class="small mb-1 form-control-label" for="input-name">{{ __('Nama Lengkap') }}</label>
+                                                    <input type="form-control text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder={{ __('Masukkan Nama Lengkap') }} value="{{ old('name', auth()->user()->name) }}" required autofocus/>
+                                                    @if ($errors->has('name'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
-                                            
-                                                <div class="mb-3">
+
+                                                <div class="mb-3 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                     <label class="small mb-1" for="inputNim">NIM</label>
-                                                    <input class="form-control" id="inputNim" type="text" placeholder="Masukkan NIM" value="2141123131" />
+                                                    <input class="form-control" id="inputNim" type="text" placeholder="Masukkan NIM, ex: 2141720133" value="" />
+                                                    @if ($errors->has('name'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
-                                                <div class="mb-3">
+
+                                                <div class="mb-3 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                     <label class="small mb-1" for="inputEmail">Email</label>
-                                                    <input class="form-control" id="inputEmail" type="email" placeholder="Masukkan email" value="yani@gmail.com" />
+                                                    <input class="form-control" id="inputEmail" type="email" placeholder="Masukkan email" value="{{ auth()->user()->email }}" />
+                                                    @if ($errors->has('name'))
+                                                        <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                        </span>
+                                                    @endif
                                                 </div>
+
                                                 <!-- Form Row-->
                                                 <div class="row gx-3 mb-3">
-                                                    <div class="col-md-6">
+
+                                                    <div class="col-md-6 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                         <label class="small mb-1" for="inputProdi">Prodi</label>
-                                                        <input class="form-control" id="inputProdi" type="text" placeholder="Masukkan Prodi" value="DIV Teknik Informatika" />
+                                                        <input class="form-control" id="inputProdi" type="text" placeholder="Masukkan Prodi, ex: DIV Teknik Informatika" value="" />
+                                                        @if ($errors->has('name'))
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $errors->first('name') }}</strong>
+                                                            </span>
+                                                        @endif
                                                     </div>
-                                                    <div class="col-md-6">
+
+                                                    <div class="col-md-6 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                         <label class="small mb-1" for="inputJurusan">Jurusan</label>
-                                                        <input class="form-control" id="inputJurusan" type="text" placeholder="Masukkan Jurusan" value="Teknologi Informasi" />
+                                                        <input class="form-control" id="inputJurusan" type="text" placeholder="Masukkan Jurusan, ex: Teknologi Informasi" value="" />
+                                                        @if ($errors->has('name'))
+                                                            <span class="invalid-feedback" role="alert">
+                                                                <strong>{{ $errors->first('name') }}</strong>
+                                                            </span>
+                                                        @endif
                                                     </div>
+
                                                 </div>
 
                                                 <!-- Form Row-->
