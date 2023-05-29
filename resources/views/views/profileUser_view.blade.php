@@ -47,22 +47,22 @@
                                                     @endif
                                                 </div>
 
-                                                <div class="mb-3 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                                <div class="mb-3 form-group{{ $errors->has('nim') ? ' has-danger' : '' }}">
                                                     <label class="small mb-1" for="inputNim">NIM</label>
-                                                    <input class="form-control" id="inputNim" type="text" placeholder="Masukkan NIM, ex: 2141720133" value="" />
-                                                    @if ($errors->has('name'))
+                                                    <input class="form-control" id="inputNim" type="text" placeholder="Masukkan NIM, ex: 2141720133" value="{{ old('name', auth()->user()->nim) }}" required/>
+                                                    @if ($errors->has('nim'))
                                                         <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                            <strong>{{ $errors->first('nim') }}</strong>
                                                         </span>
                                                     @endif
                                                 </div>
 
-                                                <div class="mb-3 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                                <div class="mb-3 form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                                     <label class="small mb-1" for="inputEmail">Email</label>
-                                                    <input class="form-control" id="inputEmail" type="email" placeholder="Masukkan email" value="{{ auth()->user()->email }}" />
-                                                    @if ($errors->has('name'))
+                                                    <input class="form-control" id="inputEmail" type="email" placeholder="Masukkan email" value="{{ old('name', auth()->user()->email) }}" required/>
+                                                    @if ($errors->has('email'))
                                                         <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $errors->first('name') }}</strong>
+                                                            <strong>{{ $errors->first('email') }}</strong>
                                                         </span>
                                                     @endif
                                                 </div>
@@ -70,50 +70,54 @@
                                                 <!-- Form Row-->
                                                 <div class="row gx-3 mb-3">
 
-                                                    <div class="col-md-6 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                                    <div class="col-md-6 form-group{{ $errors->has('prodi') ? ' has-danger' : '' }}">
                                                         <label class="small mb-1" for="inputProdi">Prodi</label>
-                                                        <input class="form-control" id="inputProdi" type="text" placeholder="Masukkan Prodi, ex: DIV Teknik Informatika" value="" />
-                                                        @if ($errors->has('name'))
+                                                        <input class="form-control" id="inputProdi" type="text" placeholder="Masukkan Prodi, ex: DIV Teknik Informatika" value="{{ old('prodi', auth()->user()->email) }}" required/>
+                                                        @if ($errors->has('prodi'))
                                                             <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('name') }}</strong>
+                                                                <strong>{{ $errors->first('prodi') }}</strong>
                                                             </span>
                                                         @endif
                                                     </div>
 
-                                                    <div class="col-md-6 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
+                                                    <div class="col-md-6 form-group{{ $errors->has('jurusan') ? ' has-danger' : '' }}">
                                                         <label class="small mb-1" for="inputJurusan">Jurusan</label>
-                                                        <input class="form-control" id="inputJurusan" type="text" placeholder="Masukkan Jurusan, ex: Teknologi Informasi" value="" />
-                                                        @if ($errors->has('name'))
+                                                        <input class="form-control" id="inputJurusan" type="text" placeholder="Masukkan Jurusan, ex: Teknologi Informasi" value="{{ old('jurusan', auth()->user()->email) }}" required/>
+                                                        @if ($errors->has('jurusan'))
                                                             <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $errors->first('name') }}</strong>
+                                                                <strong>{{ $errors->first('jurusan') }}</strong>
                                                             </span>
                                                         @endif
                                                     </div>
 
-                                                </div>
-
-                                                <!-- Form Row-->
-                                                <div class="row gx-3 mb-3">
-                                                    <!-- Form Group (first name)-->
-                                                    <div class="col-md-6">
-                                                        <label class="small mb-1" for="inputPassword">Password</label>
-                                                        <input class="form-control" id="inputPassword" type="password" placeholder="Masukkan Password" value="yani" />
-                                                    </div>
-                                                    <!-- Form Group (last name)-->
-                                                    <div class="col-md-6">
-                                                        <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
-                                                        <input class="form-control" id="inputConfirmPassword" type="password" placeholder="Masukkan Confirm password" value="yani" />
-                                                    </div>
                                                 </div>
 
                                                 <!-- Save changes button-->
-                                                <a href="{{ route('home') }}" class=" d-sm-inline-block btn btn-primary shadow-sm mt-2 mb-4 ">
-                                                    <i class="fas fa-sm text-white-50"></i>Save Changes
-                                                </a>
+                                                <div class="d-sm-inline-block btn btn-primary shadow-sm mt-2 mb-4">
+                                                    <button type="submit" style="
+                                                        background-color: transparent;
+                                                        border: none;
+                                                        color: inherit;
+                                                        cursor: pointer;">{{ __('Save Changes') }}</button>
+                                                </div>
                                                 <a href="{{ route('home') }}" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2 mt-2 mb-4">
-                                                    <i class="fas fa-sm text-white-50"></i>Cancel
+                                                    <i class="fas fa-sm text-white-50"></i>Back
                                                 </a>
                                             </form>
+
+                                            {{-- <!-- Form Row-->
+                                            <div class="row gx-3 mb-3">
+                                                <!-- Form Group (first name)-->
+                                                <div class="col-md-6">
+                                                    <label class="small mb-1" for="inputPassword">Password</label>
+                                                    <input class="form-control" id="inputPassword" type="password" placeholder="Masukkan Password" value="yani" />
+                                                </div>
+                                                <!-- Form Group (last name)-->
+                                                <div class="col-md-6">
+                                                    <label class="small mb-1" for="inputConfirmPassword">Confirm Password</label>
+                                                    <input class="form-control" id="inputConfirmPassword" type="password" placeholder="Masukkan Confirm password" value="yani" />
+                                                </div>
+                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>
