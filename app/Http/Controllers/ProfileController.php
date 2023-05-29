@@ -13,14 +13,14 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function edit()
-    {
-        return view('profile.edit');
-    }
-
     public function editAdmin()
     {
-        return view('profile.edit_admin');
+        return view('views.profileAdmin_view');
+    }
+
+    public function edit()
+    {
+        return view('views.profileUser_view');
     }
 
     /**

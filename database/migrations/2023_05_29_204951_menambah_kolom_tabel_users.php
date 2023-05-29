@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('nim')->unique()->default('null')->after('role');
             $table->string('prodi')->default('null')->after('nim');
             $table->string('jurusan')->default('null')->after('prodi');
+            $table->binary('image');
         });
     }
 
