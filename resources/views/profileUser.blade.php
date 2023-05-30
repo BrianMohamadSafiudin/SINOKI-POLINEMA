@@ -22,7 +22,7 @@ $dashboardPlaceholder = "Profile";
         <div id="content">
             @include('views.partials.topbarUser')
             @include('views.profileUser_view')
-{{-- <!--            @include('layouts.footers.guest')--> --}}
+{{-- <!--   @include('layouts.footers.guest')--> --}}
 
         </div>
 
