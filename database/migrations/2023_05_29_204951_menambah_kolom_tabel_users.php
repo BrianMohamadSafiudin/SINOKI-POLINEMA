@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('nim')->unique()->default('null')->after('role');
-            $table->string('prodi')->default('null')->after('nim');
-            $table->string('jurusan')->default('null')->after('prodi');
-            $table->binary('image');
+            $table->integer('nim')->unique()->nullable()->after('role');
+            $table->string('prodi')->nullable()->after('nim');
+            $table->string('jurusan')->nullable()->after('prodi');
+            $table->binary('image')->nullable();
         });
     }
 
