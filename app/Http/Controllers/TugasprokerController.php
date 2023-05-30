@@ -3,13 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ProfileRequest;
+use App\Http\Requests\PasswordRequest;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Image;
 
 class TugasprokerController extends Controller
 {
-    public function index()
+public function index(ProfileRequest $request)
     {
-        $dataTugas = \App\Models\tugasProker::all();
+        /**
+         * Update the profile
+         *
+         * @param  \App\Http\Requests\ProfileRequest  $request
+         * @return \Illuminate\Http\RedirectResponse
+         */
 
-        return view('halamanProker' ,compact('dataTugas'));
+        auth()->user()->index($request->all());
+
+        return back()->withStatus(__('Data Tugas successfully created.'));
     }
 }
