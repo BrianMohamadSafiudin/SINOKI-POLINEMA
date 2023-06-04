@@ -26,13 +26,14 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
     Route::get('profileAdmin', ['as' => 'profileAdmin', 'uses' => 'App\Http\Controllers\ProfileAdminController@index']);
     Route::get('profileUser', ['as' => 'profileUser', 'uses' => 'App\Http\Controllers\ProfileUserController@index']);
-
 	Route::post('profileAdminUpdate', ['as' => 'profileAdminUpdate', 'uses' => 'App\Http\Controllers\ProfileAdminController@update']);
 	Route::post('profileUserUpdate', ['as' => 'profileUserUpdate', 'uses' => 'App\Http\Controllers\ProfileUserController@update']);
+    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+
     Route::post('tugasprokers', ['as' => 'tugasprokers', 'uses' => 'App\Http\Controllers\TugasprokerController@store']);
     Route::get('tugasprokers', ['as' => 'tugasprokers', 'uses' => 'App\Http\Controllers\TugasprokerController@index']);
-
-    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
+    Route::put('tugasprokers/{tugasproker}', 'App\Http\Controllers\TugasprokerController@update')->name('tugasproker.update');
+    Route::delete('tugasprokers/{tugasproker}', 'App\Http\Controllers\TugasprokerController@destroy')->name('tugasproker.destroy');
 
     Route::get('dataAnggota', ['as' => 'dataAnggota', 'uses' => 'App\Http\Controllers\DataAnggotaController@index']);
     Route::get('editDataSie', ['as' => 'editDataSie', 'uses' => 'App\Http\Controllers\EditDataSieController@index']);

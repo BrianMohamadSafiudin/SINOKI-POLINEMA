@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('namatugas')->nullable()->unique();
             $table->string('sie')->nullable()->unique();
-            $table->dateTime('tenggatwaktu');
+            $table->date('tenggatwaktu');
             $table->string('status')->nullable()->default('Belum Selesai');
             $table->string('evaluasi')->nullable();
             $table->timestamps();
