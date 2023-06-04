@@ -19,14 +19,14 @@
     </div>
 
 
-    <li class='nav-item  active'>
+    <li class='nav-item  {{ Request::is('home_admin') ? 'active' : '' }}'>
         <a class='nav-link' href='{{ route('home_admin') }}' >
             <i class='fas fa-fw fa-folder'></i>
             <span>Data Program Kerja</span>
         </a>
     </li>
 
-    <li class='nav-item '>
+    <li class='nav-item {{ Request::is('dataAnggota') ? 'active' : '' }}'>
         <a class='nav-link' href='{{ route('dataAnggota') }}' >
             <i class='fas fa-fw fa-chart-area'></i>
             <span>Data Anggota</span></a>

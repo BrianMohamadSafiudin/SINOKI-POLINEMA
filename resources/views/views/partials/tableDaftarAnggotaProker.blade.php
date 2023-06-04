@@ -10,6 +10,22 @@
     </tr>
     </thead>
     <tbody>
+        @php
+            $int = 1
+        @endphp
+        @foreach ($dataAnggota as $d)
+        @if ($d->role === 'user')
+        <tr>
+            <td>{{ $int++ }}</td>
+            <td>{{ $d->name }}</td>
+            <td>Sie Acara</td>
+            <td>
+                <a href="{{ route('editDataSie') }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data</a>
+                <a href="#" class="btn btn-danger text-md-center"><i class="fas text-white-50 "></i>Delete Data</a>
+            </td>
+        </tr>
+        @endif
+        @endforeach
     <tr>
         <td>1.</td>
         <td>Tri Jagad Ariyani</td>
@@ -52,5 +68,4 @@
 
     </tbody>
 </table>
-
 

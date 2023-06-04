@@ -104,12 +104,12 @@
                                             <div class="row gx-3 mb-3">
                                                 <!-- Form Group (first name)-->
                                                 <div class="col-md-6">
-                                                    <label class="small mb-1 form-control-label" for="inputPassword">{{ __('Password Baru (Optional)') }}</label>
+                                                    <label class="small mb-1 form-control-label" for="inputPassword">{{ __('Password Baru? (Abaikan Jika Tidak)') }}</label>
                                                     <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Masukkan Password Baru" value="{{ auth()->user()->password }}" />
                                                 </div>
                                                 <!-- Form Group (last name)-->
                                                 <div class="col-md-6">
-                                                    <label class="small mb-1 form-control-label" for="inputConfirmPassword">{{ __('Confirm Password (Optional)') }}</label>
+                                                    <label class="small mb-1 form-control-label" for="inputConfirmPassword">{{ __('Confirm Password Baru (Abaikan Jika Tidak)') }}</label>
                                                     <input type="password" name="password" id="input-confirm-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Masukkan kembali password" value="{{ auth()->user()->password }}" />
                                                 </div>
                                             </div>
