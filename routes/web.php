@@ -29,7 +29,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::post('profileAdminUpdate', ['as' => 'profileAdminUpdate', 'uses' => 'App\Http\Controllers\ProfileAdminController@update']);
 	Route::post('profileUserUpdate', ['as' => 'profileUserUpdate', 'uses' => 'App\Http\Controllers\ProfileUserController@update']);
-    Route::post('tugasproker', ['as' => 'tugasproker', 'uses' => 'App\Http\Controllers\TugasprokerController@index']);
+    Route::post('tugasprokers', ['as' => 'tugasprokers', 'uses' => 'App\Http\Controllers\TugasprokerController@store']);
+    Route::get('tugasprokers', ['as' => 'tugasprokers', 'uses' => 'App\Http\Controllers\TugasprokerController@index']);
 
     Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 

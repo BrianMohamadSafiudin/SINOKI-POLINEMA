@@ -3,24 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\ProfileRequest;
-use App\Http\Requests\PasswordRequest;
-use Illuminate\Support\Facades\Hash;
-use App\Models\Image;
+use App\Models\tugasproker;
 
 class TugasprokerController extends Controller
 {
-public function index(ProfileRequest $request)
+    // ...
+
+    public function store(Request $request)
     {
-        /**
-         * Update the profile
-         *
-         * @param  \App\Http\Requests\ProfileRequest  $request
-         * @return \Illuminate\Http\RedirectResponse
-         */
+        $request->validate([
+            'namatugas' => 'required',
+            'sie' => 'required',
+            'tenggatwaktu' => 'required',
+        ]);
 
-        auth()->user()->index($request->all());
+        TugasProker::create($request->all());
 
-        return back()->withStatus(__('Data Tugas successfully created.'));
+        return back()->withStatus(__('Data Tugas Berhasil Ditambahkan.'));
     }
+
+    public function index()
+    {
+        $tugasprokers = TugasProker::all();
+
+        return view('tugasproker.index', compact('tugasprokers'));
+    }
+
+    // ...
 }

@@ -8,7 +8,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Model;
 
-class tugasproker extends Authenticatable
+class tugasproker extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -17,6 +17,7 @@ class tugasproker extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'tugasprokers';
 
     protected $fillable = [
         'namatugas',
