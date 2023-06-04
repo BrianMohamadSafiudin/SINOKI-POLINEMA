@@ -43,7 +43,7 @@
 
                                                     <div class="mb-3 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                         <label class="small mb-1 form-control-label" for="input-name">{{ __('Nama Lengkap') }}</label>
-                                                        <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder={{ __('Masukkan Nama Lengkap') }} value="{{ auth()->user()->name }}" required autofocus/>
+                                                        <label type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder={{ __('Masukkan Nama Lengkap') }} required autofocus> {{ auth()->user()->name }} </label>
                                                         @if ($errors->has('name'))
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $errors->first('name') }}</strong>
@@ -53,7 +53,7 @@
 
                                                     <div class="mb-3 form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                                         <label class="small mb-1 form-control-label" for="input-email">Email</label>
-                                                        <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Masukkan email" value="{{ auth()->user()->email }}" required/>
+                                                        <label type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Masukkan email" required> {{ auth()->user()->email }} </label>
                                                         @if ($errors->has('email'))
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $errors->first('email') }}</strong>
@@ -62,15 +62,6 @@
                                                     </div>
 
                                                     <!-- Form Row-->
-
-                                                <!-- Save changes button-->
-                                                <div class="d-sm-inline-block btn btn-primary shadow-sm mt-2 mb-4">
-                                                    <button type="submit" style="
-                                                        background-color: transparent;
-                                                        border: none;
-                                                        color: inherit;
-                                                        cursor: pointer;">{{ __('Save Changes') }}</button>
-                                                </div>
                                                 <a href="{{ route('home') }}" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2 mt-2 mb-4">
                                                     <i class="fas fa-sm text-white-50"></i>Back
                                                 </a>

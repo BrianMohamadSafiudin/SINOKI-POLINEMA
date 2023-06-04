@@ -10,7 +10,7 @@ class HalamanDataSieController extends Controller
     public function index()
     {
         $dataAnggota = User::all();
-        
+
         return view('halamanDataSie', compact('dataAnggota'));
     }
 }

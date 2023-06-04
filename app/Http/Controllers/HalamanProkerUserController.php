@@ -8,6 +8,8 @@ class HalamanProkerUserController extends Controller
 {
     public function index()
     {
-        return view('halamanProkerUser');
+        $dataTugas = \App\Models\tugasProker::all();
+
+        return view('halamanProkerUser', compact('dataTugas'));
     }
 }
