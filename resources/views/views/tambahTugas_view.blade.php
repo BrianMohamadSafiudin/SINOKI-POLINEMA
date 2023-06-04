@@ -28,19 +28,19 @@
                         <hr class="content-divider">
 
                         <h5 class=" mb-2 text-gray-900 font-weight-bolder">Tambah Tugas Program Kerja</h5>
-                        
+
                         <div class="card-body">
-                            <form method="post" action="{{ route('tugasproker') }}" enctype="multipart/form-data" autocomplete="off">
+                            <form method="post" action="{{ route('tugasprokers') }}" enctype="multipart/form-data" autocomplete="off">
                                 @csrf
 
-                                                @if (session('status'))
-                                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                                    {{ session('status') }}
-                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                @endif
+                                    @if (session('status'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        {{ session('status') }}
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    @endif
                                 <div class="mb-4 form-group{{ $errors->has('namatugas') ? ' has-danger' : '' }}">
                                     <label class="text-gray-900 font-weight-bold " for="exampleInputEmail1 ">Nama Tugas</label>
                                     <input type="text" name="namatugas" class="form-control form-control-alternative{{ $errors->has('namatugas') ? ' is-invalid' : '' }}" placeholder="Masukkan Nama Tugas" value="" id="input-namatugas" required/>
