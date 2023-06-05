@@ -36,15 +36,12 @@ use App\Http\Controllers\TambahTugasController;
 Route::redirect('/', '/login');
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'auth.admin'], function () {
 
-    // CRUD Profile
+    // CRUD Profile Admin
 	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
     Route::get('profileAdmin', [ProfileAdminController::class, 'index'])->name('profileAdmin');
-    Route::get('profileUser', [ProfileUserController::class, 'index'])->name('profileUser');
     Route::post('profileAdminUpdate', [ProfileAdminController::class, 'update'])->name('profileAdminUpdate');
-    Route::post('profileUserUpdate', [ProfileUserController::class, 'update'])->name('profileUserUpdate');
-    Route::put('profile/password', [ProfileController::class, 'password'])->name('profile.password');
 
     // CRUD Program Kerja
     // >///<
@@ -59,16 +56,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::put('datasies/{id}', [DatasieController::class, 'update'])->name('datasies.update');
     Route::put('datasie/{id}', [DatasieController::class, 'delete'])->name('datasie.delete');
 
-    // Return Views
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    // Return Views Admin
     Route::get('/home_admin', [HomeAdminController::class, 'index'])->name('home_admin');
     Route::get('dataAnggota', [DataAnggotaController::class, 'index'])->name('dataAnggota');
     Route::get('editDataSie', [EditDataSieController::class, 'index'])->name('editDataSie');
     Route::get('halamanDataSie', [HalamanDataSieController::class, 'index'])->name('halamanDataSie');
     Route::get('halamanEditProker', [HalamanEditProkerController::class, 'index'])->name('halamanEditProker');
-    Route::get('halamanProkerUser', [HalamanProkerUserController::class, 'index'])->name('halamanProkerUser');
     Route::get('halamanProker', [HalamanProkerController::class, 'index'])->name('halamanProker');
-    Route::get('halamanUploadTugasUser', [HalamanUploadTugasUserController::class, 'index'])->name('halamanUploadTugasUser');
     Route::get('tambahDataAnggota', [TambahDataAnggotaController::class, 'index'])->name('tambahDataAnggota');
     Route::get('tambahDataSie', [TambahDataSieController::class, 'index'])->name('tambahDataSie');
     Route::get('tambahProker', [TambahProkerController::class, 'index'])->name('tambahProker');
@@ -76,4 +70,16 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+Route::group(['middleware' => 'auth.user'], function () {
 
+    // CRUD Profile User
+    Route::get('profileUser', [ProfileUserController::class, 'index'])->name('profileUser');
+    Route::post('profileUserUpdate', [ProfileUserController::class, 'update'])->name('profileUserUpdate');
+    Route::put('profile/password', [ProfileController::class, 'password'])->name('profile.password');
+
+    // Return Views User
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('halamanProkerUser', [HalamanProkerUserController::class, 'index'])->name('halamanProkerUser');
+    Route::get('halamanUploadTugasUser', [HalamanUploadTugasUserController::class, 'index'])->name('halamanUploadTugasUser');
+
+});
