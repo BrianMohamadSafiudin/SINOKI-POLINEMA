@@ -18,12 +18,16 @@ class TugasProkerSeeder extends Seeder
         DB::table('tugasprokers')->insert([
             'namaTugas' => 'Membuat Materi Dakwah',
             'sie' => 'Sie Acara',
-            'tenggatwaktu' => now(),
+            'tenggatwaktu' => date('Y-m-d', strtotime('2023-07-25')),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
         DB::table('tugasprokers')->insert([
             'namaTugas' => 'Membuat Surat Undangan OKI',
             'sie' => 'Sie PDD',
-            'tenggatwaktu' => now(),
+            'tenggatwaktu' => date('Y-m-d', strtotime('2023-07-25')),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }

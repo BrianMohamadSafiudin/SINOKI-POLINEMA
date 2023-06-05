@@ -9,6 +9,7 @@ use App\Http\Controllers\ProfileAdminController;
 use App\Http\Controllers\ProfileUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TugasprokerController;
+use App\Http\Controllers\ProgramkerjaController;
 use App\Http\Controllers\DatasieController;
 use App\Http\Controllers\DataAnggotaController;
 use App\Http\Controllers\EditDataSieController;
@@ -44,7 +45,8 @@ Route::group(['middleware' => 'auth.admin'], function () {
     Route::post('profileAdminUpdate', [ProfileAdminController::class, 'update'])->name('profileAdminUpdate');
 
     // CRUD Program Kerja
-    // >///<
+    Route::get('programkerjas', [ProgramkerjaController::class, 'index'])->name('programkerjas');
+    Route::post('programkerjas', [ProgramkerjaController::class, 'store'])->name('programkerjas.store');
 
     // CRUD Tugas Program Kerja
     Route::get('tugasprokers', [TugasprokerController::class, 'index'])->name('tugasprokers');
