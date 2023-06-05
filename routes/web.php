@@ -5,6 +5,23 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeAdminController;
+use App\Http\Controllers\ProfileAdminController;
+use App\Http\Controllers\ProfileUserController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TugasprokerController;
+use App\Http\Controllers\DatasieController;
+use App\Http\Controllers\DataAnggotaController;
+use App\Http\Controllers\EditDataSieController;
+use App\Http\Controllers\HalamanDataSieController;
+use App\Http\Controllers\HalamanEditProkerController;
+use App\Http\Controllers\HalamanProkerUserController;
+use App\Http\Controllers\HalamanProkerController;
+use App\Http\Controllers\HalamanUploadTugasUserController;
+use App\Http\Controllers\TambahDataAnggotaController;
+use App\Http\Controllers\TambahDataSieController;
+use App\Http\Controllers\TambahProkerController;
+use App\Http\Controllers\TambahTugasController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -58,4 +75,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('tambahTugas', [TambahTugasController::class, 'index'])->name('tambahTugas');
 
 });
+
 
