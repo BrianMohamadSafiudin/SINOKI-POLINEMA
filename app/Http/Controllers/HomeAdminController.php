@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\programkerja;
+
 class HomeAdminController extends Controller
 {
     /**
@@ -21,7 +23,9 @@ class HomeAdminController extends Controller
      */
     public function index()
     {
-        return view('dashboard_admin');
+        $dataProker = programkerja::all();
+        
+        return view('dashboard_admin',compact('dataProker'));
     }
 }
 

@@ -15,17 +15,20 @@
                             </span>
                             <span class="text">Back</span>
                         </a>
-                        <h1 class="h3 mb-2 text-gray-900 font-weight-bolder mt-4">{{$judulPlaceholder}}</h1>
+                        @php
+                            $data = $dataProker->first();
+                        @endphp
+                        <h1 class="h3 mb-2 text-gray-900 font-weight-bolder mt-4">{{ $data -> namaproker }}</h1>
 
-                        <p class="mb-3 text-gray-600 font-weight-700 text-lg">Bidang Syiar</p>
+                        <p class="mb-3 text-gray-600 font-weight-700 text-lg">Bidang {{ $data -> bidang }}</p>
                         <ul style="list-style: none" class="pl-0">
                             <li>
                                 <i class='fas fa-fw fa-map-location-dot mb-3'></i>
-                                <span>Kelurahan Jatimulyo</span>
+                                <span>{{ $data -> tempat }}</span>
                             </li>
                             <li>
                                 <i class='fas fa-fw fa-calendar-days mb-2'></i>
-                                <span>25-03-2023</span>
+                                <span>{{ $data -> tanggalproker }}</span>
                             </li>
                         </ul>
 
