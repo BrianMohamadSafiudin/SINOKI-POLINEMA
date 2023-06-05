@@ -20,7 +20,7 @@ class TugasprokerController extends Controller
 
         TugasProker::create($request->all());
 
-        return back()->withStatus(__('Data tugas proker berhasil ditambahkan.'));
+        return redirect()->route('halamanProker')->withStatus(__('Data tugas proker berhasil ditambahkan.'));
     }
 
     public function update(Request $request, $id)
