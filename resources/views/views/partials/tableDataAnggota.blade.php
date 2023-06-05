@@ -7,6 +7,7 @@
         <th>Nama Anggota</th>
         <th>NIM</th>
         <th>Prodi/Jurusan</th>
+        <th>SIE</th>
         <th>Email</th>
         <th>Foto Diri</th>
     </tr>
@@ -23,6 +24,7 @@
             <td>{{ $d->name }}</td>
             <td>{{ $d->nim }}</td>
             <td>{{ $d->prodi }}/{{ $d->jurusan }}</td>
+            <td>{{ $d->sie }}</td>
             <td>{{ $d->email }}</td>
             <td>{{ $d->image }}</td>
         </tr>

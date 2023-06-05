@@ -50,6 +50,7 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
+                                        <a href="{{ route('halamanProker') }}" style="text-decoration: none">
                                         <div class="text-l font-weight-bold text-gray-800 text-uppercase mb-1">Sholawat Rutin</div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">
@@ -76,6 +77,7 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
+                                        <a href="{{ route('halamanProker') }}" style="text-decoration: none">
                                         <div class="text-l font-weight-bold text-gray-800 text-uppercase mb-1">Firma Ceria</div>
                                         <div class="row no-gutters align-items-center">
                                             <div class="col-auto">

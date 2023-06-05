@@ -29,7 +29,6 @@
                             </li>
                         </ul>
 
-                        <!-- <<<<<<< frontend-febryan/fadlila -->
                         <a href="{{ route('halamanEditProker') }}" class="btn btn-warning btn-icon-split btn-sm shadow-sm">
                             <span class="icon text-white-50">
                                 <i class="fas fa-pen-to-square "></i>
