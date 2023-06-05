@@ -60,7 +60,7 @@
               <div class="sign-up-button1">
                 <div class="sign-up-button-item"></div>
                 <div class="sign-in1">SIGN IN</div>
-                <button type="submit" class="none"></button>
+                <button type="submit" class="btn-info"></button>
               </div>
               <div class="lupa-kata-sandi"><a href="https://wa.me/+6282114903130?text=Username%20anda%20:%20? %0A(Kirim%20bukti%20selfie%20dengan%20ktm%20anda)" target="_blank">Lupa sandi? Call Admin</a></div>
             </div>

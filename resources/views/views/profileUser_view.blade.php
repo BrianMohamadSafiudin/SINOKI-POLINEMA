@@ -119,7 +119,7 @@
                                                     background-color: transparent;
                                                     border: none;
                                                     color: inherit;
-                                                    cursor: pointer;">{{ __('Save Changes') }}</button>
+                                                    cursor: pointer;">{{ __('Simpan Perubahan') }}</button>
                                             </div>
                                             <a href="{{ route('home') }}" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2 mt-2 mb-4">
                                                 <i class="fas fa-sm text-white-50"></i>Back
