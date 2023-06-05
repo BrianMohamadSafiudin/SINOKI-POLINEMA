@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('nim')->unique()->nullable()->after('role');
             $table->string('prodi')->nullable()->after('nim');
             $table->string('jurusan')->nullable()->after('prodi');
+            $table->string('sie')->nullable();
             $table->binary('image')->nullable();
         });
     }

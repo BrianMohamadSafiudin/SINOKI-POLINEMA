@@ -20,33 +20,42 @@ Route::redirect('/', '/login');
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function () {
+
+    // CRUD Profile
+	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
+    Route::get('profileAdmin', [ProfileAdminController::class, 'index'])->name('profileAdmin');
+    Route::get('profileUser', [ProfileUserController::class, 'index'])->name('profileUser');
+    Route::post('profileAdminUpdate', [ProfileAdminController::class, 'update'])->name('profileAdminUpdate');
+    Route::post('profileUserUpdate', [ProfileUserController::class, 'update'])->name('profileUserUpdate');
+    Route::put('profile/password', [ProfileController::class, 'password'])->name('profile.password');
+
+    // CRUD Program Kerja
+    // >///<
+
+    // CRUD Tugas Program Kerja
+    Route::get('tugasprokers', [TugasprokerController::class, 'index'])->name('tugasprokers');
+    Route::post('tugasprokers', [TugasprokerController::class, 'store'])->name('tugasprokers.store');
+    Route::put('tugasprokers/{tugasproker}', [TugasprokerController::class, 'update'])->name('tugasproker.update');
+    Route::delete('tugasprokers/{tugasproker}', [TugasprokerController::class, 'destroy'])->name('tugasproker.destroy');
+
+    // CRUD DataSIE
+    Route::put('datasies/{id}', [DatasieController::class, 'update'])->name('datasies.update');
+    Route::put('datasie/{id}', [DatasieController::class, 'delete'])->name('datasie.delete');
+
+    // Return Views
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::get('/home_admin', [HomeAdminController::class, 'index'])->name('home_admin');
-
-	Route::resource('user', 'App\Http\Controllers\UserController', ['except' => ['show']]);
-    Route::get('profileAdmin', ['as' => 'profileAdmin', 'uses' => 'App\Http\Controllers\ProfileAdminController@index']);
-    Route::get('profileUser', ['as' => 'profileUser', 'uses' => 'App\Http\Controllers\ProfileUserController@index']);
-	Route::post('profileAdminUpdate', ['as' => 'profileAdminUpdate', 'uses' => 'App\Http\Controllers\ProfileAdminController@update']);
-	Route::post('profileUserUpdate', ['as' => 'profileUserUpdate', 'uses' => 'App\Http\Controllers\ProfileUserController@update']);
-    Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
-
-    Route::post('tugasprokers', ['as' => 'tugasprokers', 'uses' => 'App\Http\Controllers\TugasprokerController@store']);
-    Route::get('tugasprokers', ['as' => 'tugasprokers', 'uses' => 'App\Http\Controllers\TugasprokerController@index']);
-    Route::put('tugasprokers/{tugasproker}', 'App\Http\Controllers\TugasprokerController@update')->name('tugasproker.update');
-    Route::delete('tugasprokers/{tugasproker}', 'App\Http\Controllers\TugasprokerController@destroy')->name('tugasproker.destroy');
-
-    Route::get('dataAnggota', ['as' => 'dataAnggota', 'uses' => 'App\Http\Controllers\DataAnggotaController@index']);
-    Route::get('editDataSie', ['as' => 'editDataSie', 'uses' => 'App\Http\Controllers\EditDataSieController@index']);
-    Route::get('halamanDataSie', ['as' => 'halamanDataSie', 'uses' => 'App\Http\Controllers\HalamanDataSieController@index']);
-    Route::get('halamanEditProker', ['as' => 'halamanEditProker', 'uses' => 'App\Http\Controllers\HalamanEditProkerController@index']);
-    Route::get('halamanProkerUser', ['as' => 'halamanProkerUser', 'uses' => 'App\Http\Controllers\HalamanProkerUserController@index']);
-    Route::get('halamanProker', ['as' => 'halamanProker', 'uses' => 'App\Http\Controllers\HalamanProkerController@index']);
-    Route::get('halamanUploadTugasUser', ['as' => 'halamanUploadTugasUser', 'uses' => 'App\Http\Controllers\HalamanUploadTugasUser@index']);
-    Route::get('tambahDataAnggota', ['as' => 'tambahDataAnggota', 'uses' => 'App\Http\Controllers\TambahDataAnggotaController@index']);
-    Route::get('tambahDataSie', ['as' => 'tambahDataSie', 'uses' => 'App\Http\Controllers\TambahDataSieController@index']);
-    Route::get('tambahProker', ['as' => 'tambahProker', 'uses' => 'App\Http\Controllers\TambahProkerController@index']);
-    Route::get('tambahTugas', ['as' => 'tambahTugas', 'uses' => 'App\Http\Controllers\TambahTugasController@index']);
-    // tes
+    Route::get('dataAnggota', [DataAnggotaController::class, 'index'])->name('dataAnggota');
+    Route::get('editDataSie', [EditDataSieController::class, 'index'])->name('editDataSie');
+    Route::get('halamanDataSie', [HalamanDataSieController::class, 'index'])->name('halamanDataSie');
+    Route::get('halamanEditProker', [HalamanEditProkerController::class, 'index'])->name('halamanEditProker');
+    Route::get('halamanProkerUser', [HalamanProkerUserController::class, 'index'])->name('halamanProkerUser');
+    Route::get('halamanProker', [HalamanProkerController::class, 'index'])->name('halamanProker');
+    Route::get('halamanUploadTugasUser', [HalamanUploadTugasUserController::class, 'index'])->name('halamanUploadTugasUser');
+    Route::get('tambahDataAnggota', [TambahDataAnggotaController::class, 'index'])->name('tambahDataAnggota');
+    Route::get('tambahDataSie', [TambahDataSieController::class, 'index'])->name('tambahDataSie');
+    Route::get('tambahProker', [TambahProkerController::class, 'index'])->name('tambahProker');
+    Route::get('tambahTugas', [TambahTugasController::class, 'index'])->name('tambahTugas');
 
 });
 

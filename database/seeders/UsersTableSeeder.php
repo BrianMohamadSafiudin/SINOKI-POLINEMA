@@ -33,7 +33,8 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('brianbrian'),
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'sie' => 'Sie Acara'
         ]);
         DB::table('users')->insert([
             'name' => 'MUHAMMAD BINTANG SHOLU FIRMANSYAH',
