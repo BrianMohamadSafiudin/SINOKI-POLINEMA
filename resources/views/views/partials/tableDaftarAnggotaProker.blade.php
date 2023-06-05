@@ -1,12 +1,21 @@
 
 
 <table id="example" class="table table-striped" style="width:100%">
+    @if (session('status'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('status') }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     <thead>
+    @endif
     <tr>
         <th>No</th>
         <th>Nama Anggota</th>
         <th>SIE</th>
         <th>Aksi</th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
@@ -18,54 +27,21 @@
         <tr>
             <td>{{ $int++ }}</td>
             <td>{{ $d->name }}</td>
-            <td>Sie Acara</td>
+            <td>{{ $d->sie }}</td>
             <td>
-                <a href="{{ route('editDataSie') }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data</a>
-                <a href="#" class="btn btn-danger text-md-center"><i class="fas text-white-50 "></i>Delete Data</a>
+                <a href="{{ route('editDataSie', ['int' => $int]) }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data SIE</a>
+            </td>
+            <td>
+                <form method="post" action="{{ route('datasie.delete', $d->id) }}" enctype="multipart/form-data" autocomplete="off" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                    @csrf
+                    @method('PUT')
+                    <input type="text" name="sie" id="input-sie" style="display: none;" value="" />
+                    <button type="submit" class="btn btn-danger text-md-center">Delete Data SIE</button>
+                </form>
             </td>
         </tr>
         @endif
         @endforeach
-    <tr>
-        <td>1.</td>
-        <td>Tri Jagad Ariyani</td>
-        <td>Sie Acara</td>
-        <td>
-            <a href="{{ route('editDataSie') }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data</a>
-            <a href="#" class="btn btn-danger text-md-center"><i class="fas text-white-50 "></i>Delete Data</a>
-        </td>
-    </tr>
-
-    <tr>
-        <td>2.</td>
-        <td>Fadlila Afida</td>
-        <td>Sie Kesektariatan</td>
-        <td>
-            <a href="editDataSie.php" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data</a>
-            <a href="#" class="btn btn-danger text-md-center"><i class="fas text-white-50 "></i>Delete Data</a>
-        </td>
-    </tr>
-
-    <tr>
-        <td>3.</td>
-        <td>Febryan Firmansyah</td>
-        <td>Sie PDD</td>
-        <td>
-            <a href="editDataSie.php" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data</a>
-            <a href="#" class="btn btn-danger text-md-center"><i class="fas text-white-50 "></i>Delete Data</a>
-        </td>
-    </tr>
-
-    <tr>
-        <td>4.</td>
-        <td>Brian Safiudin</td>
-        <td>Sie PDD</td>
-        <td>
-            <a href="editDataSie.php" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data</a>
-            <a href="#" class="btn btn-danger text-md-center"><i class="fas text-white-50 "></i>Delete Data</a>
-        </td>
-    </tr>
-
     </tbody>
 </table>
 

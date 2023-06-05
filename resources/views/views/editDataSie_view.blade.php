@@ -26,26 +26,43 @@
                             </li>
                         </ul>
                         <hr class="content-divider">
+                        <h5 class=" mb-2 text-gray-900 font-weight-bolder">Edit Data Sie User</h5>
+                        @php
+                            $int = request()->query('int');
+                        @endphp
+                        @foreach ($dataAnggota as $d)
+                        @if ($d->id == $int )
 
-                        <h5 class=" mb-2 text-gray-900 font-weight-bolder">Edit Data User</h5>
-                        
-                        <div class="card-body">
-                            <form>
+                        <form method="post" action="{{ route('datasies.update', $d -> id = $int ) }}" enctype="multipart/form-data" autocomplete="off">
+                            @csrf
+                            @method('PUT')
+                            @if (session('status'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                {{ session('status') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            @endif
+
+                            <div class="card-body">
                                 <div class="form-group mb-4">
                                     <label class="text-gray-900 font-weight-bold " for="exampleInputEmail1 ">Nama Anggota</label>
-                                    <input type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama anggota">
+                                    <input type="text" name="name" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama anggota" value="{{ $d -> name }}" readonly>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="text-gray-900 font-weight-bold" for="exampleInputPassword1">SIE</label>
-                                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan nama Sie">
+                                    <input type="text" name="sie" class="form-control" id="exampleInputPassword1" placeholder="Masukkan nama Sie" value="{{ $d -> sie }}">
                                 </div>
 
-                                <a href="halamanDataSie.php" class=" d-sm-inline-block btn btn-success shadow-sm ">
+                                <button type="submit" href="halamanDataSie.php" class=" d-sm-inline-block btn btn-success shadow-sm ">
                                     <i class="fas fa-sm text-white-50"></i>Simpan Perubahan
                                 </a>
+                            </div>
+                        </form>
 
-                            </form>
-                        </div>
+                        @endif
+                        @endforeach
                 </div>
 
             </div>

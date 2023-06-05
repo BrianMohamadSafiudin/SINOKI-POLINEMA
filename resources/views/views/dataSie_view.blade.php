@@ -28,11 +28,6 @@
                         <hr class="content-divider">
 
                         <h5 class=" mb-3 text-gray-900 font-weight-bolder">Daftar Anggota Program Kerja</h5>
-                        <div class="btn-tambah-tugas mb-5 mt-3">
-                            <a href="{{ route('tambahDataSie') }}" class=" d-sm-inline-block btn btn-success shadow-sm  btn-sm">
-                                <i class="fas text-white-50 "></i>Tambah Anggota
-                            </a>
-                        </div>
                         @include('views.partials.tableDaftarAnggotaProker')
                     </div>
 
