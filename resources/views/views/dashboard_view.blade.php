@@ -15,6 +15,14 @@
                     <i class="fas fa-download fa-sm text-white-50 mx-2"></i>Buat Program Kerja</a>
             </div>
             <div class="card-body">
+                @if (session('status'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('status') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
                 <div class="row">
                     <!-- Card 1-->
                         <div class="col-xl-3 col-md-6 mb-4">
