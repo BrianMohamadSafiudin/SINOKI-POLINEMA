@@ -21,39 +21,12 @@ After initializing a fresh instances of Laravel (and making all the necessary co
 ## Usage
 
 > Masuk menggunakan *nama kalian*@gmail.com dengan password *nama kalian*.
-##### Contoh: brian@gmail.com dengan password brian. 
+##### Contoh: admin@gmail.com dengan password adminadmin. 
+##### Contoh: brian@gmail.com dengan password brianbrian. 
 
 ## Dashboard
 
 You can access the dashboard either by using the "**Dashboard**" link in the left sidebar or by adding **/home** in the url. 
-
-### Profile edit
-
-You have the option to edit the current logged in user's profile (change name, email and password). To access this page just click the "**User profile**" link in the left sidebar or by adding **/profile** in the url.
-
-The `App\Http\Controllers\ProfileController` handles the update of the user information. 
-
-```
-public function update(ProfileRequest $request)
-{
-    auth()->user()->update($request->all());
-
-    return back()->withStatus(__('Profile successfully updated.'));
-}
-```
-
-Also you shouldn't worry about entering wrong data in the inputs when editing the profile, validation rules were added to prevent this (see `App\Http\Requests\ProfileRequest`). If you try to change the password you will see that other validation rules were added in `App\Http\Requests\PasswordRequest`. Notice that in this file you have a custom validation rule that can be found in `App\Rules\CurrentPasswordCheckRule`.
-
-```
-public function rules()
-{
-    return [
-        'old_password' => ['required', 'min:6', new CurrentPasswordCheckRule],
-        'password' => ['required', 'min:6', 'confirmed', 'different:old_password'],
-        'password_confirmation' => ['required', 'min:6'],
-    ];
-}
-```
 
 ## About Laravel
 
