@@ -9,13 +9,11 @@ After initializing a fresh instances of Laravel (and making all the necessary co
 ##### npm install
 ##### npm run dev
 
-> Buat database code dan testing
 ##### cp .env.example .env
-
-> Setting value .env dan .env.testing
 ##### php artisan key:generate
-##### php artisan migrate
+##### php artisan link:storage
 ##### php artisan migrate --seed
+
 ##### php artisan serve
 
 ## Usage
