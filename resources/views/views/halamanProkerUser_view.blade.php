@@ -15,24 +15,29 @@
                             </span>
                             <span class="text">Back</span>
                         </a>
-                        <h1 class="h3 mb-2 text-gray-900 font-weight-bolder"><?= $judulProker?></h1>
-                        <p class="mb-3 text-gray-600 font-weight-700 text-lg">Bidang Syiar</p>
+                        @php
+                            $data = request()->query('data');
+                        @endphp
+                        @foreach ($dataProker as $p)
+                        @if ( $p->id == $data )
+
+                        <h1 class="h3 mb-2 text-gray-900 font-weight-bolder">{{ $p -> namaproker }}</h1>
+                        <p class="mb-3 text-gray-600 font-weight-700 text-lg">Bidang {{ $p -> bidang }}</p>
                         <ul style="list-style: none" class="pl-0">
                             <li>
                                 <i class='fas fa-fw fa-map-location-dot mb-3'></i>
-                                <span>Kelurahan Jatimulyo</span>
+                                <span>{{ $p -> tempat }}</span>
                             </li>
                             <li>
                                 <i class='fas fa-fw fa-calendar-days mb-2'></i>
-                                <span>25-03-2023</span>
+                                <span>{{ $p -> tanggalproker }}</span>
                             </li>
                         </ul>
-
+                        @endif
+                        @endforeach
 
                         <hr class="content-divider mt-4">
                         <h5 class="text-gray-900 font-weight-bolder">Daftar Tugas Program Kerja</h5>
-
-
 
                         @include('views.partials.tableDaftarTugasUser')
                     </div>

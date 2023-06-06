@@ -39,43 +39,6 @@
                                                         <span class="text-gray-800">{{ $p -> tempat }}</span>
                                                     </div>
                                                 </div>
-                                                {{-- <div class="col">
-                                                    <div class="progress progress-sm mr-2">
-                                                        <div class="progress-bar bg-info" role="progressbar"
-                                                             style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                             aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
-                                        </a>
-                                        {{-- <div class="text-l font-weight-bold text-gray-800 text-uppercase mb-1">{{ $p -> namaproker }}</div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <div class="fas fa-fw text-gray-800 fa-map-location-dot mb-3"></div>
-                                                    <span class="text-gray-800">{{ $p -> tempat }}</span>
-                                                </div>
-                                            </div>
-                                            <div class="row no-gutters align-items-center">
-                                                <div class="col-auto">
-                                                    <a href="{{ route('halamanProker', ['data' => $data]) }}" class=" d-sm-inline-block btn btn-primary">
-                                                        <i class="text-md-center shadow-sm"></i>Pilih
-                                                    </a>
-                                                </div>
-                                                <div class="col-auto>">
-                                                <form method="post" action="{{ route('programkerja.destroy', $p->id) }}">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger text-md-center shadow-sm ml-2" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                                </form>
-                                            </div> --}}
-                                       {{-- <div class="col">
-                                                <div class="progress progress-sm mr-2">
-                                                    <div class="progress-bar bg-info" role="progressbar"
-                                                            style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                                                            aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div> --}}
                                         </div>
                                     </div>
                                 </div>

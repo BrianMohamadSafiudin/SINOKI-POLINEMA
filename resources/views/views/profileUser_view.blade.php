@@ -3,7 +3,6 @@
 
             <!-- Begin Page Content -->
             <div class="container-fluid">
-                <form method="post" action="{{ route('profileUserUpdate') }}" enctype="multipart/form-data" autocomplete="off">
 
                 <!-- Card -->
                 <div class="card shadow mb-4">
@@ -19,12 +18,35 @@
                                         <div class="card-header">Profile Picture</div>
                                         <div class="card-body text-center">
                                             <!-- Profile picture image-->
-                                            <img class="img-account-profile rounded-circle mb-2" src="{{ asset('admin') }}/img/{{auth()->user()->name}}.jpg" style="max-width: 128px" alt="" />
+                                            @if (auth()->user()->image_url)
+                                                <img class="img-account-profile rounded-circle mb-2" src="{{ auth()->user()->image_url }}" style="max-width: 128px" alt="" />
+                                            @else
+                                                <div class="small font-italic text-muted mb-2">Silahkan Upload Foto Profil</div>
+                                            @endif
                                             <!-- Profile picture upload button-->
-                                            <div class="mb-3">
-                                                <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 5 MB</div>
-                                                <input type="file" name="image" id="formFileSm" class="form-control form-control-sm">
-                                            </div>
+                                            @php
+                                                $iduser = auth()->user()->id
+                                            @endphp
+                                            @foreach ($dataAnggota as $d)
+                                            @if ( $d->id == $iduser )
+                                            <form method="post" action="{{ route('profileUserImage', $d -> id) }}" enctype="multipart/form-data" autocomplete="off">
+                                                @csrf
+                                                @method('PUT')
+                                                <div class="mb-3">
+                                                    <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 2 MB</div>
+                                                    <input type="file" name="image" id="formFileSm" class="form-control form-control-sm">
+                                                </div>
+                                                <div class="d-sm-inline-block btn btn-primary shadow-sm mt-2 mb-4">
+                                                    <button type="submit" style="
+                                                        background-color: transparent;
+                                                        border: none;
+                                                        color: inherit;
+                                                        cursor: pointer;">{{ __('Ubah Foto Profil') }}
+                                                    </button>
+                                                </div>
+                                            </form>
+                                            @endif
+                                            @endforeach
                                         </div>
                                     </div>
                                 </div>
@@ -33,9 +55,8 @@
                                     <div class="card mb-4">
                                         <div class="card-header">Account Details</div>
                                         <div class="card-body">
-
+                                            <form method="post" action="{{ route('profileUserUpdate') }}" enctype="multipart/form-data" autocomplete="off">
                                                 @csrf
-
                                                 @if (session('status'))
                                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                                                     {{ session('status') }}
@@ -133,7 +154,6 @@
                 </div>
 
             </div>
-        </form>
         </div>
 
     <!-- /.container-fluid -->
