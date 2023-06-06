@@ -13,17 +13,10 @@
       <div class="right-side1">
         <div class="right-side-item"></div>
         <b class="login">LOGIN</b>
+
         <div class="masuk-dengan-akun">
-          Masuk dengan akun anda untuk mendapatkan informasi mengenai OKI yang
-          anda ikuti
-        </div>
-        <div class="dropdown-oki1">
-          <select id="option" name="option" class="dropdown-oki-inner">
-            <option value="" disabled selected>Pilih OKI yang diikuti</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-          </select>
+            Masuk dengan akun anda untuk mendapatkan informasi mengenai OKI yang
+            anda ikuti
         </div>
 
         <form role="form" method="POST" action="{{ route('login') }}">
@@ -62,7 +55,7 @@
                 <div class="sign-in1">SIGN IN</div>
                 <button type="submit" class="btn-info"></button>
               </div>
-              <div class="lupa-kata-sandi"><a href="https://wa.me/+6282114903130?text=Username%20anda%20:%20? %0A(Kirim%20bukti%20selfie%20dengan%20ktm%20anda)" target="_blank">Lupa sandi? Call Admin</a></div>
+              <div class="lupa-kata-sandi"><a href="https://wa.me/+6281335783522?text=Username%20anda%20:%20? %0A(Kirim%20bukti%20selfie%20dengan%20ktm%20anda)" target="_blank">Lupa sandi? Call Admin</a></div>
             </div>
 
             <div class="left-side1">

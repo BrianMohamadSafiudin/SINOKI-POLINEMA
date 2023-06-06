@@ -21,12 +21,15 @@
     <tbody>
         @php
             $data = request()->query('data');
-            $int = 1
+            $no = 1;
         @endphp
         @foreach ($dataAnggota as $d)
         @if ($d->role === 'user')
+        @php
+            $int = $d->id;
+        @endphp
         <tr>
-            <td>{{ $int++ }}</td>
+            <td>{{ $no++ }}</td>
             <td>{{ $d->name }}</td>
             <td>{{ $d->sie }}</td>
             <td>

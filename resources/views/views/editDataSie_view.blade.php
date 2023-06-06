@@ -24,7 +24,7 @@
                         @foreach ($dataAnggota as $d)
                         @if ($d->id == $int )
 
-                        <form method="post" action="{{ route('datasie.update', [ $d -> id = $int, 'data' => $data] ) }}" enctype="multipart/form-data" autocomplete="off">
+                        <form method="post" action="{{ route('datasie.update', [$d -> id = $int, 'data' => $data] ) }}" enctype="multipart/form-data" autocomplete="off">
                             @csrf
                             @method('PUT')
                             @if (session('status'))

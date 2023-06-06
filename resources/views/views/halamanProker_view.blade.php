@@ -37,7 +37,7 @@
                         @endif
                         @endforeach
 
-                        <a href="{{ route('halamanEditProker') }}" class="btn btn-warning btn-icon-split btn-sm shadow-sm">
+                        <a href="{{ route('halamanEditProker', ['data' => $data]) }}" class="btn btn-warning btn-icon-split btn-sm shadow-sm">
                             <span class="icon text-white-50">
                                 <i class="fas fa-pen-to-square "></i>
                             </span>

@@ -71,15 +71,6 @@
                 </div>
             </div>
 
-            <div class="dropdown-oki">
-                <select id="option" name="option" class="dropdown-oki-child">
-                  <option value="" disabled selected>Pilih OKI yang diikuti</option>
-                  <option value="option1">Option 1</option>
-                  <option value="option2">Option 2</option>
-                  <option value="option3">Option 3</option>
-                </select>
-            </div>
-
             <div class="sign-up-button">
                 <div class="sign-up-button-child"></div>
                 <div class="sign-up">SIGN UP</div>

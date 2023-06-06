@@ -10,7 +10,10 @@
                 <div class="card shadow mb-4">
 
                     <div class="card-body pl-4">
-                        <a href="{{ route('home_admin') }}" class="btn btn-danger btn-icon-split btn-sm mb-4">
+                        @php
+                            $data = request()->query('data');
+                        @endphp
+                        <a href="{{ route('halamanProker', ['data' => $data]) }}" class="btn btn-danger btn-icon-split btn-sm mb-4">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left "></i>
                             </span>
@@ -18,29 +21,55 @@
                         </a>
                         <h5 class=" mb-2 text-gray-900 font-weight-bolder">Edit Program Kerja</h5>
 
-                        <form>
-                            <div class="form-group mb-4">
+                        @foreach ($programkerja as $d)
+                        @if ($d->id == $data )
+                        <hr class="content-divider">
+                        <form method="post" action="{{ route('programkerja.update', [$d -> id = $data, 'data' => $data] ) }}" enctype="multipart/form-data" autocomplete="off">
+                            @csrf
+                            @method('PUT')
+                            <div class="mb-4 form-group{{ $errors->has('namaproker') ? ' has-danger' : '' }}">
                                 <label class="text-gray-900 font-weight-bold " for="exampleInputEmail1 ">Nama Program Kerja</label>
-                                <input type="text" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan Nama Program Kerja" value="Safari Dakwah">
+                                <input type="text" name="namaproker" class="form-control form-control-alternative{{ $errors->has('namaproker') ? ' is-invalid' : '' }}" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama program kerja" value="{{ $d -> namaproker }}" required>
+                                @if ($errors->has('namaproker'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('namaproker') }}</strong>
+                                    </span>
+                                @endif
                             </div>
-                            <div class="form-group mb-4">
+                            <div class="mb-4 form-group{{ $errors->has('bidang') ? ' has-danger' : '' }}">
                                 <label class="text-gray-900 font-weight-bold" for="exampleInputPassword1">Nama Bidang</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan SIE" value="Syari">
+                                <input type="text" name="bidang" class="form-control form-control-alternative{{ $errors->has('bidang') ? ' is-invalid' : '' }}" id="exampleInputPassword1" placeholder="Masukkan nama bidang" value="{{ $d -> bidang }}" required>
+                                @if ($errors->has('bidang'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('bidang') }}</strong>
+                                    </span>
+                                @endif
                             </div>
-                            <div class="form-group mb-4">
+                            <div class="mb-4 form-group{{ $errors->has('tempat') ? ' has-danger' : '' }}">
                                 <label class="text-gray-900 font-weight-bold" for="exampleInputPassword1">Tempat Program Kerja</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Tenggat waktu" value="Kelurahan Jatimulyo">
+                                <input type="text" name="tempat" class="form-control form-control-alternative{{ $errors->has('tempat') ? ' is-invalid' : '' }}" id="exampleInputPassword1" placeholder="Masukkan tempat program kerja" value="{{ $d -> tempat }}" required>
+                                @if ($errors->has('tempat'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('tempat') }}</strong>
+                                    </span>
+                                @endif
                             </div>
-                            <div class="form-group mb-4">
+                            <div class="mb-4 form-group{{ $errors->has('tanggalproker') ? ' has-danger' : '' }}">
                                 <label class="text-gray-900 font-weight-bold" for="exampleInputPassword1">Tanggal Program Kerja</label>
-                                <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Masukkan Tenggat waktu" value="22-03-2023">
+                                <input type="date" name="tanggalproker" class="form-control form-control-alternative{{ $errors->has('tanggalproker') ? ' is-invalid' : '' }}" id="exampleInputPassword1" placeholder="Masukkan tanggal program kerja" value="{{ $d -> tanggalproker }}" readonly>
+                                @if ($errors->has('tanggalproker'))
+                                    <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('tanggalproker') }}</strong>
+                                    </span>
+                                @endif
                             </div>
-                            <a href="halamanProker.php" class=" d-sm-inline-block btn btn-success shadow-sm px-2 text-xs">
+                            <button type="submit" class=" d-sm-inline-block btn btn-success shadow-sm px-2 text-xs">
                                 <i class="fas text-white-50 "></i>Simpan Perubahan
-                            </a>
+                            </button>
 
                         </form>
-
+                        @endif
+                        @endforeach
                     </div>
                 </div>
 

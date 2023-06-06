@@ -175,13 +175,13 @@
       display: inline-block;
     }
     .login {
-      top: 79px;
+      top: 200px;
       left: 80px;
       font-size: var(--font-size-26xl);
       width: 466px;
     }
     .masuk-dengan-akun {
-      top: 147px;
+      top: 290px;
       left: 145px;
       width: 336px;
     }
@@ -238,7 +238,7 @@
     }
     .username3 {
       position: absolute;
-      top: 318px;
+      top: 380px;
       left: 138px;
       width: 350px;
       height: 81px;
@@ -250,7 +250,7 @@
       left: 21px;
     }
     .password2 {
-      top: 419px;
+      top: 480px;
       left: 138px;
       width: 350px;
       height: 81px;
@@ -272,7 +272,7 @@
     }
     .sign-up-button1 {
       border: none;   position: absolute;
-      top: 552px;
+      top: 610px;
       left: 188px;
       width: 250px;
       height: 65px;
@@ -281,7 +281,7 @@
     }
     .lupa-kata-sandi {
       position: absolute;
-      top: 628px;
+      top: 680px;
       left: 227px;
       font-size: var(--font-size-mini);
       color: #2b2b2b;
