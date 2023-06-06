@@ -7,24 +7,31 @@
                 <!-- Card -->
                 <div class="card shadow mb-4">
                     <div class="card-body pl-4">
-                        <a href="{{ route('halamanProker') }}" class="btn btn-danger btn-icon-split btn-sm mb-2">
+                        @php
+                            $data = request()->query('data');
+                        @endphp
+                        <a href="{{ route('halamanProker', ['data' => $data]) }}" class="btn btn-danger btn-icon-split btn-sm mb-2">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left "></i>
                             </span>
                             <span class="text">Back</span>
                         </a>
-                        <h1 class="h3 mb-2 text-gray-900 font-weight-bolder mt-4"><?= $judulProker?></h1>
-                        <p class="mb-3 text-gray-600 font-weight-700 text-lg">Bidang Syiar</p>
+                        @foreach ($dataProker as $p)
+                        @if ( $p->id == $data )
+                        <h1 class="h3 mb-2 text-gray-900 font-weight-bolder mt-4">{{ $p -> namaproker }}</h1>
+                        <p class="mb-3 text-gray-600 font-weight-700 text-lg">Bidang {{ $p -> bidang }}</p>
                         <ul style="list-style: none" class="pl-0">
                             <li>
                                 <i class='fas fa-fw fa-map-location-dot mb-3'></i>
-                                <span>Kelurahan Jatimulyo</span>
+                                <span>{{ $p -> tempat }}</span>
                             </li>
                             <li>
                                 <i class='fas fa-fw fa-calendar-days mb-2'></i>
-                                <span>25-03-2023</span>
+                                <span>{{ $p -> tanggalproker }}</span>
                             </li>
                         </ul>
+                        @endif
+                        @endforeach
                         <hr class="content-divider">
 
                         <h5 class=" mb-3 text-gray-900 font-weight-bolder">Daftar Anggota Program Kerja</h5>

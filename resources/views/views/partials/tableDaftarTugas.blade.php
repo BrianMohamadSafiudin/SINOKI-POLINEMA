@@ -48,7 +48,7 @@
             <form method="post" action="{{ route('tugasproker.update', $tugas->id) }}" enctype="multipart/form-data" autocomplete="off">
                 @csrf
                 @method('PUT')
-                <textarea type="text" name="evaluasi" class="form-control form-control-alternative text-gray-900" id="validationTextarea" placeholder="Tulis evaluasi" required>{{ $tugas -> evaluasi }}</textarea>
+                <textarea type="text" name="evaluasi" class="form-control form-control-alternative text-gray-900" id="validationTextarea" placeholder="Tulis evaluasi" value="">{{ $tugas -> evaluasi }}</textarea>
                 <button type="submit" class="btn btn-info text-xs mt-2">Kirim evaluasi</button>
             </form>
         </td>

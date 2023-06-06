@@ -20,6 +20,7 @@
     </thead>
     <tbody>
         @php
+            $data = request()->query('data');
             $int = 1
         @endphp
         @foreach ($dataAnggota as $d)
@@ -29,12 +30,12 @@
             <td>{{ $d->name }}</td>
             <td>{{ $d->sie }}</td>
             <td>
-                <a href="{{ route('editDataSie', ['int' => $int]) }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data SIE</a>
+                <a href="{{ route('editDataSie', ['int' => $int, 'data' => $data]) }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data SIE</a>
             </td>
             <td>
-                <form method="post" action="{{ route('datasie.delete', $d->id) }}" enctype="multipart/form-data" autocomplete="off" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                <form method="post" action="{{ route('datasie.destroy', $d->id) }}" enctype="multipart/form-data" autocomplete="off" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                     @csrf
-                    @method('PUT')
+                    @method('DELETE')
                     <input type="text" name="sie" id="input-sie" style="display: none;" value="" />
                     <button type="submit" class="btn btn-danger text-md-center">Delete Data SIE</button>
                 </form>

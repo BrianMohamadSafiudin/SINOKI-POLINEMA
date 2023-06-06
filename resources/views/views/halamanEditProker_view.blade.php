@@ -8,20 +8,14 @@
 
                 <!-- Card -->
                 <div class="card shadow mb-4">
-                    
+
                     <div class="card-body pl-4">
-                        <a href="{{ route('halamanProker') }}" class="btn btn-danger btn-icon-split btn-sm mb-4">
+                        <a href="{{ route('home_admin') }}" class="btn btn-danger btn-icon-split btn-sm mb-4">
                             <span class="icon text-white-50">
                                 <i class="fas fa-arrow-left "></i>
                             </span>
                             <span class="text">Back</span>
                         </a>
-
-                        <h1 class="h3 mb-2 text-gray-900 font-weight-bolder"><?= $judulProker?></h1>
-                        <p class="mb-3 text-gray-600 font-weight-700 text-lg">Bidang Syiar</p>
-                
-                        <hr class="content-divider">
-
                         <h5 class=" mb-2 text-gray-900 font-weight-bolder">Edit Program Kerja</h5>
 
                         <form>
@@ -46,7 +40,7 @@
                             </a>
 
                         </form>
-                        
+
                     </div>
                 </div>
 
