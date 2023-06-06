@@ -40,7 +40,8 @@ class ProgramkerjaController extends Controller
         $programkerja->tanggalproker = $request->tanggalproker;
         $programkerja->save();
 
-        return back()->withStatus(__('Data program kerja berhasil diubah.'));
+        $data = request()->query('data');
+        return redirect()->route('halamanProker', ['data' => $data])->withStatus(__('Data program kerja berhasil diubah.'));
     }
 
     public function index()

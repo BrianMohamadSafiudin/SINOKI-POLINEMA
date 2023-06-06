@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('brianbrian'),
             'created_at' => now(),
             'updated_at' => now(),
-            'sie' => 'Sie Acara'
+            'sie' => 'SIE Acara'
         ]);
         DB::table('users')->insert([
             'name' => 'MUHAMMAD BINTANG SHOLU FIRMANSYAH',
@@ -46,7 +46,8 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('sholusholu'),
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'sie' => 'SIE PDD'
         ]);
         DB::table('users')->insert([
             'name' => 'TRI JAGAD ARIYANI',
@@ -58,7 +59,8 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('yaniyani'),
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'sie' => 'SIE Dakwah'
         ]);
         DB::table('users')->insert([
             'name' => 'FEBRYAN RIZKI HIDAYATULLAH',
@@ -70,7 +72,8 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('febryanfebryan'),
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'sie' => 'SIE Media Informasi'
         ]);
         DB::table('users')->insert([
             'name' => 'FADLILA AFIDA',
@@ -82,7 +85,8 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => Hash::make('fadlilafadlila'),
             'created_at' => now(),
-            'updated_at' => now()
+            'updated_at' => now(),
+            'sie' => 'SIE Kesejahteraan Sosial'
         ]);
     }
 }

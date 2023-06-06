@@ -24,6 +24,7 @@ class User extends Authenticatable
         'prodi',
         'jurusan',
         'password',
+        'sie',
         'image'
     ];
 
