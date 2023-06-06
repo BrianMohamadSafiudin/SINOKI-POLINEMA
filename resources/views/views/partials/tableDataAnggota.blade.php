@@ -9,7 +9,7 @@
         <th>Prodi/Jurusan</th>
         <th>SIE</th>
         <th>Email</th>
-        <th>Foto Diri</th>
+        <th>Foto</th>
         <th>Aksi</th>
     </tr>
     </thead>
@@ -27,7 +27,9 @@
             <td>{{ $d->prodi }}/{{ $d->jurusan }}</td>
             <td>{{ $d->sie }}</td>
             <td>{{ $d->email }}</td>
-            <td>{{ $d->image }}</td>
+            <td>
+                <img class="img-profile rounded-circle" src="{{ $d->image_url }}" style="max-width: 50px" alt="">
+            </td>
             <td>
                 <form method="post" action="{{ route('dataAnggota.destroy', $d->id) }}">
                     @csrf
