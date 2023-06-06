@@ -13,10 +13,11 @@ class DatasieController extends Controller
         $user->sie = $request->input('sie');
         $user->save();
 
-        return redirect()->route('halamanDataSie')->withStatus(__('Data sie user berhasil diubah.'));
+        $data = request()->query('data');
+        return redirect()->route('halamanDataSie', ['data' => $data])->withStatus(__('Data sie user berhasil diubah.'));
     }
 
-    public function delete(Request $request, $id)
+    public function destroy(Request $request, $id)
     {
         $user = User::findOrFail($id);
         $user->sie = $request->input('sie');

@@ -47,6 +47,8 @@ Route::group(['middleware' => 'auth.admin'], function () {
     // CRUD Program Kerja
     Route::get('programkerjas', [ProgramkerjaController::class, 'index'])->name('programkerjas');
     Route::post('programkerjas', [ProgramkerjaController::class, 'store'])->name('programkerjas.store');
+    Route::put('programkerjas/{programkerja}', [ProgramkerjaController::class, 'update'])->name('programkerja.update');
+    Route::delete('programkerjas/{programkerja}', [ProgramkerjaController::class, 'destroy'])->name('programkerja.destroy');
 
     // CRUD Tugas Program Kerja
     Route::get('tugasprokers', [TugasprokerController::class, 'index'])->name('tugasprokers');
@@ -55,8 +57,8 @@ Route::group(['middleware' => 'auth.admin'], function () {
     Route::delete('tugasprokers/{tugasproker}', [TugasprokerController::class, 'destroy'])->name('tugasproker.destroy');
 
     // CRUD DataSIE
-    Route::put('datasies/{id}', [DatasieController::class, 'update'])->name('datasies.update');
-    Route::put('datasie/{id}', [DatasieController::class, 'delete'])->name('datasie.delete');
+    Route::put('datasie/{id}', [DatasieController::class, 'update'])->name('datasie.update');
+    Route::delete('datasie/{id}', [DatasieController::class, 'destroy'])->name('datasie.destroy');
 
     // Return Views Admin
     Route::get('/home_admin', [HomeAdminController::class, 'index'])->name('home_admin');

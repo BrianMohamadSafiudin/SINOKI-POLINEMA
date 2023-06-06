@@ -20,20 +20,21 @@ class TugasprokerController extends Controller
 
         TugasProker::create($request->all());
 
-        return redirect()->route('halamanProker')->withStatus(__('Data tugas proker berhasil ditambahkan.'));
+        $data = request()->query('data');
+        return redirect()->route('halamanProker', ['data' => $data])->withStatus(__('Data tugas proker berhasil ditambahkan.'));
     }
 
     public function update(Request $request, $id)
     {
         $request->validate([
-            'evaluasi' => 'required',
+            'evaluasi' => 'nullable',
         ]);
 
         $tugasproker = Tugasproker::findOrFail($id);
         $tugasproker->evaluasi = $request->evaluasi;
         $tugasproker->save();
 
-        return back()->withStatus(__('Evaluasi berhasil ditambahkan.'));
+        return back()->withStatus(__('Evaluasi berhasil diperbarui.'));
     }
 
     public function index()
