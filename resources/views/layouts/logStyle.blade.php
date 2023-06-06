@@ -269,6 +269,7 @@
       top: 16px;
       left: 83px;
       font-weight: 600;
+      cursor: pointer;
     }
     .sign-up-button1 {
       border: none;   position: absolute;

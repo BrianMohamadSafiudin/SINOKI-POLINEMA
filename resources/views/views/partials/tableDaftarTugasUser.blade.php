@@ -34,7 +34,7 @@
         <a href="{{ route('halamanUploadTugasUser') }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Upload Tugas</a>
         </td>
         <td>
-            <textarea type="text" name="evaluasi" class="form-control form-control-alternative text-gray-900" id="validationTextarea" placeholder="Tulis evaluasi" readonly>{{ $tugas -> evaluasi }}</textarea>
+            <textarea type="text" name="evaluasi" class="form-control form-control-alternative text-gray-900" id="validationTextarea" placeholder="Tidak ada evaluasi" readonly>{{ $tugas -> evaluasi }}</textarea>
         </td>
     </tr>
     @endforeach

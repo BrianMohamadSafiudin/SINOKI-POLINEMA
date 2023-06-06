@@ -10,6 +10,7 @@
         <th>SIE</th>
         <th>Email</th>
         <th>Foto Diri</th>
+        <th>Aksi</th>
     </tr>
     </thead>
     <tbody>
@@ -27,6 +28,13 @@
             <td>{{ $d->sie }}</td>
             <td>{{ $d->email }}</td>
             <td>{{ $d->image }}</td>
+            <td>
+                <form method="post" action="{{ route('dataAnggota.destroy', $d->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger text-md-center" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                </form>
+            </td>
         </tr>
         @endif
         @endforeach
