@@ -30,10 +30,10 @@
 
     <li class="nav-item mb-3 ">
         <div class="sidebar-heading text-gray-500">
-            OKI
+            SIE
         </div>
         <div class="nav-link text-light font-weight-bolder py-2">
-            <span style="font-size: 1rem">RISPOL</span>
+            <span style="font-size: 1rem">{{ auth()->user()->sie }}</span>
         </div>
     </li>
 
