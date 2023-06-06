@@ -80,6 +80,7 @@ Route::group(['middleware' => 'auth.user'], function () {
     // CRUD Profile User
     Route::get('profileUser', [ProfileUserController::class, 'index'])->name('profileUser');
     Route::post('profileUserUpdate', [ProfileUserController::class, 'update'])->name('profileUserUpdate');
+    Route::put('profileUserImage/{id}', [ProfileUserController::class, 'image'])->name('profileUserImage');
     Route::put('profile/password', [ProfileController::class, 'password'])->name('profile.password');
 
     // Return Views User

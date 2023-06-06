@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('prodi')->nullable()->after('nim');
             $table->string('jurusan')->nullable()->after('prodi');
             $table->string('sie')->nullable();
-            $table->binary('image')->nullable();
+            $table->string('image')->nullable();
         });
     }
 
@@ -33,6 +33,8 @@ return new class extends Migration
             $table->dropColumn('nim');
             $table->dropColumn('prodi');
             $table->dropColumn('jurusan');
+            $table->string('sie')->nullable();
+            $table->string('image')->nullable();
         });
     }
 };

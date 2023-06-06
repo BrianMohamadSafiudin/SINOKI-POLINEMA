@@ -25,8 +25,18 @@ class User extends Authenticatable
         'jurusan',
         'password',
         'sie',
-        'image'
+        'image',
     ];
+
+    protected $appends = ['image_url'];
+    public function getImageUrlAttribute()
+    {
+        if ($this->image) {
+            return asset('storage/' . $this->image);
+        }
+
+        return null;
+    }
 
     /**
      * The attributes that should be hidden for serialization.
