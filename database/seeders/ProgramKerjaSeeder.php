@@ -18,7 +18,7 @@ class ProgramKerjaSeeder extends Seeder
         DB::table('programkerjas')->insert([
             'namaproker' => 'Safari Dakwah',
             'bidang' => 'Syiar',
-            'tempat' => 'Kelurahan Jatimulyo',
+            'tempat' => 'Jatimulyo',
             'tanggalproker' => date('Y-m-d', strtotime('2023-05-25')),
             'created_at' => now(),
             'updated_at' => now(),

@@ -16,5 +16,6 @@ class DatabaseSeeder extends Seeder
         $this->call([UsersTableSeeder::class]);
         $this->call([ProgramKerjaSeeder::class]);
         $this->call([TugasProkerSeeder::class]);
+        $this->call([StorageSeeder::class]);
     }
 }
