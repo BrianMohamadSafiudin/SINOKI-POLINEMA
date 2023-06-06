@@ -63,6 +63,7 @@ Route::group(['middleware' => 'auth.admin'], function () {
     // Return Views Admin
     Route::get('/home_admin', [HomeAdminController::class, 'index'])->name('home_admin');
     Route::get('dataAnggota', [DataAnggotaController::class, 'index'])->name('dataAnggota');
+    Route::delete('dataAnggota/{dataAnggota}', [DataAnggotaController::class, 'destroy'])->name('dataAnggota.destroy');
     Route::get('editDataSie', [EditDataSieController::class, 'index'])->name('editDataSie');
     Route::get('halamanDataSie', [HalamanDataSieController::class, 'index'])->name('halamanDataSie');
     Route::get('halamanEditProker', [HalamanEditProkerController::class, 'index'])->name('halamanEditProker');

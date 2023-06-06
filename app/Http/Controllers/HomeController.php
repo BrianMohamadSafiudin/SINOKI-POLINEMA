@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\programkerja;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -23,10 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
+
+        $dataProker = programkerja::all();
+
         if (Gate::allows('home_admin')) {
             return view('dashboard_admin');
         } else {
-            return view('dashboardUser');
+            return view('dashboardUser' ,compact('dataProker'));
         }
     }
 }

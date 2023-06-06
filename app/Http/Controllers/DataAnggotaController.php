@@ -12,4 +12,11 @@ class DataAnggotaController extends Controller
         $dataAnggota = User::all();
         return view('dataAnggota' , compact('dataAnggota'));
     }
+
+    public function destroy(User $dataAnggota)
+    {
+        $dataAnggota->delete();
+
+        return back()->withStatus(__('Data tugas proker berhasil dihapus.'));
+    }
 }
