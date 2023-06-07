@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('tenggatwaktu');
             $table->string('status')->nullable()->default('Belum Selesai');
             $table->string('evaluasi')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

@@ -53,7 +53,7 @@ Route::group(['middleware' => 'auth.admin'], function () {
     // CRUD Tugas Program Kerja
     Route::get('tugasprokers', [TugasprokerController::class, 'index'])->name('tugasprokers');
     Route::post('tugasprokers', [TugasprokerController::class, 'store'])->name('tugasprokers.store');
-    Route::put('tugasprokers/{tugasproker}', [TugasprokerController::class, 'update'])->name('tugasproker.update');
+    Route::put('tugasproker/{tugasproker}', [TugasprokerController::class, 'update'])->name('tugasproker.update');
     Route::delete('tugasprokers/{tugasproker}', [TugasprokerController::class, 'destroy'])->name('tugasproker.destroy');
 
     // CRUD DataSIE
@@ -82,6 +82,10 @@ Route::group(['middleware' => 'auth.user'], function () {
     Route::post('profileUserUpdate', [ProfileUserController::class, 'update'])->name('profileUserUpdate');
     Route::put('profileUserImage/{id}', [ProfileUserController::class, 'image'])->name('profileUserImage');
     Route::put('profile/password', [ProfileController::class, 'password'])->name('profile.password');
+
+    // CRUD Tugas Program Kerja User
+    Route::put('tugasprokers/{tugasproker}', [TugasprokerController::class, 'upload'])->name('tugasproker.upload');
+    Route::get('/storage/{file}', [TugasprokerController::class, 'download'])->name('tugasproker.download');
 
     // Return Views User
     Route::get('/home', [HomeController::class, 'index'])->name('home');

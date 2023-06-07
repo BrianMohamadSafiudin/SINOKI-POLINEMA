@@ -25,6 +25,7 @@ class tugasproker extends Model
         'tenggatwaktu',
         'status',
         'pengumpulan',
-        'evaluasi'
+        'evaluasi',
+        'file',
     ];
 }
