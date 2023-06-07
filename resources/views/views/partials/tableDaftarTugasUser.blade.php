@@ -31,7 +31,18 @@
         <td>{{ $tugas -> tenggatwaktu }}</td>
         <td>{{ $tugas -> status }}</td>
         <td>
-        <a href="{{ route('halamanUploadTugasUser') }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Upload Tugas</a>
+            @if ($tugas -> status == 'Belum Selesai')
+                <form method="post" action="{{ route('tugasproker.upload', $tugas -> id) }}" enctype="multipart/form-data" autocomplete="off">
+                    @csrf
+                    @method('PUT')
+                        <div class="small font-italic text-muted mb-2">DOCS / PDF / PPT / EXCEL no larger than 3 MB</div>
+                        <input type="file" name="file" id="formFileSm" class="none"><hr>
+                        <button type="submit" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Upload Tugas </button>
+                </form>
+            @else
+            <p>Tugas sudah diupload,</p><hr>
+            <a href="{{ route('tugasproker.download', $tugas -> file) }}" class="btn btn-success text-md-center">Lihat File</a>
+            @endif
         </td>
         <td>
             <textarea type="text" name="evaluasi" class="form-control form-control-alternative text-gray-900" id="validationTextarea" placeholder="Tidak ada evaluasi" readonly>{{ $tugas -> evaluasi }}</textarea>

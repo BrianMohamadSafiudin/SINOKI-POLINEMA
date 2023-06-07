@@ -17,8 +17,8 @@
         <th>Tenggat Waktu</th>
         <th>Status</th>
         <th>Pengumpulan</th>
-        <th>Hapus Tugas</th>
         <th>Evaluasi</th>
+        <th>Hapus Tugas</th>
     </tr>
     </thead>
     <tbody>
@@ -33,15 +33,12 @@
         <td>{{ $tugas -> status }}</td>
 
         <td>
-            <a href="#" class="btn btn-success text-md-center"><i class="fas text-white-50 "></i>Lihat file</a>
-        </td>
-
-        <td>
-        <form method="post" action="{{ route('tugasproker.destroy', $tugas->id) }}">
-            @csrf
-            @method('DELETE')
-            <button type="submit" class="btn btn-danger text-md-center" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-        </form>
+            @if ($tugas -> status == 'Belum Selesai')
+            <p>Belum ada</p>
+            @else
+            <p>File uploaded</p><hr>
+            <a href="{{ route('tugasproker.download', $tugas -> file) }}" class="btn btn-success text-md-center">Lihat File</a>
+            @endif
         </td>
 
         <td>
@@ -50,6 +47,15 @@
                 @method('PUT')
                 <textarea type="text" name="evaluasi" class="form-control form-control-alternative text-gray-900" id="validationTextarea" placeholder="Tulis evaluasi" value="">{{ $tugas -> evaluasi }}</textarea>
                 <button type="submit" class="btn btn-info text-xs mt-2">Kirim evaluasi</button>
+            </form>
+        </td>
+
+        <td>
+            <p>Hapus</p><hr>
+            <form method="post" action="{{ route('tugasproker.destroy', $tugas->id) }}">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger text-md-center" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
             </form>
         </td>
 
