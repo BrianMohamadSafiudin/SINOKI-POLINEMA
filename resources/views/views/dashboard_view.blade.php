@@ -41,6 +41,12 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
+                                                    <div class="fas fa-fw text-gray-800 fa-chart-area mb-3"></div>
+                                                    <span class="text-gray-800">OKI {{ $p -> namaOki }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
                                                     <a href="{{ route('halamanProker', ['data' => $data]) }}" class=" d-sm-inline-block btn btn-primary">
                                                         <i class="text-md-center shadow-sm"></i>Pilih
                                                     </a>

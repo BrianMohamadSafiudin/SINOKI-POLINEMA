@@ -4,6 +4,12 @@
     $dashboardPlaceholder = "Dashboard";
 @endphp
 
+@if (auth()->user()->nim == NULL)
+    <script>$dashboardPlaceholder = "Silahkan lengkapi profile Anda terlebih dahulu";</script>
+@elseif (auth()->user()->nim != null)
+    <script>$dashboardPlaceholder = "Dashboard";</script>
+@endif
+
 @section('content')
 
 <!-- Page Wrapper -->

@@ -68,7 +68,7 @@
 
                                                 <div class="mb-3 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                     <label class="small mb-1 form-control-label" for="input-name">{{ __('Nama Lengkap') }}</label>
-                                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder={{ __('Masukkan Nama Lengkap') }} value="{{ auth()->user()->name }}" required autofocus/>
+                                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Masukkan Nama Lengkap Anda" value="{{ auth()->user()->name }}" required autofocus/>
                                                     @if ($errors->has('name'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('name') }}</strong>
@@ -78,7 +78,7 @@
 
                                                 <div class="mb-3 form-group{{ $errors->has('nim') ? ' has-danger' : '' }}">
                                                     <label class="small mb-1 form-control-label" for="input-nim">{{ __('NIM') }}</label>
-                                                    <input type="number" name="nim" id="input-nim" class="form-control form-control-alternative{{ $errors->has('nim') ? ' is-invalid' : '' }}" placeholder={{ __('Masukkan NIM, ex: 2141720133') }} value="{{ auth()->user()->nim }}" required/>
+                                                    <input type="number" name="nim" id="input-nim" class="form-control form-control-alternative{{ $errors->has('nim') ? ' is-invalid' : '' }}" placeholder="Masukkan NIM Anda, ex: 2141720133" value="{{ auth()->user()->nim }}" required/>
                                                     @if ($errors->has('nim'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('nim') }}</strong>
@@ -126,12 +126,12 @@
                                                 <!-- Form Group (first name)-->
                                                 <div class="col-md-6">
                                                     <label class="small mb-1 form-control-label" for="inputPassword">{{ __('Password Baru? (Abaikan Jika Tidak)') }}</label>
-                                                    <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Masukkan Password Baru" value="{{ auth()->user()->password }}" />
+                                                    <input type="password" name="password" id="input-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Masukkan Password Baru" value="{{ null !== (old('password')) ? old('password') : '' }}" />
                                                 </div>
                                                 <!-- Form Group (last name)-->
                                                 <div class="col-md-6">
                                                     <label class="small mb-1 form-control-label" for="inputConfirmPassword">{{ __('Confirm Password Baru (Abaikan Jika Tidak)') }}</label>
-                                                    <input type="password" name="password" id="input-confirm-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Masukkan kembali password" value="{{ auth()->user()->password }}" />
+                                                    <input type="password" name="password" id="input-confirm-password" class="form-control form-control-alternative{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Masukkan kembali password" value="{{ null !== (old('password')) ? old('password') : '' }}" />
                                                 </div>
                                             </div>
                                             <!-- Save changes button-->
