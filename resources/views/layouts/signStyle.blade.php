@@ -282,7 +282,7 @@
     }
     .sign-up-button {
         position: absolute;
-        top: 670px;
+        top: 735px;
         left: 188px;
         width: 250px;
         height: 65px;
