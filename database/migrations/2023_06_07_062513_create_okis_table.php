@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('programkerjas', function (Blueprint $table) {
+        Schema::create('okis', function (Blueprint $table) {
             $table->id();
-            $table->string('namaproker')->nullable()->unique();
-            $table->string('bidang')->nullable();
-            $table->string('tempat')->nullable();
-            $table->date('tanggalproker');
-            $table->string('namaOki');
+            $table->string('nama');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('programkerjas');
+        Schema::dropIfExists('okis');
     }
 };

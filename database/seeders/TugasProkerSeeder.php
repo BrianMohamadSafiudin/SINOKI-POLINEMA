@@ -19,6 +19,7 @@ class TugasProkerSeeder extends Seeder
             'namaTugas' => 'Membuat Materi Dakwah',
             'sie' => 'Sie Acara',
             'tenggatwaktu' => date('Y-m-d', strtotime('2023-07-25')),
+            'idProker' => '1',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -26,6 +27,7 @@ class TugasProkerSeeder extends Seeder
             'namaTugas' => 'Membuat Surat Undangan OKI',
             'sie' => 'Sie PDD',
             'tenggatwaktu' => date('Y-m-d', strtotime('2023-07-25')),
+            'idProker' => '1',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

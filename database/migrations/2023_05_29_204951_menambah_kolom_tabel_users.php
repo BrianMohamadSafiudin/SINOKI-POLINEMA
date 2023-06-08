@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('jurusan')->nullable()->after('prodi');
             $table->string('sie')->nullable();
             $table->string('image')->nullable();
+            $table->string('namaOki')->nullable();
         });
     }
 
@@ -35,6 +36,7 @@ return new class extends Migration
             $table->dropColumn('jurusan');
             $table->string('sie')->nullable();
             $table->string('image')->nullable();
+            $table->string('namaOki')->nullable();
         });
     }
 };

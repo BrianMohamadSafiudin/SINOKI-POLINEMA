@@ -20,6 +20,7 @@ class ProgramKerjaSeeder extends Seeder
             'bidang' => 'Syiar',
             'tempat' => 'Jatimulyo',
             'tanggalproker' => date('Y-m-d', strtotime('2023-05-25')),
+            'namaOki' => 'RISPOL',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -28,6 +29,7 @@ class ProgramKerjaSeeder extends Seeder
             'bidang' => 'Sholawat',
             'tempat' => 'Masjid An-Nur',
             'tanggalproker' => date('Y-m-d', strtotime('2023-05-25')),
+            'namaOki' => 'RISPOL',
             'created_at' => now(),
             'updated_at' => now(),
         ]);
@@ -36,6 +38,7 @@ class ProgramKerjaSeeder extends Seeder
             'bidang' => 'Firma',
             'tempat' => 'Fakultas Teknik',
             'tanggalproker' => date('Y-m-d', strtotime('2023-05-25')),
+            'namaOki' => 'RISPOL',
             'created_at' => now(),
             'updated_at' => now(),
         ]);

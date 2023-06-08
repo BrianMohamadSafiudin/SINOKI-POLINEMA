@@ -27,5 +27,6 @@ class tugasproker extends Model
         'pengumpulan',
         'evaluasi',
         'file',
+        'idProker'
     ];
 }

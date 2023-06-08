@@ -34,6 +34,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('brianbrian'),
             'created_at' => now(),
             'updated_at' => now(),
+            'namaOki' => 'RISPOL',
             'sie' => 'SIE Acara',
             'image' => 'public/users/DoNnC2wJFdrzEGMsK2BruEMXoScmdqFQAjvt2K5q.jpg'
         ]);
@@ -48,6 +49,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('sholusholu'),
             'created_at' => now(),
             'updated_at' => now(),
+            'namaOki' => 'RISPOL',
             'sie' => 'SIE PDD',
             'image' => 'public/users/xP0HY4AmUu4Gie5SAXerabguaYD6Lq9ThYb0zjBh.jpg'
         ]);
@@ -62,6 +64,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('yaniyani'),
             'created_at' => now(),
             'updated_at' => now(),
+            'namaOki' => 'RISPOL',
             'sie' => 'SIE Dakwah',
             'image' => 'public/users/bR1veiLOpq20a0zZlER5oB6SGCkT7mNA2ryGfkq9.jpg'
         ]);
@@ -76,6 +79,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('febryanfebryan'),
             'created_at' => now(),
             'updated_at' => now(),
+            'namaOki' => 'RISPOL',
             'sie' => 'SIE Media Informasi',
             'image' => 'public/users/e3anqh1sOEHBnrA67lPBIXQaeSamp8CZJawQLUdk.jpg'
         ]);
@@ -90,6 +94,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('fadlilafadlila'),
             'created_at' => now(),
             'updated_at' => now(),
+            'namaOki' => 'RISPOL',
             'sie' => 'SIE Kesejahteraan Sosial',
             'image' => 'public/users/m1ZX2MOyPW5p7AIahhb2wXXxX6LYKb1UIM5BG1Pq.jpg'
         ]);

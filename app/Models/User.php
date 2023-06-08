@@ -26,6 +26,7 @@ class User extends Authenticatable
         'password',
         'sie',
         'image',
+        'namaOki'
     ];
 
     protected $appends = ['image_url'];

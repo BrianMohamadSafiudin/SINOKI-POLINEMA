@@ -24,5 +24,6 @@ class programkerja extends Model
         'bidang',
         'tempat',
         'tanggalproker',
+        'namaOki'
     ];
 }
