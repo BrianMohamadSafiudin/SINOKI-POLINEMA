@@ -16,6 +16,7 @@ class TugasprokerController extends Controller
             'namatugas' => 'required',
             'sie' => 'required',
             'tenggatwaktu' => 'required',
+            'idProker' => 'required',
         ]);
 
         TugasProker::create($request->all());
@@ -27,7 +28,7 @@ class TugasprokerController extends Controller
     public function upload(Request $request, $id)
     {
         $request->validate([
-            'file' => 'required|file|max:3072|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpg',
+            'file' => 'required|file|max:3072|mimes:pdf,doc,docx,xls,xlsx,ppt,pptx,jpg,png',
         ]);
 
         $tugasproker = Tugasproker::findOrFail($id);

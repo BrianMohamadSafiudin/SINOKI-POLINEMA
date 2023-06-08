@@ -17,6 +17,7 @@ class ProgramkerjaController extends Controller
             'bidang' => 'required',
             'tempat' => 'required',
             'tanggalproker' => 'required',
+            'namaOki' => 'required'
         ]);
 
         ProgramKerja::create($request->all());
