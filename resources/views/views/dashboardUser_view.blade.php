@@ -24,6 +24,7 @@
                 <div class="row">
                     {{-- foreach --}}
                     @foreach ($dataProker as $p)
+                    @if ($p -> namaOki == auth()->user()->namaOki)
                     @php $data = $p -> id @endphp
                     <div class="col-xl-3 col-md-6 mb-4">
                         <div class="card border-left-info shadow h-100 py-2">
@@ -45,6 +46,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                     @endforeach
                         {{-- <div class="row">
                             <!-- Card 1-->

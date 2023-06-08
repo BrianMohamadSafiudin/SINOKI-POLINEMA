@@ -22,8 +22,10 @@
     </thead>
     <tbody>
 
-    @php $i=1; @endphp
+    @php $i=1; 
+    $data = request()->query('data'); @endphp
     @foreach ( $dataTugas as $tugas)
+    @if ($tugas -> idProker == $data)
     <tr>
         <td> @php echo "$i"; $i++; @endphp </td>
         <td>{{ $tugas -> namatugas }}</td>
@@ -48,6 +50,7 @@
             <textarea type="text" name="evaluasi" class="form-control form-control-alternative text-gray-900" id="validationTextarea" placeholder="Tidak ada evaluasi" readonly>{{ $tugas -> evaluasi }}</textarea>
         </td>
     </tr>
+    @endif
     @endforeach
     </tbody>
 </table>

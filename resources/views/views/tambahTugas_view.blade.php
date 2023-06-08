@@ -75,6 +75,12 @@
                                         </span>
                                     @endif
                                 </div>
+                                @php
+                                    $data = request()->query('data');
+                                @endphp
+                                <div class="mb-4 form-group{{ $errors->has('idProker') ? ' has-danger' : '' }}">
+                                    <input type="hidden" name="idProker" class="form-control form-control-alternative{{ $errors->has('idProker') ? ' is-invalid' : '' }}" placeholder="Masukkan Tenggat Waktu" value="{{ $data }}" id="input-tenggatwaktu" required/>
+                                </div>
 
                                 <div class="d-sm-inline-block btn btn-primary shadow-sm mt-2 mb-4">
                                     <button type="submit" style="

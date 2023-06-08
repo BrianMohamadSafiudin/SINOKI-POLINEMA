@@ -33,7 +33,7 @@
             OKI
         </div>
         <div class="nav-link text-light font-weight-bolder py-2">
-            <span style="font-size: 1rem">RISPOL</span>
+            <span style="font-size: 1rem">{{ auth()->user()->namaOki }}</span>
         </div>
     </li>
 

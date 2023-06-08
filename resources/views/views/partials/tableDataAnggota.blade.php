@@ -7,7 +7,7 @@
         <th>Nama Anggota</th>
         <th>NIM</th>
         <th>Prodi/Jurusan</th>
-        <th>SIE</th>
+        <th>OKI</th>
         <th>Email</th>
         <th>Foto</th>
         <th>Aksi</th>
@@ -25,7 +25,7 @@
             <td>{{ $d->name }}</td>
             <td>{{ $d->nim }}</td>
             <td>{{ $d->prodi }}/{{ $d->jurusan }}</td>
-            <td>{{ $d->sie }}</td>
+            <td>{{ $d->namaOki }}</td>
             <td>{{ $d->email }}</td>
             <td>
                 <img class="img-profile rounded-circle" src="{{ $d->image_url }}" style="max-width: 50px" alt="">

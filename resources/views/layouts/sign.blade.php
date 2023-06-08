@@ -71,6 +71,18 @@
                 </div>
             </div>
 
+            <div class="dropdown-oki">
+                <select id="option" name="namaOki" class="dropdown-oki-child">
+                  <option value="" disabled selected>Pilih OKI yang diikuti</option>
+                  @php
+                      $dataOki = App\Models\Oki::all();
+                  @endphp
+                  @foreach ($dataOki as $Oki)
+                  <option>{{ $Oki -> nama }}</option>
+                  @endforeach
+                </select>
+            </div>
+
             <div class="sign-up-button">
                 <div class="sign-up-button-child"></div>
                 <div class="sign-up">SIGN UP</div>

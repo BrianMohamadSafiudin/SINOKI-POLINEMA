@@ -23,8 +23,10 @@
     </thead>
     <tbody>
 
-    @php $i=1; @endphp
+    @php $i=1; 
+    $data = request()->query('data'); @endphp
     @foreach ( $dataTugas as $tugas)
+    @if ($tugas -> idProker == $data)
     <tr>
         <td> @php echo "$i"; $i++; @endphp </td>
         <td>{{ $tugas -> namatugas }}</td>
@@ -60,6 +62,7 @@
         </td>
 
     </tr>
+    @endif
     @endforeach
     </tbody>
 </table>
