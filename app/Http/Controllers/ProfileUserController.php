@@ -31,6 +31,14 @@ class ProfileUserController extends Controller
             return back()->withErrors(['not_allow_profile' => __('You are not allowed to change data for a default user.')]);
         }
 
+        $user = auth()->user();
+
+        if (is_null($request->password)) {
+            $request->merge(['password' => $user->password]);
+        } else {
+            $request->merge(['password' => Hash::make($request->get('password'))]);
+        }
+
         auth()->user()->update($request->all());
 
         return back()->withStatus(__('Profile successfully updated.'));
