@@ -57,6 +57,7 @@ Route::group(['middleware' => 'auth.admin'], function () {
     Route::delete('tugasprokers/{tugasproker}', [TugasprokerController::class, 'destroy'])->name('tugasproker.destroy');
 
     // CRUD DataSIE
+    Route::post('datasie', [DatasieController::class, 'store'])->name('tambahdatasie.store');
     Route::put('datasie/{id}', [DatasieController::class, 'update'])->name('datasie.update');
     Route::delete('datasie/{id}', [DatasieController::class, 'destroy'])->name('datasie.destroy');
 

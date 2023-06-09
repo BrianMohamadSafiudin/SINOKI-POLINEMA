@@ -23,14 +23,14 @@
             $data = request()->query('data');
             $no = 1;
         @endphp
-        @foreach ($dataAnggota as $d)
-        @if ($d->role === 'user')
+        @foreach ($anggotaProker as $d)
+        @if ($d->idProker == $data)
         @php
             $int = $d->id;
         @endphp
         <tr>
             <td>{{ $no++ }}</td>
-            <td>{{ $d->name }}</td>
+            <td>{{ $d->nama }}</td>
             <td>{{ $d->sie }}</td>
             <td>
                 <a href="{{ route('editDataSie', ['int' => $int, 'data' => $data]) }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data SIE</a>

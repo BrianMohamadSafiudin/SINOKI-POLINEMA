@@ -39,15 +39,6 @@
 
     <li class="nav-item mb-3 ">
         <div class="sidebar-heading text-gray-500">
-            SIE
-        </div>
-        <div class="nav-link text-light font-weight-bolder py-2">
-            <span style="font-size: 1rem">{{ auth()->user()->sie }}</span>
-        </div>
-    </li>
-
-    <li class="nav-item mb-3 ">
-        <div class="sidebar-heading text-gray-500">
             Jabatan
         </div>
         <div class="nav-link text-light font-weight-bolder py-2">
