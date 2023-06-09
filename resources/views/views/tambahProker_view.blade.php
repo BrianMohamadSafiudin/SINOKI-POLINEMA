@@ -53,12 +53,18 @@
                             </div>
                             <div class="mb-4 form-group{{ $errors->has('namaOki') ? ' has-danger' : '' }}">
                                 <label class="text-gray-900 font-weight-bold" for="exampleInputPassword1">Oki</label>
-                                <input type="text" name="namaOki" class="form-control form-control-alternative{{ $errors->has('namaOki') ? ' is-invalid' : '' }}" id="exampleInputPassword1" placeholder="Masukkan nama OKI" value="" required>
+                                <select class="form-select form-control" aria-label="Default select example" name="namaOki">
+                                    <option value="" selected disabled>Silahkan Pilih Nama Oki</option>
+                                    @foreach ($dataOki as $d)
+                                    <option>{{ $d->nama }}</option>
+                                    @endforeach
+                                </select>
+                                {{-- <input type="text" name="namaOki" class="form-control form-control-alternative{{ $errors->has('namaOki') ? ' is-invalid' : '' }}" id="exampleInputPassword1" placeholder="Masukkan nama OKI" value="" required>
                                 @if ($errors->has('namaOki'))
                                     <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('namaOki') }}</strong>
                                     </span>
-                                @endif
+                                @endif --}}
                             </div>
 
                             <button type="submit" class=" d-sm-inline-block btn btn-primary shadow-sm ml-2 mt-2 mb-4">
