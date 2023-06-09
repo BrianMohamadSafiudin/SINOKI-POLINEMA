@@ -23,6 +23,11 @@
 
                         <h1 class="h3 mb-2 text-gray-900 font-weight-bolder">{{ $p -> namaproker }}</h1>
                         <p class="mb-3 text-gray-600 font-weight-700 text-lg">Bidang {{ $p -> bidang }}</p>
+                        @foreach ($dataSie as $sie)
+                        @if ($sie -> nama == auth()->user()->name AND $data == $sie -> idProker)
+                        <p class="mb-3 text-gray-600 font-weight-700 text-lg">{{ $sie -> sie }}</p>
+                        @endif
+                        @endforeach
                         <ul style="list-style: none" class="pl-0">
                             <li>
                                 <i class='fas fa-fw fa-map-location-dot mb-3'></i>

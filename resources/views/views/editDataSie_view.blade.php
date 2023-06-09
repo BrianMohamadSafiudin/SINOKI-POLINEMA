@@ -21,7 +21,7 @@
                         @php
                             $int = request()->query('int');
                         @endphp
-                        @foreach ($dataAnggota as $d)
+                        @foreach ($daftarAnggota as $d)
                         @if ($d->id == $int )
 
                         <form method="post" action="{{ route('datasie.update', [$d -> id = $int, 'data' => $data] ) }}" enctype="multipart/form-data" autocomplete="off">
@@ -39,11 +39,11 @@
                             <div class="card-body">
                                 <div class="form-group mb-4">
                                     <label class="text-gray-900 font-weight-bold " for="exampleInputEmail1 ">Nama Anggota</label>
-                                    <input type="text" name="name" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama anggota" value="{{ $d -> name }}" readonly>
+                                    <input type="text" name="name" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Masukkan nama anggota" value="{{ $d -> nama }}" readonly>
                                 </div>
                                 <div class="form-group mb-4">
                                     <label class="text-gray-900 font-weight-bold" for="exampleInputPassword1">SIE</label>
-                                    <input type="text" name="sie" class="form-control" id="exampleInputPassword1" placeholder="Masukkan nama Sie" value="{{ $d -> sie }}">
+                                    <input type="text" name="sie" class="form-control" id="exampleInputPassword1" placeholder="" value="{{ $d -> sie }}">
                                 </div>
 
                                 <button type="submit" class=" d-sm-inline-block btn btn-success shadow-sm ">
