@@ -11,7 +11,9 @@ After initializing a fresh instances of Laravel (and making all the necessary co
 
 ##### cp .env.example .env
 ##### php artisan key:generate
-##### php artisan link:storage
+##### php artisan storage:link
+
+> Hapus Database bernama "Laravel" jika ada
 ##### php artisan migrate --seed
 
 ##### php artisan serve
