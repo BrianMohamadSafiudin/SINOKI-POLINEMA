@@ -30,18 +30,44 @@
             <td>
                 <img class="img-profile rounded-circle" src="{{ $d->image_url }}" style="max-width: 50px" alt="">
             </td>
+{{--            <td>--}}
+{{--                <form method="post" action="{{ route('dataAnggota.destroy', $d->id) }}">--}}
+{{--                    @csrf--}}
+{{--                    @method('DELETE')--}}
+{{--                    <button type="submit" class="btn btn-danger text-md-center" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>--}}
+{{--                </form>--}}
+{{--            </td>--}}
             <td>
-                <form method="post" action="{{ route('dataAnggota.destroy', $d->id) }}">
+                <form id="deleteForm_{{ $d->id }}" method="post" action="{{ route('dataAnggota.destroy', $d->id) }}">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger text-md-center" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                    <button type="button" class="btn btn-danger text-md-center" onclick="deleteConfirmation('{{ $d->id }}')">Delete</button>
                 </form>
             </td>
+
         </tr>
         @endif
         @endforeach
     </tbody>
 </table>
+
+<script>
+    function deleteConfirmation(formId) {
+        Swal.fire({
+            title: 'Apakah Anda yakin ingin menghapus anggota ini?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Lanjutkan dengan penghapusan data
+                document.getElementById('deleteForm_' + formId).submit();
+            }
+        });
+    }
+</script>
 
 
 

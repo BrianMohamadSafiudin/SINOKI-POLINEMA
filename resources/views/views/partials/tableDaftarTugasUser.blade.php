@@ -7,6 +7,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
+
     </div>
     <thead>
     @endif
@@ -22,7 +23,7 @@
     </thead>
     <tbody>
 
-    @php $i=1; 
+    @php $i=1;
     $data = request()->query('data'); @endphp
     @foreach ( $dataTugas as $tugas)
     @if ($tugas -> idProker == $data)
@@ -32,20 +33,36 @@
         <td>{{ $tugas -> sie }}</td>
         <td>{{ $tugas -> tenggatwaktu }}</td>
         <td>{{ $tugas -> status }}</td>
+{{--        <td>--}}
+{{--            @if ($tugas -> status == 'Belum Selesai')--}}
+{{--                <form method="post" action="{{ route('tugasproker.upload', $tugas -> id) }}" enctype="multipart/form-data" autocomplete="off">--}}
+{{--                    @csrf--}}
+{{--                    @method('PUT')--}}
+{{--                        <div class="small font-italic text-muted mb-2">DOCS / PDF / PPT / EXCEL no larger than 3 MB</div>--}}
+{{--                        <input type="file" name="file" id="formFileSm" class="none"><hr>--}}
+{{--                        <button type="submit" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Upload Tugas </button>--}}
+{{--                </form>--}}
+{{--            @else--}}
+{{--            <p>Tugas sudah diupload,</p><hr>--}}
+{{--            <a href="{{ route('tugasproker.download', $tugas -> file) }}" class="btn btn-success text-md-center">Lihat File</a>--}}
+{{--            @endif--}}
+{{--        </td>--}}
+
         <td>
-            @if ($tugas -> status == 'Belum Selesai')
-                <form method="post" action="{{ route('tugasproker.upload', $tugas -> id) }}" enctype="multipart/form-data" autocomplete="off">
+            @if ($tugas->status == 'Belum Selesai')
+                <form id="uploadForm_{{ $tugas->id }}" method="post" action="{{ route('tugasproker.upload', $tugas->id) }}" enctype="multipart/form-data" autocomplete="off" onsubmit="return uploadConfirmation('{{ $tugas->id }}')">
                     @csrf
                     @method('PUT')
-                        <div class="small font-italic text-muted mb-2">DOCS / PDF / PPT / EXCEL no larger than 3 MB</div>
-                        <input type="file" name="file" id="formFileSm" class="none"><hr>
-                        <button type="submit" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Upload Tugas </button>
+                    <div class="small font-italic text-muted mb-2">DOCS / PDF / PPT / EXCEL no larger than 3 MB</div>
+                    <input type="file" name="file" id="formFileSm" class="none" onchange="checkFileSize(this)"><hr>
+                    <button type="submit" class="btn btn-info text-md-center" id="uploadButton" disabled><i class="fas text-white-50 "></i>Upload Tugas</button>
                 </form>
             @else
-            <p>Tugas sudah diupload,</p><hr>
-            <a href="{{ route('tugasproker.download', $tugas -> file) }}" class="btn btn-success text-md-center">Lihat File</a>
+                <p>Tugas sudah diupload,</p><hr>
+                <a href="{{ route('tugasproker.download', $tugas->file) }}" class="btn btn-success text-md-center">Lihat File</a>
             @endif
         </td>
+
         <td>
             <textarea type="text" name="evaluasi" class="form-control form-control-alternative text-gray-900" id="validationTextarea" placeholder="Tidak ada evaluasi" readonly>{{ $tugas -> evaluasi }}</textarea>
         </td>
@@ -54,5 +71,27 @@
     @endforeach
     </tbody>
 </table>
+
+<script>
+    function checkFileSize(input) {
+        const fileSize = input.files[0].size;
+        const maxSize = 3 * 1024 * 1024; // 3MB
+
+        if (fileSize > maxSize) {
+            Swal.fire('Peringatan', 'File yang Anda upload melebihi 3 MB', 'warning');
+            input.value = null; // Menghapus file yang dipilih
+            document.getElementById('uploadButton').disabled = true;
+        } else {
+            document.getElementById('uploadButton').disabled = false;
+        }
+    }
+
+    function uploadConfirmation(id) {
+
+        Swal.fire(
+            'Berhasil', 'File berhasil diunggah', 'success'
+        );
+    }
+</script>
 
 

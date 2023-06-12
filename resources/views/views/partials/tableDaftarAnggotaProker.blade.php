@@ -35,17 +35,46 @@
             <td>
                 <a href="{{ route('editDataSie', ['int' => $int, 'data' => $data]) }}" class="btn btn-info text-md-center"><i class="fas text-white-50 "></i>Edit Data SIE</a>
             </td>
+{{--            <td>--}}
+{{--                <form id="deleteForm_{{ $d->id }}" method="post" action="{{ route('datasie.destroy', $d->id) }}" enctype="multipart/form-data" autocomplete="off" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">--}}
+{{--                    @csrf--}}
+{{--                    @method('DELETE')--}}
+{{--                    <input type="text" name="sie" id="input-sie" style="display: none;" value="" />--}}
+{{--                    <button type="submit" class="btn btn-danger text-md-center">Delete Data SIE</button>--}}
+{{--                </form>--}}
+{{--            </td>--}}
+
             <td>
-                <form method="post" action="{{ route('datasie.destroy', $d->id) }}" enctype="multipart/form-data" autocomplete="off" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                <form id="deleteForm_{{ $d->id }}" method="post" action="{{ route('datasie.destroy', $d->id) }}" enctype="multipart/form-data" autocomplete="off" onsubmit="return deleteConfirmation('{{ $d->id }}')">
                     @csrf
                     @method('DELETE')
                     <input type="text" name="sie" id="input-sie" style="display: none;" value="" />
                     <button type="submit" class="btn btn-danger text-md-center">Delete Data SIE</button>
                 </form>
             </td>
+
         </tr>
         @endif
         @endforeach
     </tbody>
 </table>
+<script>
+    function deleteConfirmation(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin ingin menghapus anggota sie ini?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('input-sie').value = id;
+                document.getElementById('deleteForm_' + id).submit();
+            } else {
+                return false;
+            }
+        });
+    }
+</script>
 

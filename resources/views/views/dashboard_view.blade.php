@@ -52,12 +52,19 @@
                                                     </a>
                                                 </div>
                                                 <div class="col-auto>">
-                                                <form method="post" action="{{ route('programkerja.destroy', $p->id) }}">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger text-md-center shadow-sm ml-2" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
-                                                </form>
-                                            </div>
+{{--                                                <form method="post" action="{{ route('programkerja.destroy', $p->id) }}">--}}
+{{--                                                    @csrf--}}
+{{--                                                    @method('DELETE')--}}
+{{--                                                    <button type="submit" class="btn btn-danger text-md-center shadow-sm ml-2" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>--}}
+{{--                                                </form>--}}
+                                                    <form id="deleteForm_{{ $p->id }}" method="post" action="{{ route('programkerja.destroy', $p->id) }}">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="button" class="btn btn-danger text-md-center shadow-sm ml-2" onclick="deleteConfirmation({{ $p->id }})">Delete</button>
+                                                    </form>
+
+
+                                                </div>
                                        {{-- <div class="col">
                                                 <div class="progress progress-sm mr-2">
                                                     <div class="progress-bar bg-info" role="progressbar"
@@ -161,5 +168,25 @@
         </div>
 
     </div>
+
+    <script>
+        function deleteConfirmation(id) {
+            Swal.fire({
+                title: 'Apakah Anda yakin ingin menghapus program kerja ini?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('deleteForm_' + id).submit();
+                }
+            });
+        }
+    </script>
+
+
+
 </body>
 </html>

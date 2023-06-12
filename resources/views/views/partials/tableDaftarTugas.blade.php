@@ -23,7 +23,7 @@
     </thead>
     <tbody>
 
-    @php $i=1; 
+    @php $i=1;
     $data = request()->query('data'); @endphp
     @foreach ( $dataTugas as $tugas)
     @if ($tugas -> idProker == $data)
@@ -34,14 +34,24 @@
         <td>{{ $tugas -> tenggatwaktu }}</td>
         <td>{{ $tugas -> status }}</td>
 
+{{--        <td>--}}
+{{--            @if ($tugas -> status == 'Belum Selesai')--}}
+{{--            <p>Belum ada</p>--}}
+{{--            @else--}}
+{{--            <p>File uploaded</p><hr>--}}
+{{--            <a href="{{ route('tugasproker.download', $tugas -> file) }}" class="btn btn-success text-md-center">Lihat File</a>--}}
+{{--            @endif--}}
+{{--        </td>--}}
         <td>
-            @if ($tugas -> status == 'Belum Selesai')
-            <p>Belum ada</p>
+            @if ($tugas->status == 'Belum Selesai')
+                <p>Belum ada</p>
             @else
-            <p>File uploaded</p><hr>
-            <a href="{{ route('tugasproker.download', $tugas -> file) }}" class="btn btn-success text-md-center">Lihat File</a>
+                <p>File uploaded</p><hr>
+                <a href="{{ route('tugasproker.download', $tugas->file) }}" class="btn btn-success text-md-center">Lihat File</a>
+
             @endif
         </td>
+
 
         <td>
             <form method="post" action="{{ route('tugasproker.update', $tugas->id) }}" enctype="multipart/form-data" autocomplete="off">
@@ -52,12 +62,19 @@
             </form>
         </td>
 
+{{--        <td>--}}
+{{--            <form id="deleteForm_{{ $tugas->id }}" method="post" action="{{ route('tugasproker.destroy', $tugas->id) }}">--}}
+{{--                @csrf--}}
+{{--                @method('DELETE')--}}
+{{--                <button type="submit" class="btn btn-danger text-md-center" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>--}}
+{{--            </form>--}}
+{{--        </td>--}}
+
         <td>
-            <p>Hapus</p><hr>
-            <form method="post" action="{{ route('tugasproker.destroy', $tugas->id) }}">
+            <form id="deleteForm_{{ $tugas->id }}" method="post" action="{{ route('tugasproker.destroy', $tugas->id) }}">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="btn btn-danger text-md-center" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Delete</button>
+                <button type="button" class="btn btn-danger text-md-center" onclick="deleteConfirmation('{{ $tugas->id }}')">Delete</button>
             </form>
         </td>
 
@@ -66,5 +83,61 @@
     @endforeach
     </tbody>
 </table>
+
+<script>
+    function deleteConfirmation(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin ingin menghapus data tugas ini?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('deleteForm_' + id).submit();
+            }
+        });
+    }
+
+    function deleteFileConfirmation(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin ingin menghapus file ini?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Lakukan penghapusan file melalui AJAX atau mengirimkan form untuk penghapusan file
+
+                // Contoh menggunakan AJAX dengan library Axios
+                axios.delete('/file/' + id)
+                    .then(response => {
+                        if (response.data.success) {
+                            Swal.fire('Berhasil', 'File berhasil dihapus', 'success').then(() => {
+                                // Jika ingin melakukan pengalihan halaman setelah penghapusan file berhasil
+                                // window.location.href = 'halaman-berhasil-dihapus';
+
+                                // Jika ingin me-refresh halaman saat penghapusan file berhasil
+                                location.reload();
+                            });
+                        } else {
+                            Swal.fire('Gagal', 'Terjadi kesalahan saat menghapus file', 'error');
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire('Gagal', 'Terjadi kesalahan saat menghapus file', 'error');
+                        console.error(error);
+                    });
+            }
+        });
+    }
+
+</script>
+
+
+
 
 

@@ -51,8 +51,10 @@
                                     </span>
                                 @endif
                             </div>
+
+
                             <div class="mb-4 form-group{{ $errors->has('namaOki') ? ' has-danger' : '' }}">
-                                <label class="text-gray-900 font-weight-bold" for="exampleInputPassword1">Oki</label>
+                                <label class="text-gray-900 font-weight-bold" for="exampleInputPassword1">OKI</label>
                                 <select class="form-select form-control" aria-label="Default select example" name="namaOki">
                                     <option value="" selected disabled>Silahkan Pilih Nama Oki</option>
                                     @foreach ($dataOki as $d)
@@ -84,7 +86,6 @@
     <!-- /.container-fluid -->
 
 <!-- End of Main Content -->
-
 
 </body>
 </html>
