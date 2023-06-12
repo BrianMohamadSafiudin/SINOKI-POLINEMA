@@ -28,27 +28,22 @@
                                                 $iduser = auth()->user()->id
                                             @endphp
                                             @foreach ($dataAnggota as $d)
-                                            @if ( $d->id == $iduser )
-                                            <form method="post" action="{{ route('profileUserImage', $d -> id) }}" enctype="multipart/form-data" autocomplete="off">
-                                                @csrf
-                                                @method('PUT')
-                                                <div class="mb-3">
-                                                    <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 2 MB</div>
-                                                    <input type="file" name="image" id="formFileSm" class="form-control form-control-sm">
-                                                </div>
-                                                <div class="d-sm-inline-block btn btn-primary shadow-sm mt-2 mb-4">
-                                                    <button type="submit" style="
-                                                        background-color: transparent;
-                                                        border: none;
-                                                        color: inherit;
-                                                        cursor: pointer;">{{ __('Ubah Foto Profil') }}
-                                                    </button>
-                                                </div>
-                                            </form>
-                                            @endif
+                                                @if ($d->id == $iduser)
+                                                    <form method="post" action="{{ route('profileUserImage', $d->id) }}" enctype="multipart/form-data" autocomplete="off" >
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <div class="mb-3">
+                                                            <div class="small font-italic text-muted mb-2">JPG or PNG no larger than 2 MB</div>
+                                                            <input type="file" name="image" id="formFileSm" class="form-control form-control-sm" onchange="checkFileSelected(this)">
+                                                            <small id="fileSizeWarning" class="text-danger mt-1" style="display: none;">Ukuran file tidak boleh melebihi 2 MB</small>
+                                                        </div>
+                                                        <button type="submit" id="ubahFotoButton" class="btn btn-primary text-md-center" disabled>{{ __('Ubah Foto Profil') }}</button>
+                                                    </form>
+                                                @endif
                                             @endforeach
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="col-xl-8">
                                     <!-- Account details card-->
@@ -154,9 +149,36 @@
                 </div>
 
             </div>
-        </div>
+
 
     <!-- /.container-fluid -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+    function checkFileSelected(input) {
+        const button = document.getElementById('ubahFotoButton');
+        const fileSizeWarning = document.getElementById('fileSizeWarning');
+        if (input.files && input.files[0]) {
+            const fileSize = input.files[0].size;
+            const maxSize = 2 * 1024 * 1024; // 2 MB
+            if (fileSize > maxSize) {
+                button.disabled = true;
+                fileSizeWarning.style.display = 'block';
+                Swal.fire(
+                    'File Terlalu Besar',
+                    'Ukuran file tidak boleh melebihi 2 MB',
+                    'error'
+                );
+            } else {
+                button.disabled = false;
+                fileSizeWarning.style.display = 'none';
+            }
+        } else {
+            button.disabled = true;
+            fileSizeWarning.style.display = 'none';
+        }
+    }
+
+
+</script>
 </body>

@@ -50,16 +50,23 @@
 
         <td>
             @if ($tugas->status == 'Belum Selesai')
-                <form id="uploadForm_{{ $tugas->id }}" method="post" action="{{ route('tugasproker.upload', $tugas->id) }}" enctype="multipart/form-data" autocomplete="off" onsubmit="return uploadConfirmation('{{ $tugas->id }}')">
+                <form id="uploadForm_{{ $tugas->id }}" method="post"
+                      action="{{ route('tugasproker.upload', $tugas->id) }}" enctype="multipart/form-data"
+                      autocomplete="off" onsubmit="return uploadConfirmation('{{ $tugas->id }}')">
                     @csrf
                     @method('PUT')
-                    <div class="small font-italic text-muted mb-2">DOCS / PDF / PPT / EXCEL no larger than 3 MB</div>
-                    <input type="file" name="file" id="formFileSm" class="none" onchange="checkFileSize(this)"><hr>
-                    <button type="submit" class="btn btn-info text-md-center" id="uploadButton" disabled><i class="fas text-white-50 "></i>Upload Tugas</button>
+                    <div class="small font-italic text-muted mb-2">DOCS / PDF / PPT / EXCEL no larger than 3
+                        MB</div>
+                    <input type="file" name="file" id="formFileSm_{{ $tugas->id }}"
+                           class="none" onchange="checkFileSize(this)"><hr>
+                    <button type="submit" class="btn btn-info text-md-center"
+                            id="uploadButton_{{ $tugas->id }}" disabled><i class="fas text-white-50"></i>Upload
+                        Tugas</button>
                 </form>
             @else
                 <p>Tugas sudah diupload,</p><hr>
-                <a href="{{ route('tugasproker.download', $tugas->file) }}" class="btn btn-success text-md-center" target=".blank">Lihat File</a>
+                <a href="{{ route('tugasproker.download', $tugas->file) }}"
+                   class="btn btn-success text-md-center" target=".blank">Lihat File</a>
             @endif
         </td>
 
@@ -72,17 +79,19 @@
     </tbody>
 </table>
 
+
 <script>
     function checkFileSize(input) {
         const fileSize = input.files[0].size;
         const maxSize = 3 * 1024 * 1024; // 3MB
+        const tugasId = input.id.split("_")[1];
 
         if (fileSize > maxSize) {
             Swal.fire('Peringatan', 'File yang Anda upload melebihi 3 MB', 'warning');
             input.value = null; // Menghapus file yang dipilih
-            document.getElementById('uploadButton').disabled = true;
+            document.getElementById('uploadButton_' + tugasId).disabled = true;
         } else {
-            document.getElementById('uploadButton').disabled = false;
+            document.getElementById('uploadButton_' + tugasId).disabled = false;
         }
     }
 
@@ -93,5 +102,4 @@
         );
     }
 </script>
-
 
