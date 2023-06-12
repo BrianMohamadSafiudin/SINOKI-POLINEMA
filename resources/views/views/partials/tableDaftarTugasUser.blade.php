@@ -59,7 +59,7 @@
                 </form>
             @else
                 <p>Tugas sudah diupload,</p><hr>
-                <a href="{{ route('tugasproker.download', $tugas->file) }}" class="btn btn-success text-md-center">Lihat File</a>
+                <a href="{{ route('tugasproker.download', $tugas->file) }}" class="btn btn-success text-md-center" target=".blank">Lihat File</a>
             @endif
         </td>
 

@@ -144,7 +144,7 @@
                                                         $dataOki = App\Models\Oki::all();
                                                     @endphp
                                                     @foreach ($dataOki as $Oki)
-                                                        <option value="{{ $Oki->id }}">{{ $Oki->nama }}</option>
+                                                        <option value="{{ $Oki->nama }}">{{ $Oki->nama }}</option>
                                                     @endforeach
                                                 </select>
                                             </div>

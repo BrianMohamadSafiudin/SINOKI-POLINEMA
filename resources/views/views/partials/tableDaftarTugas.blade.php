@@ -47,8 +47,12 @@
                 <p>Belum ada</p>
             @else
                 <p>File uploaded</p><hr>
-                <a href="{{ route('tugasproker.download', $tugas->file) }}" class="btn btn-success text-md-center">Lihat File</a>
-
+                <a href="{{ route('tugasproker.download', $tugas->file) }}" class="btn btn-success text-md-center" target=".blank">Lihat File</a>
+                <form id="deleteForm_{{ $tugas->id }}" method="post" action="{{ route('tugasproker.deleteFile', $tugas->id) }}" onsubmit="return deleteConfirmation('{{ $tugas->id }}')">
+                    @csrf
+                    @method('PUT')
+                    <button type="button" class="btn btn-danger text-md-center" onclick="deleteConfirmation('{{ $tugas->id }}')">Delete File</button>
+                </form>
             @endif
         </td>
 
