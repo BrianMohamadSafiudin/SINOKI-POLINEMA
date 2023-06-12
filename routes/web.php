@@ -54,6 +54,7 @@ Route::group(['middleware' => 'auth.admin'], function () {
     Route::get('tugasprokers', [TugasprokerController::class, 'index'])->name('tugasprokers');
     Route::post('tugasprokers', [TugasprokerController::class, 'store'])->name('tugasprokers.store');
     Route::put('tugasproker/{tugasproker}', [TugasprokerController::class, 'update'])->name('tugasproker.update');
+    Route::put('/tugasproker/deleteFile/{id}', [TugasprokerController::class, 'deleteFile'])->name('tugasproker.deleteFile');
     Route::delete('tugasprokers/{tugasproker}', [TugasprokerController::class, 'destroy'])->name('tugasproker.destroy');
 
     // CRUD DataSIE

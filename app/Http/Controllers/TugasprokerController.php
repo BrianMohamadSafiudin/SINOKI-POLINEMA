@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Models\tugasproker;
 
 class TugasprokerController extends Controller
@@ -45,6 +46,18 @@ class TugasprokerController extends Controller
         }
 
         return redirect()->back()->with('error', 'Gagal upload file.');
+    }
+
+    public function deleteFile($id)
+    {
+        $tugasproker = Tugasproker::findOrFail($id);
+        $filePath = storage_path('/storage/app/public/' . $tugasproker->file);
+
+        $tugasproker->file = null;
+        $tugasproker->status = 'Belum Selesai';
+        $tugasproker->save();
+
+        return redirect()->back()->with('status', 'Berhasil menghapus file.');
     }
 
     public function download($file)
