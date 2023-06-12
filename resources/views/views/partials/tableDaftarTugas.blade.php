@@ -46,15 +46,19 @@
             @if ($tugas->status == 'Belum Selesai')
                 <p>Belum ada</p>
             @else
-                <p>File uploaded</p><hr>
-                <a href="{{ route('tugasproker.download', $tugas->file) }}" class="btn btn-success text-md-center" target=".blank">Lihat File</a>
-                <form id="deleteForm_{{ $tugas->id }}" method="post" action="{{ route('tugasproker.deleteFile', $tugas->id) }}" onsubmit="return deleteConfirmation('{{ $tugas->id }}')">
-                    @csrf
-                    @method('PUT')
-                    <button type="button" class="btn btn-danger text-md-center" onclick="deleteConfirmation('{{ $tugas->id }}')">Delete File</button>
-                </form>
+                <p>File uploaded</p>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <a href="{{ route('tugasproker.download', $tugas->file) }}" class="btn btn-success text-sm-center btn-sm mr-1" style="font-size: 9pt; font-weight: 600;" target="_blank">Lihat File</a>
+                    <form id="deleteForm_{{ $tugas->id }}" method="post" action="{{ route('tugasproker.deleteFile', $tugas->id) }}" onsubmit="return deleteConfirmation('{{ $tugas->id }}')">
+                        @csrf
+                        @method('PUT')
+                        <button type="button" class="btn btn-danger text-sm-center btn-sm ml-1" style="font-size: 9pt; font-weight: 600;" onclick="deleteConfirmation('{{ $tugas->id }}')">Delete File</button>
+                    </form>
+                </div>
             @endif
         </td>
+
 
 
         <td>
