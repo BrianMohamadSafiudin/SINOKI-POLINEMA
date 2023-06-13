@@ -84,6 +84,8 @@ Route::group(['middleware' => 'auth.user'], function () {
     Route::post('profileUserUpdate', [ProfileUserController::class, 'update'])->name('profileUserUpdate');
     Route::put('profileUserImage/{id}', [ProfileUserController::class, 'image'])->name('profileUserImage');
     Route::put('profile/password', [ProfileController::class, 'password'])->name('profile.password');
+    Route::put('/profile/deleteImage/{id}', [ProfileUserController::class, 'deleteImage'])->name('profile.deleteImage');
+    Route::delete('deleteImage/{deleteImage}', [ProfileUserController::class, 'destroy'])->name('profile.destroy');
 
     // CRUD Tugas Program Kerja User
     Route::put('tugasprokers/{tugasproker}', [TugasprokerController::class, 'upload'])->name('tugasproker.upload');

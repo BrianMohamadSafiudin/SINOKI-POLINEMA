@@ -67,4 +67,22 @@ class ProfileUserController extends Controller
         return redirect()->back()->with('status', 'Foto profil berhasil diupload.');
     }
 
+    public function deleteImage($id)
+    {
+        $user = User::findOrFail($id);
+        $filePath = storage_path('/storage/app/public/' . $user->image);
+
+        $user->image = null;
+        $user->save();
+
+
+        return redirect()->back()->with('status', 'Berhasil menghapus Foto');
+    }
+
+    public function destroy(User $deleteImage)
+    {
+        $deleteImage->delete();
+
+        return back()->withStatus(__('Foto berhasil dihapus.'));
+    }
 }
