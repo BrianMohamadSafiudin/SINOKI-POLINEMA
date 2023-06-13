@@ -37,7 +37,12 @@
                                                             <input type="file" name="image" id="formFileSm" class="form-control form-control-sm" onchange="checkFileSelected(this)">
                                                             <small id="fileSizeWarning" class="text-danger mt-1" style="display: none;">Ukuran file tidak boleh melebihi 2 MB</small>
                                                         </div>
+                                                        @if ($d->image == null)
                                                 <div class="d-flex justify-content-center">
+                                                        <button type="submit" id="ubahFotoButton" class="btn btn-primary text-md-center mr-1" disabled>{{ __('Tambah Foto Profil') }}</button>
+                                                    </form>
+                                                    @else
+                                                    <div class="d-flex justify-content-center">
                                                         <button type="submit" id="ubahFotoButton" class="btn btn-primary text-md-center mr-1" disabled>{{ __('Ubah Foto Profil') }}</button>
                                                     </form>
                                                     <form id="deleteForm_{{ $d->id }}" method="post" action="{{ route('profile.deleteImage', $d->id) }}" onsubmit="return deleteConfirmation('{{ $d->id }}')">
@@ -45,6 +50,7 @@
                                                         @method('PUT')
                                                         <button type="button" class="btn btn-danger text-md-center ml-1" onclick="deleteConfirmation('{{ $d->id }}')">Delete File</button>
                                                     </form>
+                                                    @endif
                                                 </div>
                                                 @endif
                                             @endforeach
