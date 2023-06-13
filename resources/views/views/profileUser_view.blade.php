@@ -37,8 +37,15 @@
                                                             <input type="file" name="image" id="formFileSm" class="form-control form-control-sm" onchange="checkFileSelected(this)">
                                                             <small id="fileSizeWarning" class="text-danger mt-1" style="display: none;">Ukuran file tidak boleh melebihi 2 MB</small>
                                                         </div>
-                                                        <button type="submit" id="ubahFotoButton" class="btn btn-primary text-md-center" disabled>{{ __('Ubah Foto Profil') }}</button>
+                                                <div class="d-flex justify-content-center">
+                                                        <button type="submit" id="ubahFotoButton" class="btn btn-primary text-md-center mr-1" disabled>{{ __('Ubah Foto Profil') }}</button>
                                                     </form>
+                                                    <form id="deleteForm_{{ $d->id }}" method="post" action="{{ route('profile.deleteImage', $d->id) }}" onsubmit="return deleteConfirmation('{{ $d->id }}')">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <button type="button" class="btn btn-danger text-md-center ml-1" onclick="deleteConfirmation('{{ $d->id }}')">Delete File</button>
+                                                    </form>
+                                                </div>
                                                 @endif
                                             @endforeach
                                         </div>
@@ -178,7 +185,20 @@
             fileSizeWarning.style.display = 'none';
         }
     }
-
+    function deleteConfirmation(id) {
+        Swal.fire({
+            title: 'Apakah Anda yakin ingin menghapus foto profil ini?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                document.getElementById('deleteForm_' + id).submit();
+            }
+        });
+    }
 
 </script>
 </body>
