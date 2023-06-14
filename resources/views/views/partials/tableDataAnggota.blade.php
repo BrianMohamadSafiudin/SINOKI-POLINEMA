@@ -17,7 +17,12 @@
         @php
             $int = 1;
         @endphp
-
+    <form action="{{ route('search') }}" method="GET" class="d-flex" role="search">
+        <div class="input-group justify-content-end mb-3">
+            <input type="search" name="query" class="rounded align-content-end mx-2" placeholder="  Search...." aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" class="btn btn-primary" style="border-width: 2px; font-weight: 800"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </form>
         @foreach ($dataAnggota as $d)
         @if ($d->role === 'user')
         <tr>

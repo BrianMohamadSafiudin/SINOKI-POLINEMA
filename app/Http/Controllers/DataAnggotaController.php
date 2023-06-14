@@ -19,4 +19,21 @@ class DataAnggotaController extends Controller
 
         return back()->withStatus(__('Data tugas proker berhasil dihapus.'));
     }
+    public function search(Request $request)
+    {
+    $query = $request->input('query');
+
+    $dataAnggota = User::where('role', 'user')
+        ->where(function ($q) use ($query) {
+            $q->where('name', 'LIKE', '%' . $query . '%')
+                ->orWhere('nim', 'LIKE', '%' . $query . '%')
+                ->orWhere('prodi', 'LIKE', '%' . $query . '%')
+                ->orWhere('jurusan', 'LIKE', '%' . $query . '%')
+                ->orWhere('namaOki', 'LIKE', '%' . $query . '%')
+                ->orWhere('email', 'LIKE', '%' . $query . '%');
+        })
+        ->get();
+
+    return view('dataAnggota', compact('dataAnggota'));
+    }
 }
