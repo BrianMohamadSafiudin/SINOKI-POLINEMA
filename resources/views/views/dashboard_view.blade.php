@@ -45,6 +45,24 @@
                                                     <span class="text-gray-800">OKI {{ $p -> namaOki }}</span>
                                                 </div>
                                             </div>
+                                            @php
+                                                $totalSelesai = App\Models\tugasproker::where('status','Selesai')->where('idProker',$p->id)->count();
+                                            
+                                                $total = App\Models\tugasproker::count('status');
+                                                if ($total != 0) {
+                                                    $sisa = ($totalSelesai / $total) * 100;
+                                                } else {
+                                                    // Mengatasi pembagian dengan nol
+                                                    $sisa = 0;
+                                                }
+                                            @endphp
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col">
+                                                    <div class="progress  mr-2 mb-3" style="height: 28px">
+                                                        <div class="progress-bar" role="progressbar" style="width:{{ $sisa }}%; font-weight: bolder; font-size: 11pt;" aria-valuemin="0" aria-valuemax="100">{{ number_format($sisa, 1, '.', '') }}%</div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
                                                     <a href="{{ route('halamanProker', ['data' => $data]) }}" class=" d-sm-inline-block btn btn-primary">
