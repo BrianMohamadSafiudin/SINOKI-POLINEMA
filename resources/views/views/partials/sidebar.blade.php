@@ -2,7 +2,7 @@
 <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #4E31AA">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard_admin">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home_admin') }}">
         <div class="sidebar-brand-icon">
             <img src="{{ asset('admin') }}/img/logo.ico" alt="logo-polinema" style="max-width: 40px">
         </div>
