@@ -12,16 +12,13 @@
 
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('admin') }}/css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="icon" href="{{ asset('admin') }}/img/logo.ico">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="sweetalert2.all.min.js"></script>
-    <script src="jquery-3.6.4.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
@@ -76,18 +73,20 @@
                                 <form role="form" method="POST" action="{{ route('register') }}">
                                     @csrf
 
-
-                                    <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} my-5">
+                                    <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} my-4">
                                         <label class="form-label font-weight-bold ">Email</label>
                                         <div class="input-group">
-                                            <div class=""> $email=<input class="no-border{{ $errors->has('email') ? ' is-invalid' : '' }} form-control"  aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Masukkan email anda') }}" type="email" name="email" value="{{ old('email') }}" minlength="{8}" required autofocus></input></div>
+                                            <div class="mb-3"> $email=<input class="no-border{{ $errors->has('email') ? ' is-invalid' : '' }} form-control"  aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Masukkan email anda') }}" type="email" name="email" value="{{ old('email') }}" minlength="{8}" required autofocus></input></div>
                                         </div>
                                         @if ($errors->has('email'))
-                                            <span class="invalid-feedback" style="display: block;" role="alert">
+                                            <div class="mt-2" style="margin-top: 20px;">
+                                                <span class="invalid-feedback" style="display: block;" role="alert">
                                             <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
+                                            </span>
+                                            </div>
                                         @endif
                                     </div>
+
 
                                     <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }} my-4">
                                         <label class="form-label font-weight-bold ">Nama Lengkap</label>

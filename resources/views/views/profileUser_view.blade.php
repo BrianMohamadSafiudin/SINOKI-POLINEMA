@@ -21,6 +21,7 @@
                                             @if (auth()->user()->image_url)
                                                 <img class="img-account-profile rounded-circle mb-2" src="{{ auth()->user()->image_url }}" style="max-width: 128px" alt="" />
                                             @else
+                                                <img class="img-account-profile rounded-circle mb-2" src="{{ asset('admin') }}/img/user.svg" style="max-width: 128px" alt="" />
                                                 <div class="small font-italic text-muted mb-2">Silahkan Upload Foto Profil</div>
                                             @endif
                                             <!-- Profile picture upload button-->
@@ -40,11 +41,9 @@
                                                         @if ($d->image == null)
                                                 <div class="d-flex justify-content-center">
                                                         <button type="submit" id="ubahFotoButton" class="btn btn-primary text-md-center mr-1" disabled>{{ __('Tambah Foto Profil') }}</button>
-                                                    </form>
                                                     @else
                                                     <div class="d-flex justify-content-center">
                                                         <button type="submit" id="ubahFotoButton" class="btn btn-primary text-md-center mr-1" disabled>{{ __('Ubah Foto Profil') }}</button>
-                                                    </form>
                                                     <form id="deleteForm_{{ $d->id }}" method="post" action="{{ route('profile.deleteImage', $d->id) }}" onsubmit="return deleteConfirmation('{{ $d->id }}')">
                                                         @csrf
                                                         @method('PUT')
@@ -55,7 +54,9 @@
                                                 @endif
                                             @endforeach
                                         </div>
+                                                    </form>
                                     </div>
+
 
                                 </div>
                                 <div class="col-xl-8">
@@ -153,7 +154,7 @@
                                             <a href="{{ route('home') }}" class=" d-sm-inline-block btn btn-danger shadow-sm ml-2 mt-2 mb-4">
                                                 <i class="fas fa-sm text-white-50"></i>Back
                                             </a>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -207,4 +208,6 @@
     }
 
 </script>
-</body>
+
+                </div>
+            </div>

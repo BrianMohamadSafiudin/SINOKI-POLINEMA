@@ -33,9 +33,14 @@
             <td>{{ $d->namaOki }}</td>
             <td>{{ $d->email }}</td>
             <td>
-                <img class="img-profile rounded-circle" src="{{ $d->image_url }}" style="max-width: 50px" alt="">
+                @if ($d->image_url)
+                    <img class="img-profile rounded-circle" src="{{ $d->image_url }}" style="width: 50px; height: 50px; object-fit: cover;" alt="">
+                @else
+                    <img class="img-profile rounded-circle" src="{{ asset('admin') }}/img/user.svg" style="width: 50px; height: 50px; object-fit: cover;" alt="">
+                @endif
             </td>
-{{--            <td>--}}
+
+            {{--            <td>--}}
 {{--                <form method="post" action="{{ route('dataAnggota.destroy', $d->id) }}">--}}
 {{--                    @csrf--}}
 {{--                    @method('DELETE')--}}
