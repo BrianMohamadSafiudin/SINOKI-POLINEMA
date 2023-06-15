@@ -98,5 +98,31 @@ class UsersTableSeeder extends Seeder
             'sie' => 'SIE Kesejahteraan Sosial',
             'image' => 'public/users/m1ZX2MOyPW5p7AIahhb2wXXxX6LYKb1UIM5BG1Pq.jpg'
         ]);
+        DB::table('users')->insert([
+            'name' => 'BRAMAN SAFIUDIN',
+            'role' => 'user',
+            'nim' => '2141720187',
+            'prodi' => 'DIV Teknik Informatika',
+            'jurusan' => 'Teknologi Informasi',
+            'email' => 'braman@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('bramanbraman'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'namaOki' => 'BKM',
+        ]);
+        DB::table('users')->insert([
+            'name' => 'MUHAMAD ELKARIM',
+            'role' => 'user',
+            'nim' => '2141720111',
+            'prodi' => 'DIV Administrasi Bisnis',
+            'jurusan' => 'Akutansi',
+            'email' => 'muhamad@gmail.com',
+            'email_verified_at' => now(),
+            'password' => Hash::make('muhamadmuhamad'),
+            'created_at' => now(),
+            'updated_at' => now(),
+            'namaOki' => 'BKM',
+        ]);
     }
 }
