@@ -31,7 +31,7 @@
         <td> @php echo "$i"; $i++; @endphp </td>
         <td>{{ $tugas -> namatugas }}</td>
         <td>{{ $tugas -> sie }}</td>
-        <td>{{ $tugas -> tenggatwaktu }}</td>
+        <td>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $tugas->tenggatwaktu)->format('d-m-Y') }}</td>
         <td>{{ $tugas -> status }}</td>
 
 {{--        <td>--}}

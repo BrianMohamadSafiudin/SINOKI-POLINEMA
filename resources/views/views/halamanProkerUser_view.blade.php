@@ -35,7 +35,7 @@
                             </li>
                             <li>
                                 <i class='fas fa-fw fa-calendar-days mb-2'></i>
-                                <span>{{ $p -> tanggalproker }}</span>
+                                <span>{{ \Carbon\Carbon::createFromFormat('Y-m-d', $p->tanggalproker)->format('d-m-Y') }}</span>
                             </li>
                         </ul>
                         @endif
