@@ -58,7 +58,7 @@
 
                             <div class="mb-4 form-group{{ $errors->has('tanggalproker') ? ' has-danger' : '' }}">
                                 <label class="text-gray-900 font-weight-bold" for="exampleInputPassword1">Tanggal Program Kerja</label>
-                                <input type="date" name="tanggalproker" class="form-control form-control-alternative{{ $errors->has('tanggalproker') ? ' is-invalid' : '' }}" id="exampleInputPassword1" placeholder="Masukkan tanggal program kerja" value="{{ $d -> tanggalproker }}" readonly>
+                                <input type="date" name="tanggalproker" class="form-control form-control-alternative{{ $errors->has('tanggalproker') ? ' is-invalid' : '' }}" id="exampleInputPassword1" placeholder="Masukkan tanggal program kerja" value="{{ $d -> tanggalproker }}">
                                 @if ($errors->has('tanggalproker'))
                                     <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('tanggalproker') }}</strong>
