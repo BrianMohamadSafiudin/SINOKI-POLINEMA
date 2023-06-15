@@ -99,7 +99,7 @@ class UsersTableSeeder extends Seeder
             'image' => 'public/users/m1ZX2MOyPW5p7AIahhb2wXXxX6LYKb1UIM5BG1Pq.jpg'
         ]);
         DB::table('users')->insert([
-            'name' => 'Annisa Nurul Khoiriyah',
+            'name' => 'ANISA NURUL AZIZAH',
             'role' => 'user',
             'nim' => '2141720187',
             'prodi' => 'DIV Teknik Informatika',
