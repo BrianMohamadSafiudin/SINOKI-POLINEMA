@@ -8,8 +8,8 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <thead>
     @endif
+    <thead>
     <tr>
         <th>No</th>
         <th>Nama Anggota</th>
@@ -102,7 +102,7 @@
         });
     }
 </script>
-.
+
 
 
 
