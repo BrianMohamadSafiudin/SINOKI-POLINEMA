@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('tugasprokers', function (Blueprint $table) {
             $table->id();
-            $table->string('namatugas')->nullable()->unique();
+            $table->string('namatugas')->nullable();
             $table->string('sie')->nullable();
             $table->date('tenggatwaktu');
             $table->string('status')->nullable()->default('Belum Selesai');

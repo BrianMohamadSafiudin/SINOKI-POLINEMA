@@ -77,7 +77,7 @@
 
                                                 <div class="mb-3 form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                                     <label class="small mb-1 form-control-label" for="input-name">{{ __('Nama Lengkap') }}</label>
-                                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Masukkan Nama Lengkap Anda" value="{{ auth()->user()->name }}" required autofocus/>
+                                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Masukkan Nama Lengkap Anda" value="{{ auth()->user()->name }}" autofocus/>
                                                     @if ($errors->has('name'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('name') }}</strong>
@@ -87,7 +87,7 @@
 
                                                 <div class="mb-3 form-group{{ $errors->has('nim') ? ' has-danger' : '' }}">
                                                     <label class="small mb-1 form-control-label" for="input-nim">{{ __('NIM') }}</label>
-                                                    <input type="number" name="nim" id="input-nim" class="form-control form-control-alternative{{ $errors->has('nim') ? ' is-invalid' : '' }}" placeholder="Masukkan NIM Anda, ex: 2141720133" value="{{ auth()->user()->nim }}" required/>
+                                                    <input type="number" name="nim" id="input-nim" class="form-control form-control-alternative{{ $errors->has('nim') ? ' is-invalid' : '' }}" placeholder="Masukkan NIM Anda, ex: 2141720133" value="{{ auth()->user()->nim }}" />
                                                     @if ($errors->has('nim'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('nim') }}</strong>
@@ -97,7 +97,7 @@
 
                                                 <div class="mb-3 form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
                                                     <label class="small mb-1 form-control-label" for="input-email">Email</label>
-                                                    <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Masukkan email" value="{{ auth()->user()->email }}" required/>
+                                                    <input type="email" name="email" id="input-email" class="form-control form-control-alternative{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Masukkan email" value="{{ auth()->user()->email }}" />
                                                     @if ($errors->has('email'))
                                                         <span class="invalid-feedback" role="alert">
                                                             <strong>{{ $errors->first('email') }}</strong>
@@ -110,7 +110,7 @@
 
                                                     <div class="col-md-6 form-group{{ $errors->has('prodi') ? ' has-danger' : '' }}">
                                                         <label class="small mb-1 form-control-label" for="input-prodi">Prodi</label>
-                                                        <input type="text" name="prodi" id="input-prodi" class="form-control form-control-alternative{{ $errors->has('prodi') ? ' is-invalid' : '' }}" placeholder="Masukkan Prodi, ex: DIV Teknik Informatika" value="{{ auth()->user()->prodi }}" required/>
+                                                        <input type="text" name="prodi" id="input-prodi" class="form-control form-control-alternative{{ $errors->has('prodi') ? ' is-invalid' : '' }}" placeholder="Masukkan Prodi, ex: DIV Teknik Informatika" value="{{ auth()->user()->prodi }}" />
                                                         @if ($errors->has('prodi'))
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $errors->first('prodi') }}</strong>
@@ -120,7 +120,7 @@
 
                                                     <div class="col-md-6 form-group{{ $errors->has('jurusan') ? ' has-danger' : '' }}">
                                                         <label class="small mb-1 form-control-label" for="input-jurusan">Jurusan</label>
-                                                        <input type="text" name="jurusan" id="input-jurusan" class="form-control form-control-alternative{{ $errors->has('jurusan') ? ' is-invalid' : '' }}" placeholder="Masukkan Jurusan, ex: Teknologi Informasi" value="{{ auth()->user()->jurusan }}" required/>
+                                                        <input type="text" name="jurusan" id="input-jurusan" class="form-control form-control-alternative{{ $errors->has('jurusan') ? ' is-invalid' : '' }}" placeholder="Masukkan Jurusan, ex: Teknologi Informasi" value="{{ auth()->user()->jurusan }}" />
                                                         @if ($errors->has('jurusan'))
                                                             <span class="invalid-feedback" role="alert">
                                                                 <strong>{{ $errors->first('jurusan') }}</strong>
