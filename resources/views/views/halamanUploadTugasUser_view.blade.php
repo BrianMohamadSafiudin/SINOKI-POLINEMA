@@ -45,7 +45,7 @@
                         </div>
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="inputGroupFile01">
-                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                            <label class="custom-file-label" for="inputGroupFile01">Choose File</label>
                         </div>
                         </div>
                         <a href="#" class=" d-sm-inline-block btn btn-primary shadow-sm ">
@@ -60,6 +60,7 @@
 
 
 
+                            
                     </div>
                 </div>
 
