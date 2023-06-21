@@ -27,7 +27,7 @@ class HomeAdminController extends Controller
     {
         $dataProker = programkerja::all();
         $dataOki = Oki::all();
-        
+
         return view('dashboard_admin',compact('dataProker','dataOki'));
     }
 
@@ -45,11 +45,11 @@ class HomeAdminController extends Controller
                 // ->orWhere('email', 'LIKE', '%' . $query . '%');
         })
         ->get();
+//
+//        if ($dataProker->isEmpty()) {
+//            echo '<script>alert("Proker tidak ditemukan.");</script>';
+//        }
 
-        if ($dataProker->isEmpty()) {
-            echo '<script>alert("Proker tidak ditemukan.");</script>';
-        }
-        
     return view('dashboard_admin', compact('dataProker', 'dataOki'));
     }
 }

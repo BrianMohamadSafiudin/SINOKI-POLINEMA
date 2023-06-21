@@ -34,6 +34,25 @@
         .btn-signup:hover{
             color: white;
         }
+        /* Misalnya, set tata letak untuk layar dengan lebar kurang dari atau sama dengan 768px */
+        @media (max-width: 768px) {
+            .col-lg-6 {
+                width: 100%;
+                background-color: whitesmoke;
+            }
+
+            .col-lg-6:first-child {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Set tata letak untuk layar dengan lebar lebih dari 768px */
+        @media (min-width: 768px) {
+            .col-lg-6 {
+                width: 50%;
+            }
+        }
+
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
@@ -48,21 +67,21 @@
             <div class="card o-hidden border-0 shadow-lg my-5">
                 <div class="card-body p-0 ">
                     <!-- Nested Row within Card Body -->
-                    <div class="row" >
+                    <div class="row">
                         <div class="col-lg-6 d-none d-lg-block" style="background-color: whitesmoke;">
-                            <div class="p-5 d-flex justify-content-md-center align-items-center vh-100 ">
-                                <div class="text-center " >
-                                    <img class="mb-3 mt-4" src="{{asset('assets')}}/logo-politeknik-negeri-malang-1@2x.png" alt="" width="150px" >
+                            <div class="p-5 d-flex justify-content-md-center align-items-center vh-100">
+                                <div class="text-center">
+                                    <img class="mb-3 mt-4" src="{{asset('assets')}}/logo-politeknik-negeri-malang-1@2x.png" alt="" width="150px">
                                     <h1 class="h3 font-weight-bolder text-gray-900 my-3">Selamat Datang Kembali!</h1>
                                     <h2 class="h6 text-gray-900 mb-4">Untuk tetap mendapatkan informasi mengenai OKI yang anda ikuti, silahkan masuk dengan akun anda</h2>
-                                    <a href="login" class=" d-sm-inline-block btn btn-outline-primary shadow-sm btn-lg" style="border-radius: 50px; font-size: 18pt; font-weight: 600; border-width: 2pt ; padding: 10px 25px;">
+                                    <a href="login" class="d-sm-inline-block btn btn-outline-primary shadow-sm btn-lg" style="border-radius: 50px; font-size: 18pt; font-weight: 600; border-width: 2pt; padding: 10px 25px;">
                                         Sign In
                                     </a>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="col-lg-6"  style="background-color: white; ">
+                        <div class="col-lg-6" style="background-color: white;">
                             <div class="p-5">
                                 <div class="text-center mt-3">
                                     <div class="text-center">
@@ -74,65 +93,57 @@
                                     @csrf
 
                                     <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }} my-4">
-                                        <label class="form-label font-weight-bold ">Email</label>
+                                        <label class="form-label font-weight-bold">Email</label>
                                         <div class="input-group">
-                                            <div class="mb-3"> $email=<input class="no-border{{ $errors->has('email') ? ' is-invalid' : '' }} form-control"  aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Masukkan email anda') }}" type="email" name="email" value="{{ old('email') }}" minlength="{8}" required autofocus></input></div>
+                                            <div class="mb-3">
+                                                <input class="no-border{{ $errors->has('email') ? ' is-invalid' : '' }} form-control" aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Masukkan email anda') }}" type="email" name="email" value="{{ old('email') }}" minlength="{8}" required autofocus>
+                                            </div>
                                         </div>
                                         @if ($errors->has('email'))
                                             <div class="mt-2" style="margin-top: 20px;">
                                                 <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
+                                                    <strong>{{ $errors->first('email') }}</strong>
+                                                </span>
                                             </div>
                                         @endif
                                     </div>
 
-
                                     <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }} my-4">
-                                        <label class="form-label font-weight-bold ">Nama Lengkap</label>
+                                        <label class="form-label font-weight-bold">Nama Lengkap</label>
                                         <div class="input-group">
-                                            <div class="input-group"><input class="no-border{{ $errors->has('name') ? ' is-invalid' : '' }} form-control"  aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Masukkan nama lengkap anda') }}" type="text" name="name" value="{{ old('name') }}" required autofocus></input></div>
+                                            <div class="input-group">
+                                                <input class="no-border{{ $errors->has('name') ? ' is-invalid' : '' }} form-control" aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Masukkan nama lengkap anda') }}" type="text" name="name" value="{{ old('name') }}" required autofocus>
+                                            </div>
                                         </div>
                                         @if ($errors->has('name'))
                                             <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('name') }}</strong>
-                                        </span>
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
                                         @endif
                                     </div>
 
                                     <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }} my-4">
-                                        <label class="form-label font-weight-bold ">Password ( minimal 8 huruf / angka )</label>
+                                        <label class="form-label font-weight-bold">Password ( minimal 8 huruf / angka )</label>
                                         <div class="input-group">
-                                            <div class="input-group"><input class="no-border{{ $errors->has('password') ? ' is-invalid' : '' }} form-control" aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Masukkan password anda') }}" type="password" name="password" minlength="{8}" required></input></div>
+                                            <div class="input-group">
+                                                <input class="no-border{{ $errors->has('password') ? ' is-invalid' : '' }} form-control" aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Masukkan password anda') }}" type="password" name="password" minlength="{8}" required>
+                                            </div>
                                         </div>
                                         @if ($errors->has('password'))
                                             <span class="invalid-feedback" style="display: block;" role="alert">
-                                            <strong>{{ $errors->first('password') }}</strong>
-                                        </span>
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
                                         @endif
                                     </div>
 
                                     <div class="form-group  my-4">
-                                        <label class="form-label font-weight-bold ">Confirm Password</label>
+                                        <label class="form-label font-weight-bold">Confirm Password</label>
                                         <div class="input-group">
-                                            <div class="input-group" ><input class="no-border form-control" aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Ulangi password anda') }}" type="password" name="password_confirmation" minlength="{8}" required></input></div>
+                                            <div class="input-group">
+                                                <input class="no-border form-control" aria-describedby="inputGroup-sizing-lg" placeholder="{{ __('Ulangi password anda') }}" type="password" name="password_confirmation" minlength="{8}" required>
+                                            </div>
                                         </div>
                                     </div>
-
-{{--                                    <div class="form-group">--}}
-{{--                                        <label class="form-label font-weight-bold ">Pilih OKI</label>--}}
-{{--                                        <div class="input-group " >--}}
-{{--                                            <select class="custom-select dropdown-oki-child selectpicker" id="option" name="namaOki" data-live-search="true" data-live-search-style="startsWith">--}}
-{{--                                                @php--}}
-{{--                                                    $dataOki = App\Models\Oki::all();--}}
-{{--                                                @endphp--}}
-{{--                                                @foreach ($dataOki as $Oki)--}}
-{{--                                                    <option>{{ $Oki -> nama }}</option>--}}
-{{--                                                @endforeach--}}
-{{--                                            </select>--}}
-
-{{--                                        </div>--}}
-{{--                                    </div>--}}
 
                                     <div class="form-group">
                                         <label class="form-label font-weight-bold">Pilih OKI</label>
@@ -150,40 +161,29 @@
                                         </div>
                                     </div>
 
-
-
-
                                     <div class="text-center mt-3">
-                                        <button type="submit" href="" class=" d-sm-inline-block btn btn-lg btn-primary shadow-sm btn-lg mt-2" style="border-radius: 50px; font-size: 16pt; font-weight: 600; border-width: 2pt ; padding: 8px 24px; margin: auto;">
+                                        <button type="submit" href="" class="d-sm-inline-block btn btn-lg btn-primary shadow-sm btn-lg mt-2" style="border-radius: 50px; font-size: 16pt; font-weight: 600; border-width: 2pt; padding: 8px 24px; margin: auto;">
                                             {{ __('Create account') }}
                                         </button>
                                     </div>
 
                                     <div class="text-center mt-3 d-block d-sm-none">
                                         <hr>
-                                        <a href="login" class="btn btn-outline-primary shadow-sm btn-sm " style="border-radius: 50px; font-size: 18pt; font-weight: 600; border-width: 2pt ; padding: 10px 25px;">
+                                        <a href="login" class="btn btn-outline-primary shadow-sm btn-sm" style="border-radius: 50px; font-size: 18pt; font-weight: 600; border-width: 2pt; padding: 10px 25px;">
                                             Sign In
                                         </a>
                                     </div>
 
-
                                 </form>
-
-
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
-
-
 </div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
