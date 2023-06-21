@@ -9,10 +9,10 @@
 
                 @if ( (auth()->user()->nim) == null || (auth()->user()->image) == null)
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                    <strong>Silahkan lengkapi data anda di halaman profile user</strong>
+                    <strong>Silahkan lengkapi data anda di halaman profile user!</strong>
                     <button type="button" class="close" data-bs-dismiss="alert" >X</button>
                 </div>
-                
+
                 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
                 <script>
                     $(document).ready(function() {
@@ -20,8 +20,8 @@
                             $(this).closest('.alert').alert('close');
                         });
                     });
-                </script>                
-                
+                </script>
+
                 @endif
                 <!-- Card -->
                 <div class="card shadow mb-4">
@@ -74,8 +74,8 @@
                     <div class="text-center">
                         <h5 class="font-weight-bold text-dark">Belum ada proker, silahkan ditunggu...</h5>
                     </div>
-                    
-                    
+
+
                 </div>
                 @endif
 

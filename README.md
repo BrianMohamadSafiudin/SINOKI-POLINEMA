@@ -1,4 +1,4 @@
-# Cara Install
+# How To Install
 
 After initializing a fresh instances of Laravel (and making all the necessary configurations), install the preset using one of the provided methods:
 
@@ -45,3 +45,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 ## Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+
+Laravel is a powerful and popular PHP framework that offers many features and tools to speed up web application development. By using Laravel, you can take advantage of features like Eloquent ORM, expressive routing, Blade's template system, and much more. Strong support from the community and extensive official documentation make Laravel a good choice for building efficient, secure, and scalable web applications.
+
+Have fun learning laravel!
