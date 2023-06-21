@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="{{ asset('admin') }}/css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ asset('admin') }}/img/logo.ico">
+
 
     <link
         rel="stylesheet"

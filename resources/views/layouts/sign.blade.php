@@ -137,7 +137,7 @@
                                     <div class="form-group">
                                         <label class="form-label font-weight-bold">Pilih OKI</label>
                                         <div class="input-group">
-                                            <div class="custom-select-container">
+                                            <div class="input-group">
                                                 <select class="custom-select dropdown-oki-child selectpicker" id="option" name="namaOki">
                                                     @php
                                                         $dataOki = App\Models\Oki::all();
@@ -152,11 +152,20 @@
 
 
 
+
                                     <div class="text-center mt-3">
                                         <button type="submit" href="" class=" d-sm-inline-block btn btn-lg btn-primary shadow-sm btn-lg mt-2" style="border-radius: 50px; font-size: 16pt; font-weight: 600; border-width: 2pt ; padding: 8px 24px; margin: auto;">
                                             {{ __('Create account') }}
                                         </button>
                                     </div>
+
+                                    <div class="text-center mt-3 d-block d-sm-none">
+                                        <hr>
+                                        <a href="login" class="btn btn-outline-primary shadow-sm btn-sm " style="border-radius: 50px; font-size: 18pt; font-weight: 600; border-width: 2pt ; padding: 10px 25px;">
+                                            Sign In
+                                        </a>
+                                    </div>
+
 
                                 </form>
 

@@ -102,13 +102,19 @@
                                         <button type="submit" href="" class=" d-sm-inline-block btn btn-lg btn-primary shadow-sm btn-lg mt-2" style="border-radius: 50px; font-size: 18pt; font-weight: 600; border-width: 2pt ; padding: 10px 28px; margin: auto;">
                                             Sign In
                                         </button>
+                                        <div class="text-center mt-3">
+                                            <a class="text-decoration-none text-md " href="https://wa.me/+6282114903130?text=Username%20anda%20:%20? %0A(Kirim%20bukti%20selfie%20dengan%20ktm%20anda)" target="_blank">Lupa sandi? Call Admin</a>
+                                        </div>
                                     </div>
 
                                 </form>
-                                <hr>
-                                <div class="text-center">
-                                    <a class="text-decoration-none text-md " href="https://wa.me/+6282114903130?text=Username%20anda%20:%20? %0A(Kirim%20bukti%20selfie%20dengan%20ktm%20anda)" target="_blank">Lupa sandi? Call Admin</a>
+                                <div class="text-center mt-3 d-block d-sm-none">
+                                    <hr>
+                                    <a href="register" class=" d-sm-inline-block btn btn-outline-primary shadow-sm btn-lg" style="border-radius: 50px; font-size: 18pt; font-weight: 600; border-width: 2pt ; padding: 10px 25px;">
+                                        Sign Up
+                                    </a>
                                 </div>
+
 
                             </div>
 

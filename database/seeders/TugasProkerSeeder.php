@@ -31,5 +31,21 @@ class TugasProkerSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+        DB::table('tugasprokers')->insert([
+            'namaTugas' => 'Membuat Rundown Acara',
+            'sie' => 'Sie Acara',
+            'tenggatwaktu' => date('Y-m-d', strtotime('2023-07-25')),
+            'idProker' => '1',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('tugasprokers')->insert([
+            'namaTugas' => 'Membuat Rundown Acara',
+            'sie' => 'Sie Acara',
+            'tenggatwaktu' => date('Y-m-d', strtotime('2023-05-20')),
+            'idProker' => '2',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }
